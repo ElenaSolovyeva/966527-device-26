@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Elena Solovyeva](https://up.htmlacademy.ru/htmlcss/26/user/966527).
-* Наставник: `Неизвестно`.
+* Наставник: [Анна Лёмина](https://htmlacademy.ru/profile/id83874).
 
 ---
 
