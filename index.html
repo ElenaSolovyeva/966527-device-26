@@ -35,7 +35,12 @@
         <p>Самая длинная палка для селфи доступна в нашем магазине.</br>
             Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
         <p>Подробнее</p>
-        <!-- не знаю, какие тэги нужны для кнопок слайдера, пока оставляю пустым-->
+        <!-- для кнопок слайдера создаю форму с радио кнопками-->
+        <form name="index_top_slider" action="" method="">
+          <input name="longest_selfi"  type="radio" value=""/>
+          <input name=""  type="radio" value=""/>
+          <input name=""  type="radio" value=""/>
+        </form>
         <table>
           <tr>
             <th>Длина палки</th>
@@ -80,28 +85,57 @@
       </section>
       <section>
         <h2>Сервис</h2>
-        <ul>
+        <!--ul>
           <li>
-              <button type="button">Доставка</button> <!-- размечаю как кнопки, тк нет перехода на другую страницу -->
+              <button type="button">Доставка</button>
               <button type="button">Гарантия</button>
               <button type="button">Кредит</button>
           </li>
-        </ul>
+        </ul-->
+        <form name="sevices" action="" method="">
+          <label for="delivery">Доставка</label>
+          <input id="delivery" type="radio" value="delivery"/>
+          <label for="guarantee">Гарантия</label>
+          <input id="guarantee" type="radio" value="guarantee"/>
+          <label for="loan">Кредит</label>
+          <input id="loan" type="radio" value="loan"/>
+        </form>
+
       </section>
       <section>
-        <h2>Доставка</h2>
+        <!--h2>Доставка</h2>
         <p>Мы с удовольствием доставим ваш товар прямо к вашему<br>
            подъезду совершенно бесплатно! Ведь мы неплохо <br>
            заработаем, поднимая его на ваш этаж.</p>
-        <img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип для раздела Доставка" >
+        <img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип для раздела Доставка" -->
+      <ul>
+        <li>
+          <p>Доставка</p> <!-- наименование услуги -->
+          <p>Мы с удовольствием доставим ваш товар прямо к вашему<br> <!-- описание услуги  -->
+             подъезду совершенно бесплатно! Ведь мы неплохо <br>
+             заработаем, поднимая его на ваш этаж.</p>
+          <!--Логотип для раздела Доставка можно будет задать через css -->
+        </li>
+        <li>
+          <p>Гарантия</p> <!-- наименование услуги -->
+          <p></p> <!-- описание услуги  -->
+          <!--Логотип можно будет задать через css -->
+        </li>
+        <li>
+          <p>Кредит</p> <!-- наименование услуги -->
+          <p></p> <!-- описание услуги  -->
+          <!--Логотип можно будет задать через css -->
+        </li>
+
+      </ul>
       </section>
       <section>
         <h2>Торговые марки</h2>
         <ul>
-          <li><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип DJI" ></li>
-          <li><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип ADGETS" ></li>
-          <li><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип GoPro" ></li>
-          <li><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип VIVE" ></li>
+          <li><a href="#"><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип DJI" ></a></li>
+          <li><a href="#"><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип ADGETS" ></a></li>
+          <li><a href="#"><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип GoPro" ></a></li>
+          <li><a href="#"><img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип VIVE" ></a></li>
         </ul>
       </section>
       <!--конец блока, выделенного красным  -->
@@ -150,7 +184,7 @@
         <li><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
         <li><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
       </ul>
-      <p> 
+      <p>
         <a href="https://htmlacademy.ru"><img src="img/index_html_academy_logo.svg" width="" height="" alt="Иконка htmlacademy"></a>
       </p>
     </footer>
