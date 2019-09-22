@@ -7,20 +7,28 @@
   <body> <!-- насколько я поняла, декоративные изображения будем подключать через CSS, поэтому здесь иконки не размечаю  -->
     <header>
       <p>DEVICE</p>
-      <!-- поиск по сайту будет реализован как элемент формы -->
-      <ul>
-        <li><a href="#">Войти<a></li>
-        <li><a href="#">Сравнить<a></li>
-        <li><a href="#">Корзина<a></li>
-      </ul>
-      <nav>
+      <section>
+        <h2 class="visually=hidden">Верхнее меню"</h2>
+        <label for="index-search" class="visually-hidden">поиск по сайту</label>
+        <input id="index-search" type="search" placeholder="поиск по сайту">
+        <button type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
         <ul>
-          <li><a href="#">Каталог товаров</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Войти<a></li>
+          <li><a href="#">Сравнить<a></li>
+          <li><a href="#">Корзина<a></li>
         </ul>
-      </nav>
+      </section>
+      <section>
+        <h2>Основная навигация по сайту</h2>
+          <nav>
+            <ul>
+              <li><a href="#">Каталог товаров</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+    </section>
     </header>
 
     <main>
@@ -36,7 +44,7 @@
             Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
         <p>Подробнее</p>
         <!-- для кнопок слайдера создаю форму с радио кнопками-->
-        <form name="index_top_slider" action="" method="">
+        <form name="index_top_slider" action="https://echo.htmlacademy.ru" method="post">
           <input name="longest_selfi"  type="radio" value=""/> <!-- ?1 спросить на консультации, как сделать радио кнопку именно нужного дизайна, в соответствии с макетом? Сделать кнопку прозрачной и подложить картинку из макета?-->
           <input name=""  type="radio" value=""/>
           <input name=""  type="radio" value=""/>
@@ -86,13 +94,6 @@
       </section>
       <section>
         <h2>Сервис</h2>
-        <!--ul>
-          <li>
-              <button type="button">Доставка</button>
-              <button type="button">Гарантия</button>
-              <button type="button">Кредит</button>
-          </li>
-        </ul-->
         <form name="sevices" action="" method="">
           <label for="delivery">Доставка</label>
           <input id="delivery" type="radio" value="delivery"/>
@@ -104,11 +105,6 @@
 
       </section>
       <section>
-        <!--h2>Доставка</h2>
-        <p>Мы с удовольствием доставим ваш товар прямо к вашему<br>
-           подъезду совершенно бесплатно! Ведь мы неплохо <br>
-           заработаем, поднимая его на ваш этаж.</p>
-        <img src="https://via.placeholder.com/150x100" width="" height="" alt="Логотип для раздела Доставка" -->
       <ul>
         <li>
           <p>Доставка</p> <!-- наименование услуги -->
@@ -195,10 +191,32 @@
       <h2>Подробнее о нас</h2>
       <a href="#">Подробнее о нас</a>
     </section>
-    <!-- попап для "Напишите нам" -->
     <section>
-      <h2>Обратная связь</h2>
+      <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
+      <p>
+        <img src="img/index_map_big.jpg" width="960" height="560" alt="Наш адрес: Москва, ул. Строителей, дом 15">
+      </p>
+      <button type="button">Закрыть</button>
+    </section>
+    <section><!-- попап для "Напишите нам" -->
+      <h2 class="visually-hidden">Обратная связь</h2>
       <a href="#">Напишите нам</a>
+    </section>
+    <section>
+      <h2 class="visually-hidden">Форма обратной связи</h2>
+      <form name="write-us" action="" method="post">
+        <label>Ваше имя
+          <input type="text" placeholder="Имя Фамилия" requared>
+        </label>
+        <label>Ваш e-mail:
+          <input type="email" placeholder="email@example.com" requared>
+        </label>
+        <label>Текст письма:
+          <textarea rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
+        </label>
+        <button type="button">Закрыть</button>
+        <button type="submit">Отправить</button>
+      </form>
     </section>
   </body>
 </html>

@@ -15,7 +15,16 @@
       </ul>
       <nav>
         <ul>
-          <li><a href="">Каталог товаров</a></li>
+          <li><a href="">Каталог товаров</a>
+            <ul>
+              <li><a href="#">Виртуальная реальность</a></li>
+              <li><a href="#">Моноподы для селфи</a></li>
+              <li><a href="#">Экшн-камеры</a></li>
+              <li><a href="#">Фитнес-браслеты</a></li>
+              <li><a href="#">Умные часы</a></li>
+              <li><a href="#">квадрокоптеры</a></li>
+            </ul>
+          </li>
           <li><a href="">Доставка</a></li>
           <li><a href="">Гарантия</a></li>
           <li><a href="">Контакты</a></li>
@@ -30,14 +39,39 @@
         <li><a href="">Каталог товаров</a></li>
         <li>Моноподы для селфи</li>
       </ul>
+
       <section>
-        <h2>Фильтр товаров</h2>
-        <p>Фильтр:</p>
-        <!-- Здесь будет форма -->
-        <button type="button">Показать</button>
-      </section>
+        <h2 class="visually-hidden">Фильтр товаров</h2>
+        <form name="products-filter" action="https://echo.htmlacademy.ru" method="get">
+          <p>Фильтр:</p>
+          <fieldset>
+            <legend>Цвет</legend>
+            <ul>
+              <li>
+                <label><input type="checkbox" checked>Черный</input></label>
+                <label><input type="checkbox">Белый</input></label>
+                <label><input type="checkbox" checked>Синий</input></label>
+                <label><input type="checkbox" checked>Красный</input></label>
+                <label><input type="checkbox">Розовый</input></label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Bluetooth</legend>
+            <ul>
+              <li>
+                <label><input type="radio" checked>Нет</label>
+              </li>
+              <li>
+                <label><input type="radio">Нет</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit">Показать</button
+        </form>
+
       <section>
-        <h2>Сортировка товаров</h2>
+        <h2 class="visually-hidden">Сортировка товаров</h2>
         <p>Сортировка:</p>
         <a href="#">По цене</a>
         <a href="#">По типу</a>
@@ -46,19 +80,20 @@
         <a href="#"></a> <!--Треугольник вверх -->
         <a href="#"></a> <!--Треугольник вниз -->
       </section>
+
       <section>
-        <h2>Список моноподов для сэлфи</h2>
+        <h2 class="visually-hidden">Каталог моноподов для сэлфи</h2>
         <ul>
           <li>
-            <a href="">
-                <span>Любительская сэлфи-палка</span>
+            <a href="#">
+              <span>Любительская сэлфи-палка</span>
             </a>
             <img src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
             <p>500 руб.</p>
             <!-- не знаю, как разметить, что надпись "new" не активна, но может появиться -->
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <span>Профессиональная<br>
                     сэлфи-палка</span>
             </a>
@@ -67,7 +102,7 @@
             <!-- не знаю, как разметить, что надпись "new" не активна, но может появиться -->
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <span>Непотопляемая сэлфи-палка</span>
             </a>
             <img src="img/catalog_product_3.jpg" width="" height="" alt="Непотопляемая сэлфи-палка">
@@ -75,7 +110,7 @@
             <!-- не знаю, как разметить, что метка "new" не активна, но может появиться -->
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <span>Сэлфи-палка "Следуй за <br>
                     мной"
               </span>
