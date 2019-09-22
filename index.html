@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style/css">
   </head>
   <body> <!-- насколько я поняла, декоративные изображения будем подключать через CSS, поэтому здесь иконки не размечаю  -->
     <header>
       <p>DEVICE</p>
       <section>
         <h2 class="visually=hidden">Верхнее меню</h2>
-        <label for="index-search" class="visually-hidden">поиск по сайту</label>
-        <input id="index-search" type="search" placeholder="поиск по сайту">
-        <button type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
+        <form name="search-field" action="https://echo.html-academy.ru" method="post">
+          <label for="index-search" class="visually-hidden">поиск по сайту</label>
+          <input id="index-search" type="search" placeholder="поиск по сайту">
+          <button type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
+        </form>
         <ul>
           <li><a href="#">Войти<a></li>
           <li><a href="#">Сравнить<a></li>
@@ -43,10 +47,9 @@
         <p>Самая длинная палка для селфи доступна в нашем магазине.</br>
             Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
         <p>Подробнее</p>
-          <input name="longest_selfi"  type="radio" value="" checked/> <!-- ?1 спросить на консультации, как сделать радио кнопку именно нужного дизайна, в соответствии с макетом? Сделать кнопку прозрачной и подложить картинку из макета?-->
-          <input name=""  type="radio" value=""/>
-          <input name=""  type="radio" value=""/>
-        </form>
+        <input name="longest_selfi"  type="radio" value="" checked/> <!-- ?1 спросить на консультации, как сделать радио кнопку именно нужного дизайна, в соответствии с макетом? Сделать кнопку прозрачной и подложить картинку из макета?-->
+        <input name=""  type="radio" value=""/>
+        <input name=""  type="radio" value=""/>
         <table>
           <tr>
             <th>Длина палки</th>
