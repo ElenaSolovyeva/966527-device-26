@@ -8,7 +8,7 @@
     <header>
       <p>DEVICE</p>
       <section>
-        <h2 class="visually=hidden">Верхнее меню"</h2>
+        <h2 class="visually=hidden">Верхнее меню</h2>
         <label for="index-search" class="visually-hidden">поиск по сайту</label>
         <input id="index-search" type="search" placeholder="поиск по сайту">
         <button type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
@@ -19,7 +19,7 @@
         </ul>
       </section>
       <section>
-        <h2>Основная навигация по сайту</h2>
+        <h2 class="visually=hidden">Основная навигация по сайту</h2>
           <nav>
             <ul>
               <li><a href="#">Каталог товаров</a></li>
@@ -32,10 +32,10 @@
     </header>
 
     <main>
-      <h1>Интернет-магазин DEVICE</h1>
+      <h1 class="visually-hidden">Интернет-магазин DEVICE</h1>
       <!--блок, выделенный красным  -->
       <section>
-        <h2>Промо-блок "Самая длинная палка для сэлфи"</h2>
+        <h2 class="visually-hidden">Промо-блок "Самая длинная палка для сэлфи"</h2>
         <img src="img/index_slider_1.png" width="" height="" alt="Изображение самой длинной палки для сэлфи">
         <p>01</p>
         <p>Делай селфи, </br>
@@ -43,9 +43,7 @@
         <p>Самая длинная палка для селфи доступна в нашем магазине.</br>
             Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
         <p>Подробнее</p>
-        <!-- для кнопок слайдера создаю форму с радио кнопками-->
-        <form name="index_top_slider" action="https://echo.htmlacademy.ru" method="post">
-          <input name="longest_selfi"  type="radio" value=""/> <!-- ?1 спросить на консультации, как сделать радио кнопку именно нужного дизайна, в соответствии с макетом? Сделать кнопку прозрачной и подложить картинку из макета?-->
+          <input name="longest_selfi"  type="radio" value="" checked/> <!-- ?1 спросить на консультации, как сделать радио кнопку именно нужного дизайна, в соответствии с макетом? Сделать кнопку прозрачной и подложить картинку из макета?-->
           <input name=""  type="radio" value=""/>
           <input name=""  type="radio" value=""/>
         </form>
@@ -63,7 +61,7 @@
         </table>
       </section>
       <section>
-        <h2>Разделы каталога</h2>
+        <h2 class="visually-hidden">Разделы каталога</h2>
         <ul>
           <li>
             <h3>Виртуальная реальность</h3>
