@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/myriad-pro.woff2') format('woff2'),
+       url('fonts/myriad-web.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroyextrabold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy leight';
+  src: url('../fonts/gilroylight.woff2') format('woff2');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/opensans.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans light';
+  src: url('../fonts/opensanslight.woff2') format('woff2');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+body {
+  /* Блочная модель */
+  margin: 0;
+  padding: 0;
+  /* Типографика */
+  font-family: "OpenSans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #000000;
+  /* Оформление */
+  background-color: #ffffff;
+  background-position: top center;
+}
+
+
+/*? Непонятно, как задать фон в заголовке,
+    пока задала для тэга header, потом переделаю.
+  ? Выяснить, как посмотреть, что за эффекты и есть ли градиент*/
+header {
+  /* Оформление */
+  background-color: #f7e296;
+}
+
+a {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  /* Блочная модель */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  /* Типографика */
+  white-space: nowrap; /*Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
+}
+
+.logo{
+  /* Типографика */
+  color: #000000;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.logo a:hover,
+.logo a:focus {
+  opacity: 0.6;
+}
+
+.logo a:hover {
+  opacity: 0.6;
+}
+
+.top-nav-list,
+.main-nav-list{
+  /* Оформление */
+  list-style: none;
+}
+
+.top-nav-list a,
+.main-nav-list a {
+    color: #000000;
+}
+
+.top-nav-list a {
+  /* Типографика */
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.main-nav-list a {
+  /* Типографика */
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+
+.top-nav-list a:hover,
+.main-nav-list a:hover {
+  opacity: 0.6;
+}
+
+.top-nav-list a:focus,
+.main-nav-list a:focus  {
+  opacity: 0.3;
+}
+
+.search-field {
+  /* Типографика */
+  opacity: 0.3;
+  /* Оформление */
+  background-color: transparent;
+  border: none;
+}
+
+.search-field:hover {
+  /* Типографика */
+  opacity: 0.6;
+}
+
+.search-field:focus {
+  /* Типографика */
+  opacity: 1;
+}
+
+/*?как добавить значок с лупой*/
+
+.button-search {
+  /* Типографика */
+  color: #f7e296;
+  /* Оформление */
+  background-color: transparent;
+  border: none;
+}
+
+.button-search:hover,
+.button-search:focus {
+  /* Типографика*/
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 30px;
+  /* Оформление */
+  background-color: #000000;
+  border: none;
+}
+
+.button-search:active {
+  /* Типографика*/
+  color: #000000;
+  opacity: 0.3; /*?Почему свойство opacity применяется к цвету фона, а не к цвету шрифта */
+  font-size: 15px;
+  line-height: 30px;
+  /* Оформление */
+  background-color: #000000;
+  border: none;
+}
+
+/*Блок, выделенный красным*/
+
+/*Пока не получается сделать черную черту сверху width: 80px; height: 7px;*/
+.info h2 {
+  /* Типографика*/
+  font-family: "Myriad Pro";
+  font-size: 47px;
+  lein-height: 48px;
+}
+
+.info p { /*? Не получается узнать данные о шрифте и его размере из макета, поставила примерные значения*/
+  /* Типографика*/
+  font-family: "OpenSans light";
+  font-size: 15px;
+  lein-height: 30px;
+}
+
+.info ul {
+  list-style: none;
+}
+/*? Как добавить маркеры из макета вместо стандартных*/
+
+.info li {  /*Не могу найти эти надписи в макете, поставила примерные значения*/
+  font-family: "Myriad Pro";
+  font-size: 15px;
+  lein-height: 30px;
+}
+
+.info a {
+  color: #000000;
+  font-family: "Gilroy";
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 3.6px; /*VA=200, font-size: 18px --> letter-spacing = 200 * 18 / 1000, нашла такую формулу в интернете */
+  text-transform: uppercase;
+}
+
+/*СТИЛИ ДЛ ЯФУТЕРА*/
+
+.main-footer {
+  /* Блочная модель */
+  margin: 0;
+  padding: 0;
+  /* Типографика */
+  color: #ffffff;
+  /* Оформление */
+  background-color: #464646;
+  background-position: top center; /*? Правильно ли здесь "top"*/
+}
+.logo-footer {
+  color: #ffc600;
+  font-family: "Myriad Pro";
+  font-size: 15px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.logo-footer:hover,
+.logo-footer:focus {
+  opacity: 0.6;
+}
+
+.logo-footer:active {
+  opacity: 0.3;
+}
+/***************************/
+
+.bottom-nav-list,
+.footer-nav-list{
+  /* Оформление */
+  list-style: none;
+}
+
+.bottom-nav-list a,
+.footer-nav-list a {
+    color: #ffffff;
+}
+
+.bottom-nav-list a {
+  /* Типографика */
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 36px;
+}
+
+.footer-nav-list a {
+  /* Типографика */
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+
+.bottom-nav-list a:hover,
+.footer-nav-list a:hover {
+  opacity: 0.6;
+}
+
+.bottom-nav-list a:focus,
+.footer-nav-list a:focus  {
+  opacity: 0.3;
+}
+
+.socialnetwork-list {
+  list-style: none;
+}
+/*? как подменять картинки при наведении иклике*/
+
+.htmlacademy-logo {
+  /*? Как задать цыет #ffc600; для логотипа */
+}
+
+/* ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ*/
+
+.feedback-modal {
+  background-color:#ffffff;
+}
+
+.feedback-form label {
+  color: #000000;
+  font-family:  "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.feedback-field {
+  color: #464646;
+  font-family: "OpenSans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.button {
+  /* Типографика */
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+
+  background-color: transparent;
+  border: none;
+}
+
+.button-close {
+  color: red; /*Пусть будет такой цвет, пока не разобралась, как вместо кнопки картинку подложить*/
+  background-color: transparent;
+  border: none;
+}
