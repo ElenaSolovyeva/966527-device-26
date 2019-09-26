@@ -1,20 +1,12 @@
 @font-face {
-  font-family: 'Myriad Pro';
-  src: url('../fonts/myriad-pro.woff2') format('woff2'),
-       url('fonts/myriad-web.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  }
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/gilroyextrabold.woff2') format('woff2');
+  font-family: "Gilroy";
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gilroy leight';
+  font-family: 'Gilroy light';
   src: url('../fonts/gilroylight.woff2') format('woff2');
   font-weight: lighter;
   font-style: normal;
@@ -46,20 +38,25 @@ body {
   color: #000000;
   /* Оформление */
   background-color: #ffffff;
-  background-position: top center;
 }
 
 
 /*? Непонятно, как задать фон в заголовке,
     пока задала для тэга header, потом переделаю.
   ? Выяснить, как посмотреть, что за эффекты и есть ли градиент*/
-header {
+header { /*ДОБАВИТЬ КЛАСС*/
   /* Оформление */
   background-color: #f7e296;
 }
 
 a {
   text-decoration: none;
+}
+
+.reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .visually-hidden {
@@ -76,7 +73,7 @@ a {
   white-space: nowrap; /*Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
 }
 
-.logo{
+.logo{ /*БУДЕТ ЗАМЕНЕНО НА КАРТИНКУ*/
   /* Типографика */
   color: #000000;
   font-family: "Myriad Pro", Arial, sans-serif;
@@ -94,38 +91,33 @@ a {
   opacity: 0.6;
 }
 
-.top-nav-list,
-.main-nav-list{
-  /* Оформление */
-  list-style: none;
-}
-
-.top-nav-list a,
+.top-nav-list a, /*ДОБАВИТЬ КЛАСС*/
 .main-nav-list a {
     color: #000000;
 }
 
-.top-nav-list a {
+.top-nav-list a { /*ДОБАВИТЬ КЛАСС*/
   /* Типографика */
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
 }
 
-.main-nav-list a {
+.main-nav-list a { /*ДОБАВИТЬ КЛАСС*/
   /* Типографика */
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   text-transform: uppercase;
   line-height: 24px;
+  letter-spacing: 3.6px;
 }
 
-.top-nav-list a:hover,
+.top-nav-list a:hover, /*ДОБАВИТЬ КЛАСС*/
 .main-nav-list a:hover {
   opacity: 0.6;
 }
 
-.top-nav-list a:focus,
+.top-nav-list a:focus, /*ДОБАВИТЬ КЛАСС*/
 .main-nav-list a:focus  {
   opacity: 0.3;
 }
@@ -148,7 +140,7 @@ a {
   opacity: 1;
 }
 
-/*?как добавить значок с лупой*/
+/* значок с лупой будет фоном для инпута*/
 
 .button-search {
   /* Типографика */
@@ -172,17 +164,109 @@ a {
 .button-search:active {
   /* Типографика*/
   color: #000000;
-  opacity: 0.3; /*?Почему свойство opacity применяется к цвету фона, а не к цвету шрифта */
+  opacity: 0.3;
   font-size: 15px;
   line-height: 30px;
   /* Оформление */
-  background-color: #000000;
+  background-color: rgba(256, 256, 256, 1);
   border: none;
 }
 
-/*Блок, выделенный красным*/
+.page-number {
+  color: #ffffff;
+  font-family: "Gilroy";
+  font-size: 179.2px;
+  lein-height: 179.2px;
+}
 
-/*Пока не получается сделать черную черту сверху width: 80px; height: 7px;*/
+/*Блок, выделенный красным*/
+.promo-slogan {
+  font-family: "Gilroy";
+  font-size: 47px;
+  line-height: 56px;
+}
+
+.promo-info {
+  font-family: "OpenSans light";
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.button-yellow {
+  color: #000000;
+  font-family: "Gilroy";
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+}
+
+.button-yellow:hover,
+.button-yellow:focus {
+  /*background-color*/
+  }
+
+.button-yellow:active {
+  /*background-color*/
+  opacity: 0.3;
+}
+
+.promo-description th {
+  color: #464646;
+  font-family: "OpenSans light";
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.promo-description td {
+  font-family: "Gilroy light";
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.sections-item h3 {
+  font-family: "Gilroy";
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.sections-item a { /*ДОБАВИТЬ КЛАСС*/
+  background-color: #f7e296;
+}
+
+.button-yellow-black { /*ДОБАВИТЬ ДОПОЛНИТЕЛЬНЫЙ КЛАСС, ВСЕ КНОПКИ В ОДНОМ ПРАВИЛЕ*/
+  color: #000000;
+  font-family: "Gilroy";
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+
+  /*background-color: #f0c52e;*/
+}
+.button-yellow-black:focus
+{/*изменяется размер фона/тени*/}
+
+.button-yellow-black:active {
+  color: #f7e184;
+  /*background-color: #000000;*/
+}
+
+.description-item h3 {
+  font-family: "Gilroy";
+  font-size: 47px;
+  line-height: 48px;
+}
+
+.description-item p {
+  color: #464646;
+  font-family: "OpenSans light";
+  font-size: 15px;
+  line-height: 30px;
+}
+
+
+/*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
 .info h2 {
   /* Типографика*/
   font-family: "Myriad Pro";
@@ -197,18 +281,15 @@ a {
   lein-height: 30px;
 }
 
-.info ul {
-  list-style: none;
-}
-/*? Как добавить маркеры из макета вместо стандартных*/
+/*добавить маркеры из макета вместо стандартных - ВЫРЕЗАТЬ ИЗ МАКЕТА И СДЕЛАТЬ ПСЕВДОЭЛ-М ИЛИ ФОНОМ*/
 
-.info li {  /*Не могу найти эти надписи в макете, поставила примерные значения*/
+.info-list li {  /*Не могу найти эти надписи в макете, поставила примерные значения*/
   font-family: "Myriad Pro";
   font-size: 15px;
   lein-height: 30px;
 }
 
-.info a {
+.info-list a { /*ДОБАВИТЬ КЛАСС*/
   color: #000000;
   font-family: "Gilroy";
   font-size: 18px;
@@ -217,7 +298,7 @@ a {
   text-transform: uppercase;
 }
 
-/*СТИЛИ ДЛ ЯФУТЕРА*/
+/*СТИЛИ ДЛЯ ФУТЕРА*/
 
 .main-footer {
   /* Блочная модель */
@@ -227,9 +308,9 @@ a {
   color: #ffffff;
   /* Оформление */
   background-color: #464646;
-  background-position: top center; /*? Правильно ли здесь "top"*/
 }
-.logo-footer {
+
+.logo-footer {  /*svg*/
   color: #ffc600;
   font-family: "Myriad Pro";
   font-size: 15px;
@@ -247,13 +328,7 @@ a {
 }
 /***************************/
 
-.bottom-nav-list,
-.footer-nav-list{
-  /* Оформление */
-  list-style: none;
-}
-
-.bottom-nav-list a,
+.bottom-nav-list a, /*ДОБАВИТЬ КЛАСС*/
 .footer-nav-list a {
     color: #ffffff;
 }
@@ -273,6 +348,10 @@ a {
   line-height: 24px;
 }
 
+.footer-nav-item a {
+  letter-spacing: 3.6px;
+}
+
 .bottom-nav-list a:hover,
 .footer-nav-list a:hover {
   opacity: 0.6;
@@ -283,9 +362,6 @@ a {
   opacity: 0.3;
 }
 
-.socialnetwork-list {
-  list-style: none;
-}
 /*? как подменять картинки при наведении иклике*/
 
 .htmlacademy-logo {
@@ -329,3 +405,52 @@ a {
   background-color: transparent;
   border: none;
 }
+
+/*СТИЛИ ДЛЯ СТРАНИЦЫ КАТАЛОГА*/
+
+.product-groups-item a{
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 36px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.product-groups-item a:hover,
+.product-groups-item a:focus {
+  opacity: 0.6;
+}
+
+.product-groups-item a:active {
+  opacity: 0.3;
+}
+
+.selfi-monopods {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 48px;
+}
+
+.breadcrumbs-item {
+  color: #000000; /*rgba*/
+  opacity: 0.3;
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.catalog-item {
+  color: #000000;
+  font-family: "Gilroy light", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.catalog-item a {
+  color: #000000;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/*ФУТЕР СТРАНИЦЫ КАТАЛОГА совпадает с главной страницей*/

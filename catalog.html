@@ -4,53 +4,80 @@
     <meta charset="utf-8">
     <title>Каталог DEVICE</title>
     <link rel="stylesheet" href="css/normalize.css"><!-- потихоньку начала делать задание по css -->
-    <link rel="stylesheet" href="css/style/css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body> <!-- Не вижу, какие изображения нужно подключить для блоков, выделенных красным  -->
     <header>
-      <p><a href="index.html">DEVICE</a></p>
+      <p><a class="logo" href="index.html">DEVICE</a></p>
       <!-- поиск по сайту будет реализован как элемент формы -->
-      <ul>
-        <li><button type="button">Личный кабинет</button></li>
-        <li><button type="button">Выйти</button></li>
-        <li><button type="button">Сравнить</button></li>
-        <li><button type="button">Корзина</button></li>
-      </ul>
-      <nav>
-        <ul>
-          <li><a href="">Каталог товаров</a>
-            <ul>
-              <li><a href="#">Виртуальная реальность</a></li>
-              <li><a href="#">Моноподы для селфи</a></li>
-              <li><a href="#">Экшн-камеры</a></li>
-              <li><a href="#">Фитнес-браслеты</a></li>
-              <li><a href="#">Умные часы</a></li>
-              <li><a href="#">квадрокоптеры</a></li>
-            </ul>
+
+      <section class="top-nav">
+        <h2 class="visually-hidden">Верхнее меню</h2>
+        <form name="search-field" action="https://echo.html-academy.ru" method="post">
+          <label for="index-search" class="visually-hidden ">Поиск по сайту</label>
+          <input id="index-search" type="search" class="search-field" placeholder="Поиск по сайту">
+          <button class="button-search" type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
+        </form>
+        <ul class="top-nav-list reset-list">
+          <li class="top-nav-item username">
+            <a href="#">Валентин Петухов</a>
+            <a href="#">Выйти<a>
           </li>
-          <li><a href="">Доставка</a></li>
-          <li><a href="">Гарантия</a></li>
-          <li><a href="">Контакты</a></li>
+          <li class="top-nav-item"></li>
+          <li class="top-nav-item"><a href="#">Сравнить<a></li>
+          <li class="top-nav-item"><a href="#">Корзина<a></li>
         </ul>
-      </nav>
+      </section>
+
+      <section class="main-nav">
+        <h2 class="visually-hidden">Основная навигация по сайту</h2>
+          <nav>
+            <ul class="main-nav-list reset-list">
+              <li><a href="#">Каталог товаров</a></li>
+                <ul class="product-groups-list reset-list">
+                  <li class="product-groups-item"><a href="#">Виртуальная реальность</a></li>
+                  <li class="product-groups-item"><a href="#">Моноподы для селфи</a></li>
+                  <li class="product-groups-item"><a href="#">Экшн-камеры</a></li>
+                  <li class="product-groups-item"><a href="#">Фитнес-браслеты</a></li>
+                  <li class="product-groups-item"><a href="#">Умные часы</a></li>
+                  <li class="product-groups-item"><a href="#">квадрокоптеры</a></li>
+                </ul>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+      </section>
     </header>
 
     <main>
-      <h1>Моноподы для селфи<h1>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="">Каталог товаров</a></li>
-        <li>Моноподы для селфи</li>
+      <h1 class="selfi-monopods">Моноподы для селфи<h1>
+      <ul class="breadcrumbs reset-list">
+        <li class="breadcrumbs-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumbs-item"><a href="">Каталог товаров</a></li>
+        <li class="breadcrumbs-item">Моноподы для селфи</li>
       </ul>
 
       <section>
         <h2 class="visually-hidden">Фильтр товаров</h2>
         <form name="products-filter" action="https://echo.htmlacademy.ru" method="get">
           <p>Фильтр:</p>
+
+          <!--Блок со стоимостью-->
+          <div class="range">
+            <div class="scale">
+              <div class="bar"></div> <!--зеленая полоска -->
+              <span class="range-min"></span>
+              <span class="range-max"></span>
+            </div>
+              <label>от</label><input type="text">
+              <label>до</label><input type="text">
+          </div>
+
           <fieldset>
             <legend>Цвет</legend>
-            <ul>
-              <li>
+            <ul class="reset-list">
+              <li><!--исправить -->
                 <label><input type="checkbox" checked>Черный</input></label>
                 <label><input type="checkbox">Белый</input></label>
                 <label><input type="checkbox" checked>Синий</input></label>
@@ -61,7 +88,7 @@
           </fieldset>
           <fieldset>
             <legend>Bluetooth</legend>
-            <ul>
+            <ul class="reset-list">
               <li>
                 <label><input type="radio" checked>Нет</label>
               </li>
@@ -86,17 +113,17 @@
 
       <section>
         <h2 class="visually-hidden">Каталог моноподов для сэлфи</h2>
-        <ul>
-          <li>
+        <ul class="catalog-list reset-list">
+          <li class="catalog-item">
+            <img src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
             <a href="#">
               <span>Любительская сэлфи-палка</span>
             </a>
-            <img src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
-            <p>500 руб.</p>
-            <!-- как разметить, что надпись "new" не активна, но может появиться:
-             - Эту надпись можно сделать псевдоэлементом, который будет появляться только у классов catalog-item-new -->
-          </li>
-          <li>
+            <span>500 руб.</span>
+            <!-- надпись "new" не активна, но может появиться:
+             - Эту надпись можно сделать псевдоэлементом (в контенте, кружок- бордер), который будет появляться только у классов catalog-item-new -->
+          </li><!--переделать остальные эл-ты по аналогии -->
+          <li class="catalog-item catalog-item-new">
             <a href="#">
               <span>Профессиональная<br>
                     сэлфи-палка</span>
@@ -105,7 +132,7 @@
             <p>1500 руб.</p>
             <!-- не знаю, как разметить, что надпись "new" не активна, но может появиться -->
           </li>
-          <li>
+          <li class="catalog-item">
             <a href="#">
               <span>Непотопляемая сэлфи-палка</span>
             </a>
@@ -124,10 +151,9 @@
             <!-- не знаю как разметить метку "new", тк это декоративное изображение, а его следует реализовывать с помощью CSS -->
           </li>
         </ul>
-      </section>
-      <section>
+
         <h2 class="visually-hidden">Навигация по страницам каталога товаров</h2>
-        <ul>
+        <ul class="pagination-list reset-list">
           <li><a href="">Назад</a></li>
           <li><a href="">1</a></li>
           <li><a href="">2</a></li>
@@ -136,28 +162,40 @@
         </ul>
       </section>
     </main>
-    <footer>
-      <p>DEVICE</p>
-      <ul>
-        <li><a href="#">Войти</a></li>
-        <li><a href="#">Сравнить</a></li>
-        <li><a href="#">Корзина</a></li>
+
+    <footer class="main-footer">
+      <p><a class="logo-footer" href="#">DEVICE</a></p>
+      <ul class="bottom-nav-list reset-list">
+        <li class="bottom-nav-item"><a href="#">Выйти</a><a href="#">Валентин Петухов</a></li>
+        <li class="bottom-nav-item"><a href="#">Сравнить</a></li>
+        <li class="bottom-nav-item"><a href="#">Корзина</a></li>
       </ul>
       <p>г. Москва, ул. Строителей, 15</p>
       <nav>
-        <ul>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Контакты</a></li>
+        <ul class="footer-nav-list reset-list">
+          <li class="footer-nav-item"><a href="#">Доставка</a></li>
+          <li class="footer-nav-item"><a href="#">Гарантия</a></li>
+          <li class="footer-nav-item"><a href="#">Контакты</a></li>
         </ul>
       </nav>
       <p>Тел.: +7(495)495-95-95</p>
-      <ul>
-        <li><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
-        <li><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
-        <li><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
+      <ul class="socialnetwork-list reset-list">
+        <li class="socialnetwork-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
+        <li class="socialnetwork-item"><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
+        <li class="socialnetwork-item"><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
       </ul>
       <p>
-        <a href="https://htmlacademy.ru"><img src="img/index_html_academy_logo.svg" width="" height="" alt="Иконка htmlacademy"></a>
+        <a class="htmlacademy-logo" href="https://htmlacademy.ru"><img src="img/index_html_academy_logo.svg" width="" height="" alt="Иконка htmlacademy"></a>
       </p>
     </footer>
+
+    <section class="map-modal">
+      <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
+      <p>
+        <img src="img/index_map_big.jpg" width="960" height="560" alt="Наш адрес: Москва, ул. Строителей, дом 15">
+      </p>
+      <button type="button">Закрыть</button>
+    </section>
+
+  </body>
+</html>
