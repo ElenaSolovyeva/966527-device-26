@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <header>
-      <p><a class="logo" href="#">DEVICE</a></p>
+    <header class="header-decor">
+      <p> <!-- ? нужен ли здесь тэг р -->
+        <a class="logo-link" href="#">
+          <img class="logo-image" src="img/icon_logo-device.svg" width="163" height="35" alt="Наш логотип">
+        </a>
+      </p>
 
       <section class="top-nav">
         <h2 class="visually-hidden">Верхнее меню</h2>
         <form name="search-field" action="https://echo.html-academy.ru" method="post">
-          <label for="index-search" class="visually-hidden ">Поиск по сайту</label>
-          <input id="index-search" type="search" class="search-field" placeholder="Поиск по сайту">
-          <button class="button-search" type="submit">Найти</button>
+          <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
+          <input class="search-input" id="index-search" type="search" placeholder="">
+          <button class="search-button" type="submit">Найти</button>
         </form>
         <ul class="top-nav-list reset-list">
-          <li class="top-nav-item"><a class="top-nav-link" href="#">Войти<a></li>
-          <li class="top-nav-item"><a class="top-nav-link" href="#">Сравнить<a></li>
-          <li class="top-nav-item"><a class="top-nav-link" href="#">Корзина<a></li>
+          <li class="top-nav-item"><a class="nav-link user" href="#">Войти<a></li>
+          <li class="top-nav-item"><a class="nav-link compare" href="#">Сравнить<a></li>
+          <li class="top-nav-item"><a class="nav-link cart" href="#">Корзина<a></li>
         </ul>
       </section>
 
@@ -28,10 +32,10 @@
         <h2 class="visually-hidden">Основная навигация по сайту</h2>
           <nav>
             <ul class="main-nav-list reset-list">
-              <li class="main-nav-item"><a class="main-nav-link" href="#">Каталог товаров</a></li>
-              <li class="main-nav-item"><a class="main-nav-link" href="#">Доставка</a></li>
-              <li class="main-nav-item"><a class="main-nav-link" href="#">Гарантия</a></li>
-              <li class="main-nav-item"><a class="main-nav-link" href="#">Контакты</a></li>
+              <li class="main-nav-item"><a class="main-nav-link catalog-link" href="#">Каталог товаров</a></li>
+              <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Доставка</a></li>
+              <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Гарантия</a></li>
+              <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Контакты</a></li>
             </ul>
           </nav>
       </section>
@@ -68,7 +72,7 @@
           <p class="slider-info">Мотивирующие фитнес-браслеты помогут найти в себе силы</br> не пропускать занятия и соблюдать диету.</p>
           <table class="item-description">
             <tr>
-              <th class="description-parameter">Длина палки</th>
+              <th class="description-parameter">Без подзарядки</th>
             </tr>
             <tr>
               <td class="description-value">48 часов</td>
@@ -94,47 +98,47 @@
 
         <p><a class="button button-details" href="#">Подробнее</a></p>
 
-        <input class="promo-button" name="longest_selfi"  type="radio" value="" checked/>
-        <input class="promo-button" name=""  type="radio" value=""/>
-        <input class="promo-button" name=""  type="radio" value=""/>
+        <input class="promo-button" name="promo-radio"  type="radio" value="" checked/>
+        <input class="promo-button" name="promo-radio"  type="radio" value=""/>
+        <input class="promo-button" name="promo-radio"  type="radio" value=""/>
       </section>
 
       <section class="offers">
         <h2 class="visually-hidden">Наши предложения (группы товаров)</h2>
         <ul class="offers-list reset-list">
           <li class="offers-item">
-            <a class="offers-list" href="#">
+            <a class="offers-link" href="#">
               <img src="img/index_catalog_virtual_reality.svg" width="100" height="55" alt= "Иконка для раздела &laquo;Виртуальная реальность&raquo;">
             </a>
-            <h3 class="sections-title">Виртуальная реальность</h3>
+            <h3 class="offers-title">Виртуальная реальность</h3>
          </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img src="img/index_catalog_monopod.svg" width="87" height="118" alt="Иконка для раздела &laquo;Моноподы для селфи&raquo;">
+              <img class="offers-image" src="img/index_catalog_monopod.svg" width="87" height="118" alt="Иконка для раздела &laquo;Моноподы для селфи&raquo;">
             </a>
             <h3 class="offers-title">Моноподы для селфи</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img src="img/index_catalog_action_cameras.svg" width="71" height="87" alt="Иконка для раздела &laquo;Экшн-камеры&raquo;">
+              <img class="offers-image" src="img/index_catalog_action_cameras.svg" width="71" height="87" alt="Иконка для раздела &laquo;Экшн-камеры&raquo;">
             </a>
             <h3 class="offers-title">Экшн-камеры</h3>
           </li>
           <li class="offers-item">
-            <a class="sections-link"  href="#">
-              <img src="img/index_catalog_fitnes_trackers.svg" width="107" height="65" alt="Иконка для раздела &laquo;Фитнес-браслеты&raquo;">
+            <a class="offers-link"  href="#">
+              <img class="offers-image" src="img/index_catalog_fitnes_trackers.svg" width="107" height="65" alt="Иконка для раздела &laquo;Фитнес-браслеты&raquo;">
             </a>
             <h3 class="offers-title">Фитнес-браслеты</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img src="img/index_catalog_smart_watches.svg" width="56" height="99" alt="Иконка для раздела &laquo;Умные часы&raquo;">
+              <img class="offers-image" src="img/index_catalog_smart_watches.svg" width="56" height="99" alt="Иконка для раздела &laquo;Умные часы&raquo;">
             </a>
             <h3 class="offers-title">Умные часы</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img src="img/index_catalog_quadrocopters.svg" width="132" height="69" alt="Иконка для раздела &laquo;Квадрокоптеры&raquo;">
+              <img class="offers-image" src="img/index_catalog_quadrocopters.svg" width="132" height="69" alt="Иконка для раздела &laquo;Квадрокоптеры&raquo;">
             </a>
             <h3 class="offers-title">Квадрокоптеры</h3>
           </li>
@@ -151,46 +155,55 @@
           <label class="button button-services" for="loan" class="button-yellow-black">Кредит</label>
           <input class="services-switch" id="loan" type="radio" value="loan"/>
         </div>
-        <ul class="services-list reset-list"><!-- перенести в <section class="services"> -->
-          <li class="services-item">
+        <ul class="services-list reset-list">
+          <li class="services-item delivery">
             <h3 class="services-title">Доставка</h3>
-            <p class="services-description">Мы с удовольствием доставим ваш товар прямо к вашему<br>
-                                            подъезду совершенно бесплатно! Ведь мы неплохо <br>
-                                            заработаем, поднимая его на ваш этаж.</p>
-            <!--Логотип для раздела Доставка задать через css - фоном или псевдоэлементом -->
+            <p class="services-description">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
           </li>
-        <li class="services-item">
-          <h3>Гарантия</h3> <!-- наименование услуги -->
-          <p></p> <!-- описание услуги  -->
-          <!--Логотип (через css) -->
+        <li class="services-item warranty">
+          <h3 class="services-title">Гарантия</h3>
+          <p>Если из-за возгорания купленного у нас товара у вас сгорит дом —<br> не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
         </li>
-        <li class="services-item">
-          <h3>Кредит</h3> <!-- наименование услуги -->
-          <p></p> <!-- описание услуги  -->
-          <!--Логотип (через css) -->
+        <li class="services-item credit">
+          <h3 class="services-title ">Кредит</h3>
+          <p>Залезть в долговую яму стало проще! Кредитные консультанты<br> подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
         </li>
       </ul>
       </section>
 
       <section class="partners">
-        <h2 class="visually-hidden">Торговые марки</h2>
+        <h2 class="visually-hidden">Наши партнеры. Представляем торговые марки</h2>
         <ul class="partners-list reset-list">
-          <li class="partner-icon"><a class="partner-link" href="#"><img src="img/index_logo_1.png" width="" height="" alt="Логотип DJI"></a></li>
-          <li class="partner-icon"><a class="partner-link" href="#"><img src="img/index_logo_2.png" width="" height="" alt="Логотип ADGETS"></a></li>
-          <li class="partner-icon"><a class="partner-link" href="#"><img src="img/index_logo_3.png" width="" height="" alt="Логотип GoPro"></a></li>
-          <li class="partner-icon"><a class="partner-link" href="#"><img src="img/index_logo_4.png" width="" height="" alt="Логотип VIVE"></a></li>
+          <li class="partner-icon">
+            <a class="partner-link dji" href="#">
+              <img src="img/index_logo_1.png" width="260" height="100" alt="Логотип DJI">
+            </a>
+          </li>
+          <li class="partner-icon">
+            <a class="partner-link sp-adgets" href="#">
+              <img src="img/index_logo_2.png"  width="260" height="100" alt="Логотип ADGETS">
+            </a>
+          </li>
+          <li class="partner-icon">
+            <a class="partner-link gopro" href="#">
+              <img src="img/index_logo_3.png"  width="260" height="100" alt="Логотип GoPro">
+            </a>
+          </li>
+          <li class="partner-icon">
+            <a class="partner-link vive" href="#">
+              <img src="img/index_logo_4.png"  width="260" height="100" alt="Логотип VIVE">
+            </a>
+          </li>
         </ul>
       </section>
-      <!--конец блока, выделенного красным  -->
-
 
       <section class="we">
-        <div class="about-us"> <!--вложить div в section-->
+        <div class="about-us">
           <h2 class="we-title">О нас</h2>
           <p class="we-details">Огромный выбор гаджетов не оставит равнодушным гика,<br> который есть в каждом из нас.</p>
           <p class="we-details">Мы можем доставить ваш товар в самые отдаленные точки<br> России! DEVICE работает со смногими транспортными компаниями:</p>
           <ul class="delivery-list reset-list">
-            <li class="delivery-partner">Деловые линии</li>
+            <li class="delivery-partner">Деловые Линии</li>
             <li class="delivery-partner">Автортейдинг</li>
             <li class="delivery-partner">ЖелДорЭкспедиция</li>
           </ul>
@@ -200,7 +213,7 @@
         <div class="contacts">
           <h2 class="we-title">Контакты</h2>
           <p class="we-details">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете<br> проверить работоспособность покупки. Всякое бывает.</p>
-          <img class="our-location" src="https://via.placeholder.com/150x100" width="" height="" alt="Схема проезда. Наш адрес: 119311 Москва, ул. Строителей, 15"
+          <img class="our-location" src="img/index_map-small.jpg" width="560" height="222" alt="Схема проезда. Наш адрес: 119311 Москва, ул. Строителей, 15">
           <a class="button details-button" href="#">Напишите нам</a>
         </div>
       </section>
@@ -211,17 +224,25 @@
 
       <div class="footer-left-box">
         <a class="logo-footer" href="#">
-          <img src="" width="" height="" alt="Логотип DEVICE">
+          <img src="img/index_logo-device-footer.png" width="163" height="35" alt="Логотип DEVICE">
         </a>
         <p class="our-adress">г. Москва, ул. Строителей, 15</p>
       </div>
 
       <div class="footer-middle-box">
-        <ul class="bottom-nav-list reset-list">
-          <li class="bottom-nav-item"><a class="bottom-nav-link" href="#">Войти</a></li>
-          <li class="bottom-nav-item"><a class="bottom-nav-link" href="#">Сравнить</a></li>
-          <li class="bottom-nav-item"><a class="bottom-nav-link" href="#">Корзина</a></li>
-        </ul>
+        <nav>
+          <ul class="footer-nav-list reset-list">
+            <li class="main-nav-item footer-nav-item">
+              <a class="main-nav-link footer-link" href="#">Доставка</a>
+            </li>
+            <li class="main-nav-item footer-nav-item">
+              <a class="main-nav-link footer-link" href="#">Гарантия</a>
+            </li>
+            <li class="main-nav-item footer-nav-item">
+              <a class="main-nav-link footer-link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
 
         <ul class="social-list reset-list">
           <li class="social-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
@@ -231,43 +252,48 @@
       </div>
 
       <div class="footer-right-box">
-        <nav>
-          <ul class="footer-nav-list reset-list">
-            <li class="footer-nav-item"><a href="#">Доставка</a></li>
-            <li class="footer-nav-item"><a href="#">Гарантия</a></li>
-            <li class="footer-nav-item"><a href="#">Контакты</a></li>
-          </ul>
-        </nav>
+        <ul class="footer-nav-list reset-list">
+          <li class="footer-nav-item">
+            <a class="nav-link footer-link user-footer" href="#">Войти</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="nav-link footer-link compare-footer" href="#">Сравнить</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="nav-link footer-link cart-footer" href="#">Корзина</a>
+          </li>
+        </ul>
 
         <p class="our-tel">Тел.: +7(495)495-95-95</p>
 
-        <p class="developer"><a class="developer-logo" href="https://htmlacademy.ru"><img src="img/index_html_academy_logo.svg" width="" height="" alt="Иконка htmlacademy"></a></p>
+        <p class="developer">
+          <a class="developer-logo" href="https://htmlacademy.ru" title="Ссылка на сайт разработчика" ></a>
+        </p>
       </div>
 
     </footer>
 
+    <!-- MODAL-WINDOWS -->
     <section class="map-modal">
       <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
-      <p>
-        <img src="img/index_map_big.jpg" width="960" height="560" alt="Наш адрес: Москва, ул. Строителей, дом 15">
-      </p>
-      <button class="button button-details" type="button">Закрыть</button>
+      <p><img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"></p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
+      <button class="modal-close" type="button">Закрыть</button>
     </section>
 
     <section class="feedback-modal">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <form class="feedback-form" name="write-us" action="" method="post">
-        <label for="name-id">Ваше имя</label>
-        <input type="text" class="feedback-field" id="name-id"placeholder="Имя Фамилия" requared>
+        <label class="feedback-label" for="name-id">Ваше имя:</label>
+        <input class="clients-data feedback-field" type="text" id="name-id"placeholder="Имя Фамилия" requared>
 
-        <label for="email-id">Ваш e-mail:</label>
-        <input type="email" class="feedback-field" id="email-id"  placeholder="email@example.com" requared>
+        <label class="feedback-label" for="email-id">Ваш e-mail:</label>
+        <input class="clients-data feedback-field" type="email" class="" id="email-id"  placeholder="email@example.com" requared>
 
-        <label for="message-id">Текст письма:</label>
-        <textarea class="feedback-field" id="message-id" rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
+        <label class="feedback-label" for="message-id">Текст письма:</label>
+        <textarea class="clients-message" id="message-id" rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
 
-        <button class="button-close" type="button">Закрыть</button>
-        <button class="button" type="submit">Отправить</button>
+        <button class="modal-close" type="button">Закрыть</button>
+        <button class="button modal-send" type="submit">Отправить</button>
       </form>
     </section>
   </body>

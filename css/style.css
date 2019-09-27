@@ -6,46 +6,40 @@
 }
 
 @font-face {
-  font-family: 'Gilroy light';
-  src: url('../fonts/gilroylight.woff2') format('woff2');
+  font-family: "Gilroy light";
+  src: url("../fonts/gilroylight.woff2") format("woff2");
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  src: url('../fonts/opensans.woff2') format('woff2');
+  font-family: "OpenSans";
+  src: url("../fonts/opensans.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'OpenSans light';
-  src: url('../fonts/opensanslight.woff2') format('woff2');
+  font-family: "OpenSans light";
+  src: url("../fonts/opensanslight.woff2") format("woff2");
   font-weight: lighter;
   font-style: normal;
 }
 
 body {
-  /* Блочная модель */
   margin: 0;
   padding: 0;
-  /* Типографика */
+
   font-family: "OpenSans", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
   font-weight: normal;
   color: #000000;
-  /* Оформление */
+
   background-color: #ffffff;
 }
 
-
-/*? Непонятно, как задать фон в заголовке,
-    пока задала для тэга header, потом переделаю.
-  ? Выяснить, как посмотреть, что за эффекты и есть ли градиент*/
-header { /*ДОБАВИТЬ КЛАСС*/
-  /* Оформление */
+.header-decor {
   background-color: #f7e296;
 }
 
@@ -60,7 +54,6 @@ a {
 }
 
 .visually-hidden {
-  /* Блочная модель */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -69,42 +62,128 @@ a {
   border: 0;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  /* Типографика */
-  white-space: nowrap; /*Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
+
+  white-space: nowrap; /*REM: Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
 }
 
-.logo{ /*БУДЕТ ЗАМЕНЕНО НА КАРТИНКУ*/
-  /* Типографика */
+.logo-image:hover,
+.logo-image:focus {
+  opacity: 0.6;
+}
+
+.logo-image:active {
+  opacity: 0.3;
+}
+
+
+.search-label::before { /* ? не уверена, что правильно*/
+  content: "";
+  display: inline-block;
+  
+  width: 17px;
+  height: 17px;
+
+  background: url("../img/icon_search.svg") no-repeat;
+  background-size: 17px 17px;
+  background-repeat: no-repeat;
+}
+
+.search-label {
+  color: rgba(0, 0, 0, 0.3);
+
+  background-color: transparent;
+}
+
+.search-label:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-label:focus,
+.search-label:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.search-input {
+  color:  #000000;
+  background-color: transparent;
+  border: none;
+}
+
+.search-button {
+  color: transparent;
+
+  border: none;
+  background-color: transparent;
+}
+
+.search-input:focus + .search-button {
   color: #000000;
-  font-family: "Myriad Pro", Arial, sans-serif;
-  font-size: 15px;
-  line-height: 30px;
-  text-transform: uppercase;
+
+  border: 2px solid #000000;
+  background-color: transparent;
 }
 
-.logo a:hover,
-.logo a:focus {
-  opacity: 0.6;
+.search-input:focus + .search-button:hover,
+.search-input:focus + .search-button:focus {
+  color: #ffffff;
+
+  border: 2px solid #000000;
+  background-color: #000000;
 }
 
-.logo a:hover {
-  opacity: 0.6;
+
+.search-input:focus + .search-button:active { /* ? не понимаю, в чем ошибка, почему отображается некорректно*/
+  color: rgba(256, 256, 256, 0.3);
+
+  border: 2px solid #000000;
+  background-color: #000000;
 }
 
-.top-nav-list a, /*ДОБАВИТЬ КЛАСС*/
-.main-nav-list a {
+.nav-link,
+.main-nav-link {
     color: #000000;
 }
 
-.top-nav-list a { /*ДОБАВИТЬ КЛАСС*/
-  /* Типографика */
+.nav-link {
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
 }
 
-.main-nav-list a { /*ДОБАВИТЬ КЛАСС*/
-  /* Типографика */
+.user::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 12px;
+  margin-right: 14px;
+
+  background-size: 13px 12px;
+  background: url("../img/icon_user.svg") no-repeat;
+}
+
+.compare::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  margin-right: 10px;
+
+  background-size: 10px 12px;
+  background: url("../img/icon_compare.svg") no-repeat;
+}
+
+.cart::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 12px;
+
+  background-size: 12px 12px;
+  background: url("../img/icon_cart.svg") no-repeat;
+}
+
+.main-nav-link{
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   text-transform: uppercase;
@@ -112,211 +191,284 @@ a {
   letter-spacing: 3.6px;
 }
 
-.top-nav-list a:hover, /*ДОБАВИТЬ КЛАСС*/
-.main-nav-list a:hover {
+.nav-link:hover,
+.main-nav-link:hover {
   opacity: 0.6;
 }
 
-.top-nav-list a:focus, /*ДОБАВИТЬ КЛАСС*/
-.main-nav-list a:focus  {
+.nav-link:focus,
+.main-nav-link:focus  {
   opacity: 0.3;
 }
 
-.search-field {
-  /* Типографика */
+.catalog-link::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url("../img/icon_plus.svg") no-repeat;
+  background-size: 17px 17px;
+  background-repeat: no-repeat;
   opacity: 0.3;
-  /* Оформление */
-  background-color: transparent;
-  border: none;
-}
-
-.search-field:hover {
-  /* Типографика */
-  opacity: 0.6;
-}
-
-.search-field:focus {
-  /* Типографика */
-  opacity: 1;
-}
-
-/* значок с лупой будет фоном для инпута*/
-
-.button-search {
-  /* Типографика */
-  color: #f7e296;
-  /* Оформление */
-  background-color: transparent;
-  border: none;
-}
-
-.button-search:hover,
-.button-search:focus {
-  /* Типографика*/
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 30px;
-  /* Оформление */
-  background-color: #000000;
-  border: none;
-}
-
-.button-search:active {
-  /* Типографика*/
-  color: #000000;
-  opacity: 0.3;
-  font-size: 15px;
-  line-height: 30px;
-  /* Оформление */
-  background-color: rgba(256, 256, 256, 1);
-  border: none;
 }
 
 .page-number {
-  color: #ffffff;
+  color: #aaffff; /*Цвет пока такой, чтобы на белом фоне виднол было до того, как правильно спозиционирую*/
   font-family: "Gilroy";
   font-size: 179.2px;
   lein-height: 179.2px;
 }
 
-/*Блок, выделенный красным*/
-.promo-slogan {
+.slider-slogan {
   font-family: "Gilroy";
   font-size: 47px;
   line-height: 56px;
 }
 
-.promo-info {
+.slider-info {
   font-family: "OpenSans light";
   font-size: 15px;
   line-height: 30px;
 }
 
-.button-yellow {
-  color: #000000;
-  font-family: "Gilroy";
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 3.6px;
-  text-transform: uppercase;
-}
-
-.button-yellow:hover,
-.button-yellow:focus {
-  /*background-color*/
-  }
-
-.button-yellow:active {
-  /*background-color*/
-  opacity: 0.3;
-}
-
-.promo-description th {
+.description-parameter {
   color: #464646;
   font-family: "OpenSans light";
   font-size: 13px;
   line-height: 20px;
 }
 
-.promo-description td {
+.description-value {
   font-family: "Gilroy light";
   font-size: 36px;
   line-height: 48px;
 }
 
-.sections-item h3 {
-  font-family: "Gilroy";
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.sections-item a { /*ДОБАВИТЬ КЛАСС*/
-  background-color: #f7e296;
-}
-
-.button-yellow-black { /*ДОБАВИТЬ ДОПОЛНИТЕЛЬНЫЙ КЛАСС, ВСЕ КНОПКИ В ОДНОМ ПРАВИЛЕ*/
+.button { /*Базовый стиль для ссылок и кнопок "ПОДРОБНЕЕ", "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ", "ПОДРОБНЕЕ О НАС", "НАПИШИТЕ НАМ"*/
   color: #000000;
   font-family: "Gilroy";
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
-
-  /*background-color: #f0c52e;*/
 }
-.button-yellow-black:focus
-{/*изменяется размер фона/тени*/}
 
-.button-yellow-black:active {
+.button-details { /* Для "ПОДРОБНЕЕ" */
+  display: block;
+  width: 220px;
+  height: 8px; /*? Почему не отбражается фон в состоянии покоя*/
+
+  text-align: center;
+  vertical-align: middle; /*? Почему не выравнивается по вертикали*/
+
+  background-color: #f0c52e;
+}
+
+.button-details:hover,
+.button-details:focus {
+  height: 40px;
+  background-color: #f0c52e;
+  }
+
+.button-details:active {
+  height: 40px;
+  background-color: #f0c52e;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.promo-button { /*РАДИО-КНОПКИ СЛАЙДЕРА*/
+    /*display: none; opacity: 0; - не работает, не получается скрыть "исходные" радио-кнопки*/
+}
+
+.promo-button::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+
+  opacity: 1;
+  background: url("../img/icon_radio-off.svg") no-repeat;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+}
+
+.promo-button::before:active { /* не получается*/
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url("../img/icon_radio-on.svg") no-repeat;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+}
+
+.offers-link {  /*ССЫЛКИ НА РАЗДЕЛЫ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+
+  background-color: #f7e296;
+}
+
+.offers-image { /*КАРТИНКИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+  display: block;
+  background-position: center bottom; /* не получается*/
+}
+
+.offers-title { /*ПОДПИСИ ПОД КАРТИНКАМИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+  font-family: "Gilroy";
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Блок "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
+.slider-services {
+  background-color: #e5e5e5;  /*? как сделать правильный размер фона  height: 288px; ?*/
+}
+
+.button-services {  /*Как сделать правильный размер фона для инпутов "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
+  display: block;
+  z-index: 110;
+
+  width: 160px;
+  /* height: 8px; */
+
+  background-color: #f0c52e;
+}
+
+.button-services:hover,
+.button-services:focus { /*Отображается некорректно*/
+  z-index: 120;
+
+  height: 40px;
+
+  background-color: #f0c52e;
+}
+
+.button-services:active {
+  width: 277px;
+  height: 40px;
+  z-index: 130;
+
   color: #f7e184;
-  /*background-color: #000000;*/
+
+  background-color: #000000;
+
 }
 
-.description-item h3 {
+.services-title { /* Заголовок "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ" */
   font-family: "Gilroy";
   font-size: 47px;
   line-height: 48px;
 }
 
-.description-item p {
+.services-description { /*Описание услуги "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ"*/
   color: #464646;
   font-family: "OpenSans light";
   font-size: 15px;
   line-height: 30px;
 }
 
-
-/*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
-.info h2 {
-  /* Типографика*/
-  font-family: "Myriad Pro";
-  font-size: 47px;
-  lein-height: 48px;
+/*Сделать логотип для раздела Доставка задать через css - фоном или псевдоэлементом */
+.delivery::after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 160px;
+  background: url("../img/icon_delivery.svg") no-repeat;
+  background-size: 130px 160px;
+  background-repeat: no-repeat;
 }
 
-.info p { /*? Не получается узнать данные о шрифте и его размере из макета, поставила примерные значения*/
-  /* Типографика*/
-  font-family: "OpenSans light";
-  font-size: 15px;
-  lein-height: 30px;
+.warranty::after {
+  content: "";
+  display: block;
+  width: 175px;
+  height: 195px;
+  background: url("../img/icon_warranty.svg") no-repeat;
+  background-size: 130px 160px;
+  background-repeat: no-repeat;
 }
 
-/*добавить маркеры из макета вместо стандартных - ВЫРЕЗАТЬ ИЗ МАКЕТА И СДЕЛАТЬ ПСЕВДОЭЛ-М ИЛИ ФОНОМ*/
 
-.info-list li {  /*Не могу найти эти надписи в макете, поставила примерные значения*/
-  font-family: "Myriad Pro";
-  font-size: 15px;
-  lein-height: 30px;
+.credit::after {
+  content: "";
+  display: block;
+  width: 155px;
+  height: 185px;
+  background: url("../img/icon_credit.svg") no-repeat;
+  background-size: 155px 185px;
+  background-repeat: no-repeat;
 }
 
-.info-list a { /*ДОБАВИТЬ КЛАСС*/
-  color: #000000;
+.dji:hover { /*Не получается отображать другой фон при наведении мыши*/
+  z-index: 200;
+  background-image: url("../img/img/index_logo_1_active.png");
+}
+
+.we-title {
   font-family: "Gilroy";
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 3.6px; /*VA=200, font-size: 18px --> letter-spacing = 200 * 18 / 1000, нашла такую формулу в интернете */
-  text-transform: uppercase;
+  font-size: 47px;
+  line-height: 48px;
 }
+
+
+.we-details {
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.delivery-partner {   /*Примерные значения, точные не могу получить из макета*/
+  font-family: "Gilroy";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.delivery-partner::before {
+  content: "";
+  display: inline-block;
+  margin-right: 25px;
+  vertical-align: middle;
+
+  opacity: 0.3;
+
+  width: 8px;
+  height: 8px;
+  background: url("../img/icon_radio-off.svg") no-repeat;
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+}
+
+
+.details-button {
+  display: block;
+
+  width: 260px;
+
+  background-color: #f0c52e;
+  background-size: 260px 8px;
+}
+
+.details-button:hover,
+.details-button:focus {
+  background-color: #f0c52e;
+  background-size: 260px 40px;
+}
+/*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
+
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
 
-.main-footer {
-  /* Блочная модель */
+.footer {
   margin: 0;
   padding: 0;
-  /* Типографика */
+
   color: #ffffff;
-  /* Оформление */
+
   background-color: #464646;
 }
 
-.logo-footer {  /*svg*/
-  color: #ffc600;
-  font-family: "Myriad Pro";
-  font-size: 15px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
 
 .logo-footer:hover,
 .logo-footer:focus {
@@ -326,46 +478,72 @@ a {
 .logo-footer:active {
   opacity: 0.3;
 }
-/***************************/
 
-.bottom-nav-list a, /*ДОБАВИТЬ КЛАСС*/
-.footer-nav-list a {
-    color: #ffffff;
+.footer-link {
+  color: #ffffff;
 }
 
-.bottom-nav-list a {
-  /* Типографика */
-  font-family: "OpenSans light", Arial, sans-serif;
-  font-size: 15px;
-  line-height: 36px;
-}
 
-.footer-nav-list a {
-  /* Типографика */
-  font-family: "Gilroy", Arial, sans-serif;
-  font-size: 18px;
-  text-transform: uppercase;
-  line-height: 24px;
-}
-
-.footer-nav-item a {
-  letter-spacing: 3.6px;
-}
-
-.bottom-nav-list a:hover,
+.footer-nav-list a:hover,
 .footer-nav-list a:hover {
   opacity: 0.6;
 }
 
-.bottom-nav-list a:focus,
+.footer-nav-list a:focus,
 .footer-nav-list a:focus  {
   opacity: 0.3;
 }
 
-/*? как подменять картинки при наведении иклике*/
 
-.htmlacademy-logo {
-  /*? Как задать цыет #ffc600; для логотипа */
+.user-footer::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 12px;
+  margin-right: 14px;
+
+  background-size: 13px 12px;
+  background: url("../img/icon_user.svg") no-repeat;
+  fill: #ffffff; /*Не получается изменить цвет заливки*/
+}
+
+.compare-footer::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  margin-right: 10px;
+
+  background-size: 10px 12px;
+  background: url("../img/icon_compare.svg") no-repeat;
+}
+
+.cart-footer::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 12px;
+
+  background-size: 12px 12px;
+  background: url("../img/icon_cart.svg") no-repeat;
+}
+
+.developer-logo {
+  display: block;
+  width: 27px;
+  height: 35px;
+
+  background: url("../img/icon_logo-html.svg") no-repeat;
+}
+
+.developer-logo:hover,
+.developer-logo:focus {
+  opacity: 0.6;
+}
+
+.developer-logo:active {
+  opacity: 0.3;
 }
 
 /* ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ*/
@@ -374,36 +552,71 @@ a {
   background-color:#ffffff;
 }
 
-.feedback-form label {
+.feedback-label {
   color: #000000;
   font-family:  "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
 }
 
-.feedback-field {
+.clients-data,
+.clients-message {
+  display: block;
+
   color: #464646;
   font-family: "OpenSans", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
+
+  border: none;
+  background-color: #f2f2f2;
 }
 
-.button {
-  /* Типографика */
-  font-family: "Gilroy", Arial, sans-serif;
-  font-size: 18px;
-  text-transform: uppercase;
-  line-height: 24px;
-  letter-spacing: 3.6px;
+.clients-data {
+  width: 360px;
+  height: 50px;
+}
+
+.clients-message {
+  width: 760px;
+  height: 156px;
+}
+
+.modal-close {
+  display: block;
+  width: 55px;
+  height: 55px;
+  z-index: 100;
+
+  color: transparent;
 
   background-color: transparent;
   border: none;
+  background-image: url("../img/icon_modal-close.svg") ;
+  background-size: 55px 55px;
 }
 
-.button-close {
-  color: red; /*Пусть будет такой цвет, пока не разобралась, как вместо кнопки картинку подложить*/
-  background-color: transparent;
+.modal-send { /* Для "ОТПРАВИТЬ" */
+  display: block;
+  width: 200px;
+  /*height: 40px; ? Почему не меняется высота фона в состоянии покоя*/
+
+  text-align: center;
+  vertical-align: middle; /*? Почему не выравнивается по вертикали*/
+
   border: none;
+  background-color: #f0c52e;
+  background-size: 220px 8px;
+}
+
+.modal-send:hover,
+.modal-send:focus {
+  height: : 40px;
+  background-size: 220px 40px;
+}
+
+.modal-send:active {
+  opacity: 0.3;
 }
 
 /*СТИЛИ ДЛЯ СТРАНИЦЫ КАТАЛОГА*/

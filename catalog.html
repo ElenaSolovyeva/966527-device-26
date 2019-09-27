@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Каталог DEVICE</title>
-    <link rel="stylesheet" href="css/normalize.css"><!-- потихоньку начала делать задание по css -->
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body> <!-- Не вижу, какие изображения нужно подключить для блоков, выделенных красным  -->
+  <body>
     <header>
       <p><a class="logo" href="index.html">DEVICE</a></p>
       <!-- поиск по сайту будет реализован как элемент формы -->
@@ -14,8 +14,8 @@
       <section class="top-nav">
         <h2 class="visually-hidden">Верхнее меню</h2>
         <form name="search-field" action="https://echo.html-academy.ru" method="post">
-          <label for="index-search" class="visually-hidden ">Поиск по сайту</label>
-          <input id="index-search" type="search" class="search-field" placeholder="Поиск по сайту">
+          <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
+          <input  class="search-input" id="index-search" type="search" placeholder="Поиск по сайту">
           <button class="button-search" type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
         </form>
         <ul class="top-nav-list reset-list">
