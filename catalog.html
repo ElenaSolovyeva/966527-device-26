@@ -6,26 +6,33 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
-    <header>
-      <p><a class="logo" href="index.html">DEVICE</a></p>
-      <!-- поиск по сайту будет реализован как элемент формы -->
+    <header class="header-decor">
+      <p> <!-- ? нужен ли здесь тэг р -->
+        <a class="logo-link" href="#">
+          <img class="logo-image" src="img/icon_logo-device.svg" width="163" height="35" alt="Наш логотип">
+        </a>
+      </p>
 
       <section class="top-nav">
         <h2 class="visually-hidden">Верхнее меню</h2>
         <form name="search-field" action="https://echo.html-academy.ru" method="post">
-          <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
-          <input  class="search-input" id="index-search" type="search" placeholder="Поиск по сайту">
-          <button class="button-search" type="submit">найти</button> <!-- в дальнейшем эту кнопку надо будет сделать невидимой и сверху наложить иконку с лупой -->
+          <label class="visually-hidden" for="index-search">Поиск по сайту</label>
+          <input class="search-input" id="index-search" type="search" placeholder="Поиск по сайту">
+          <button class="search-button transparent-field" type="submit">Найти</button>
         </form>
         <ul class="top-nav-list reset-list">
-          <li class="top-nav-item username">
-            <a href="#">Валентин Петухов</a>
-            <a href="#">Выйти<a>
+          <li class="top-nav-item">
+            <a class="nav-link user" href="#">Валентин Петухов</a>
+            <a class="nav-link-exit" href="#">Выйти</a>
           </li>
-          <li class="top-nav-item"></li>
-          <li class="top-nav-item"><a href="#">Сравнить<a></li>
-          <li class="top-nav-item"><a href="#">Корзина<a></li>
+          <li class="top-nav-item">
+            <a class="nav-link compare" href="#">Сравнить</a>
+          </li>
+          <li class="top-nav-item">
+            <a class="nav-link cart" href="#">Корзина</a>
+          </li>
         </ul>
       </section>
 
@@ -33,122 +40,171 @@
         <h2 class="visually-hidden">Основная навигация по сайту</h2>
           <nav>
             <ul class="main-nav-list reset-list">
-              <li><a href="#">Каталог товаров</a></li>
-                <ul class="product-groups-list reset-list">
-                  <li class="product-groups-item"><a href="#">Виртуальная реальность</a></li>
-                  <li class="product-groups-item"><a href="#">Моноподы для селфи</a></li>
-                  <li class="product-groups-item"><a href="#">Экшн-камеры</a></li>
-                  <li class="product-groups-item"><a href="#">Фитнес-браслеты</a></li>
-                  <li class="product-groups-item"><a href="#">Умные часы</a></li>
-                  <li class="product-groups-item"><a href="#">квадрокоптеры</a></li>
-                </ul>
-              <li><a href="#">Доставка</a></li>
-              <li><a href="#">Гарантия</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li class="main-nav-item">
+                <a class="main-nav-link catalog-link" href="#">Каталог товаров</a>
+              </li>
+              <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Доставка</a></li>
+              <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Гарантия</a></li>
+              <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Контакты</a></li>
             </ul>
-          </nav>
+          <!--Как правильнее, включить блок ниже (с группами товаров) в основную навигацию по сайту или сделать отдельным блоком? Пока исхожу из того, что группы товаров по смыслу связаны с каталогом -->
+            <div class="products-left-block">
+              <ul class="product-groups-list reset-list">
+                <li class="product-groups-item">
+                  <a class="product-groups-link" href="#">Виртуальная реальность</a>
+                </li>
+                <li class="product-groups-item">
+                  <a class="product-groups-link" href="#">Моноподы для селфи</a>
+                </li>
+                <li class="product-groups-item">
+                  <a class="product-groups-link" href="#">Экшн-камеры</a>
+                </li>
+              </ul>
+            </div>
+            <div class="products-middle-block">
+              <ul class="product-groups-list reset-list">
+                <li class="product-groups-item">
+                  <a class="product-groups-link" href="#">Фитнес-браслеты</a>
+                </li>
+                <li class="product-groups-item">
+                  <a class="product-groups-link" href="#">Умные часы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="products-right-block">
+              <ul class="product-groups-list reset-list">
+                <li class="product-groups-item">
+                  <a class="product-groups-link" href="#">Квадрокоптеры</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
       </section>
     </header>
 
     <main>
+
       <h1 class="selfi-monopods">Моноподы для селфи<h1>
-      <ul class="breadcrumbs reset-list">
-        <li class="breadcrumbs-item"><a href="index.html">Главная</a></li>
-        <li class="breadcrumbs-item"><a href="">Каталог товаров</a></li>
-        <li class="breadcrumbs-item">Моноподы для селфи</li>
+
+      <ul class="breadcrumbs reset-list"
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link main" href="index.html">Главная</a
+        </li>
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link catalog" href="#">Каталог товаров</a> <!-- Какой адрес для ссылки нужно здесь поставить? # или какой-то самой придумать? -->
+        </li>
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link catalog breadcrumbs-active" href="#">Моноподы для селфи</a
+        </li>
       </ul>
 
-      <section>
-        <h2 class="visually-hidden">Фильтр товаров</h2>
-        <form name="products-filter" action="https://echo.htmlacademy.ru" method="get">
-          <p>Фильтр:</p>
-
-          <!--Блок со стоимостью-->
+      <section class="filter">
+        <h2 class="filter-title">Фильтр:</h2>
+          <form class="filter-form" name="products-filter" action="https://echo.htmlacademy.ru" method="get">
+         <!--Должен ли быть блок "стоимость" внутри формы или нужго вынести за ее пределы?-->
           <div class="range">
-            <div class="scale">
-              <div class="bar"></div> <!--зеленая полоска -->
-              <span class="range-min"></span>
-              <span class="range-max"></span>
-            </div>
-              <label>от</label><input type="text">
-              <label>до</label><input type="text">
+            <p class="filter-subtitle">Стоимость</p>
+              <div class="scale">
+                  <div class="bar-grey"></div> <!--серая полоска -->
+                  <div class="bar-green"></div> <!--зеленая полоска -->
+                  <span class="range-min"></span>
+                  <span class="range-max"></span>
+              </div>
+              <label class="range-min-label" for="range-from-id">от</label>
+              <input class="range-min-input transparent-field" type="text" id="range-from-id" placeholder="0">
+              <label class="range-max-label" for="range-to-id">до</label>
+              <input class="range-max-input  transparent-field" type="text" id="range-to-id" placeholder="5000">
           </div>
 
-          <fieldset>
-            <legend>Цвет</legend>
+          <fieldset class="filter-fieldset">
+            <legend  class="filter-subtitle">Цвет</legend>
             <ul class="reset-list">
               <li><!--исправить -->
-                <label><input type="checkbox" checked>Черный</input></label>
-                <label><input type="checkbox">Белый</input></label>
-                <label><input type="checkbox" checked>Синий</input></label>
-                <label><input type="checkbox" checked>Красный</input></label>
-                <label><input type="checkbox">Розовый</input></label>
+                <label class="color-choice">
+                  <input class="color-checkbox transparent-field" type="checkbox" checked>Черный</input>
+                </label>
+                <label class="color-choice">
+                  <input class="color-checkbox transparent-field" type="checkbox">Белый</input>
+                </label>
+                <label class="color-choice">
+                  <input class="color-checkbox transparent-field" type="checkbox" checked>Синий</input>
+                </label>
+                <label class="color-choice">
+                  <input class="color-checkbox transparent-field" type="checkbox" checked>Красный</input>
+                </label>
+                <label class="color-choice">
+                  <input class="color-checkbox transparent-field" type="checkbox">Розовый</input>
+                </label>
               </li>
             </ul>
           </fieldset>
-          <fieldset>
-            <legend>Bluetooth</legend>
+          <fieldset class="filter-fieldset">
+            <legend  class="filter-subtitle">Bluetooth</legend>
             <ul class="reset-list">
               <li>
-                <label><input type="radio" checked>Нет</label>
+                <label class="bluetooth-choice">
+                  <input class="bluetooth-radio transparent-field" type="radio" checked>
+                  Есть
+                </label>
               </li>
               <li>
-                <label><input type="radio">Нет</label>
+                <label  class="bluetooth-choice">
+                  <input  class="bluetooth-radio transparent-field" type="radio">
+                  Нет
+                </label>
               </li>
             </ul>
           </fieldset>
-          <button type="submit">Показать</button
+          <button class="button button-details" type="submit">Показать</button
         </form>
 
-      <section>
-        <h2 class="visually-hidden">Сортировка товаров</h2>
-        <p>Сортировка:</p>
-        <a href="#">По цене</a>
-        <a href="#">По типу</a>
-        <a href="#">По популярности</a>
+      <section class="products-sorting">
+        <h2 class="sorting-title">Сортировка:</h2>
+        <ul class="reset-list">
+          <a class="sorting-link" href="#">По цене</a>
+          <a class="sorting-link" href="#">По типу</a>
+          <a class="sorting-link" href="#">По популярности</a>
+        </ul>
         <!--Треугольнички "вверх" и "вниз" размечаю как ссылки -->
-        <a href="#"></a> <!--Треугольник вверх -->
-        <a href="#"></a> <!--Треугольник вниз -->
+        <a class="arrow-up" href="#"></a> <!--Треугольник вверх -->
+        <a class="arrow-down" href="#"></a> <!--Треугольник вниз -->
       </section>
 
-      <section>
+      <section class="catalog">
         <h2 class="visually-hidden">Каталог моноподов для сэлфи</h2>
+
         <ul class="catalog-list reset-list">
           <li class="catalog-item">
             <img src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
-            <a href="#">
+            <a class="item-link" href="#">
               <span>Любительская сэлфи-палка</span>
             </a>
-            <span>500 руб.</span>
+            <span class="catalog-price">500 руб.</span>
             <!-- надпись "new" не активна, но может появиться:
              - Эту надпись можно сделать псевдоэлементом (в контенте, кружок- бордер), который будет появляться только у классов catalog-item-new -->
           </li><!--переделать остальные эл-ты по аналогии -->
+
           <li class="catalog-item catalog-item-new">
-            <a href="#">
-              <span>Профессиональная<br>
-                    сэлфи-палка</span>
-            </a>
             <img src="img/catalog_product_2.jpg" width="" height="" alt="Профессиональная сэлфи-палка">
-            <p>1500 руб.</p>
-            <!-- не знаю, как разметить, что надпись "new" не активна, но может появиться -->
+            <a class="item-link" href="#">
+              <span>Профессиональная<br> сэлфи-палка</span>
+            </a>
+            <span class="catalog-price">1500 руб.</span>
           </li>
+
           <li class="catalog-item">
-            <a href="#">
+            <img src="img/catalog_product_3.jpg" width="" height="" alt="Непотопляемая сэлфи-палка">
+            <a class="item-link" href="#">
               <span>Непотопляемая сэлфи-палка</span>
             </a>
-            <img src="img/catalog_product_3.jpg" width="" height="" alt="Непотопляемая сэлфи-палка">
-            <p>2500 руб.</p>
-            <!-- не знаю, как разметить, что метка "new" не активна, но может появиться -->
+            <span class="catalog-price">2500 руб.</span>
           </li>
           <li>
-            <a href="#">
-              <span>Сэлфи-палка "Следуй за <br>
-                    мной"
-              </span>
-            </a>
             <img src="img/catalog_product_4.jpg" width="" height="" alt="Сэлфи-палка Следуй за мной">
-            <p>4900 руб.</p>
-            <!-- не знаю как разметить метку "new", тк это декоративное изображение, а его следует реализовывать с помощью CSS -->
+            <a class="item-link" href="#">
+              <span>Сэлфи-палка "Следуй за<br> мной" </span>
+            </a>
+            <span class="catalog-price">4900 руб.</span>
           </li>
         </ul>
 
@@ -161,14 +217,23 @@
           <li><a href="">Вперед</a></li>
         </ul>
       </section>
+      <div class="clear"></div> <!-- временно -->
+      <div class="space"></div> <!-- временно -->
     </main>
 
     <footer class="main-footer">
       <p><a class="logo-footer" href="#">DEVICE</a></p>
       <ul class="bottom-nav-list reset-list">
-        <li class="bottom-nav-item"><a href="#">Выйти</a><a href="#">Валентин Петухов</a></li>
-        <li class="bottom-nav-item"><a href="#">Сравнить</a></li>
-        <li class="bottom-nav-item"><a href="#">Корзина</a></li>
+        <li class="bottom-nav-item">
+          <a href="#">Выйти</a>
+          <a href="#">Валентин Петухов</a>
+        </li>
+        <li class="bottom-nav-item">
+          <a href="#">Сравнить</a>
+        </li>
+        <li class="bottom-nav-item">
+          <a href="#">Корзина</a>
+        </li>
       </ul>
       <p>г. Москва, ул. Строителей, 15</p>
       <nav>

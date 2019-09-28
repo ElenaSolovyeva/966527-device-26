@@ -39,10 +39,6 @@ body {
   background-color: #ffffff;
 }
 
-.header-decor {
-  background-color: #f7e296;
-}
-
 a {
   text-decoration: none;
 }
@@ -66,6 +62,17 @@ a {
   white-space: nowrap; /*REM: Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
 }
 
+.transparent-field {
+  color: transparent;
+
+  background-color: transparent;
+  border: none;
+}
+
+.header-decor {
+  background-color: #f7e296;
+}
+
 .logo-image:hover,
 .logo-image:focus {
   opacity: 0.6;
@@ -79,7 +86,7 @@ a {
 .search-label::before { /* ? не уверена, что правильно*/
   content: "";
   display: inline-block;
-  
+
   width: 17px;
   height: 17px;
 
@@ -90,8 +97,6 @@ a {
 
 .search-label {
   color: rgba(0, 0, 0, 0.3);
-
-  background-color: transparent;
 }
 
 .search-label:hover {
@@ -103,17 +108,17 @@ a {
   color: rgba(0, 0, 0, 1);
 }
 
-.search-input {
-  color:  #000000;
-  background-color: transparent;
-  border: none;
-}
+.search-input,
+.search-input:visited {
+  padding-left: 36px;
 
-.search-button {
-  color: transparent;
+  font-family: "OpenSans light";
+  font-size: 15px;
+  line-height: 30px;
+  color: rgba(256, 256, 256, 0.3);
 
   border: none;
-  background-color: transparent;
+  background: url("../img/icon_search.svg") no-repeat;
 }
 
 .search-input:focus + .search-button {
@@ -259,8 +264,9 @@ a {
   height: 8px; /*? Почему не отбражается фон в состоянии покоя*/
 
   text-align: center;
-  vertical-align: middle; /*? Почему не выравнивается по вертикали*/
+  /*vertical-align: middle; ? Почему не выравнивается по вертикали*/
 
+  border: none;
   background-color: #f0c52e;
 }
 
@@ -588,10 +594,6 @@ a {
   height: 55px;
   z-index: 100;
 
-  color: transparent;
-
-  background-color: transparent;
-  border: none;
   background-image: url("../img/icon_modal-close.svg") ;
   background-size: 55px 55px;
 }
@@ -620,8 +622,27 @@ a {
 }
 
 /*СТИЛИ ДЛЯ СТРАНИЦЫ КАТАЛОГА*/
+/* catalog.tnml  <header> */
 
-.product-groups-item a{
+.nav-link-exit {
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-link-exit:hover,
+.nav-link-exit:focus {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-link-exit:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.product-groups-link{
+  color: rgba(0, 0, 0, 1);
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 36px;
@@ -629,30 +650,263 @@ a {
   text-transform: none;
 }
 
-.product-groups-item a:hover,
-.product-groups-item a:focus {
-  opacity: 0.6;
+.product-groups-link:hover,
+.product-groups-link:focus {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.product-groups-item a:active {
-  opacity: 0.3;
+.product-groups-link:active {
+  color: rgba(0, 0, 0, 0.3);
 }
 
+/* catalog.html <main> */
 .selfi-monopods {
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
 }
-
-.breadcrumbs-item {
-  color: #000000; /*rgba*/
-  opacity: 0.3;
+.breadcrumbs-link {
+  color: rgba(0, 0, 0, 0.3);
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
 }
 
-.catalog-item {
+.breadcrumbs-link:hover,
+.breadcrumbs-link:focus {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumbs-link:active {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumbs:nth-child(1)::after, /* пока не получается спозиционировать*/
+.breadcrumbs:nth-child(2)::after {
+  content: "";
+  display: block;
+
+  width: 4px;
+  height: 7px;
+  margin-left: 16px;
+
+  background-size: cover;
+  background: url("../img/icon_nav-arrow.svg") no-repeat;
+}
+
+.filter-title {
+  display: block;
+
+  width: 468px;
+  height: 70px;
+  padding-links: 200px; /*не смещается*/
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+
+  background-color: #dbdbdb;
+}
+
+.filter-form {
+  display: block;
+
+  width: 468px;
+  height: 1217px;
+  background-color: #eeeeee;
+}
+
+.filter-subtitle {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Доделать -  полоска 197 x 2 dbdbdb  115 x 2 91c92f */
+.bar-grey {
+  z-index: 200;
+
+  width: 197px;
+  height: 2px;
+  background-color: #dbdbdb;
+}
+
+.bar-green {
+  z-index: 201;
+
+  width: 115px;
+  height: 2px;
+  background-color: #91c92f;
+}
+
+.range-min,  /*кружочки не отображаются*/
+.range-max {
+  display: block;
+  z-index:800;
+
+  width: 20px;
+  height: 22px;
+
+  background-size: 20px 22px;
+  background-image: url("../img/icon_filter-button.svg") no-repeat;
+}
+
+.range-min-label,
+.range-max-label,
+.range-min-input,
+.range-max-input
+ {
+  font-family: "Gilroy light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.2); /* цвет фона не применяется к placeholder*/
+}
+
+.range-min-input,
+.range-max-input { } /* позиционирование пока не задано*/
+
+.filter-fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.color-choice,
+.bluetooth-choice {
+  display: block;
+
+  font-family: "OpenSans light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+.color-checkbox {
+  margin-right: 15px; /*пока примерно*/
+}
+
+.color-checkbox::before {
+  content: "";
+  display: block;
+
+  width: 23px;
+  height: 23px;
+  margin-left: 0px;
+
+  background-size: cover;
+  background: url("../img/icon_checkbox-off.svg") no-repeat;
+}
+
+.color-checkbox::before:active { /* в таком виде не работает. как правильно указать селектор?*/
+  content: "";
+
+  width: 26px;
+  height: 23px;
+  margin-left: 0px;
+
+  background-size: 26px 23px;
+  background: url("../img/icon_checkbox-on.svg") no-repeat;
+}
+
+.bluetooth-radio {
+    margin-right: 15px; /*пока примерно*/
+}
+
+.bluetooth-radio::before {
+  content: "";
+  display: block;
+
+  width: 25px;
+  height: 25px;
+  margin-left: 0px;
+
+  background-size: 25px 25px;
+  background: url("../img/icon_radio-off.svg") no-repeat;
+}
+
+.bluetooth-radio::before:active { /* как правильно указать селектор?*/
+  background: url("../img/icon_radio-on.svg") no-repeat;
+  }
+
+.sorting-title {
+  display: block;
+
+  width: 1440px;
+  height: 70px;
+  padding-links: 72px; /*не смещается*/
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+
+  background-color: #ebebeb;
+  }
+
+
+.sorting-link {
+  display: inline-block;
+
+  font-family: "OpenSans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.3);
+
+  background-color: transparent;
+}
+
+.sorting-link:hover,
+.sorting-link:focus {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.sorting-link:active {
+   color: rgba(0, 0, 0, 1);
+}
+
+.arrow-up,  /*не отображаются*/
+.arrow-down {
+  display: inline-block;
+  z-index: 300;
+
+  width: 11px;
+  height: 10px;
+  background-size: cover;
+
+  color: rgba(0, 0, 0, 0.2); /* как изменить цвет cvg-иконки (к чему применить fill)*/
+}
+
+.arrow-up {
+    background-image: url("../img/icon_up-dir.svg");
+}
+
+.arrow-down {
+    background-image: url("../img/icon_down-dir.svg");
+}
+
+.arrow-up:hover,
+.arrow-down:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.arrow-up:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+/*.catalog {
+  display: block;
+  width: 973px;
+  height: 1220px;
+
+  background-color: transparent;
+}
+*/
+
+.catalog-price {
+  display: inline-block;
   color: #000000;
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 16px;
@@ -664,6 +918,10 @@ a {
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+}
+
+.main-footer {
+  display: block;
 }
 
 /*ФУТЕР СТРАНИЦЫ КАТАЛОГА совпадает с главной страницей*/

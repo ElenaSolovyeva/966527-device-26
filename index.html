@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
     <header class="header-decor">
       <p> <!-- ? нужен ли здесь тэг р -->
@@ -18,13 +19,19 @@
         <h2 class="visually-hidden">Верхнее меню</h2>
         <form name="search-field" action="https://echo.html-academy.ru" method="post">
           <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
-          <input class="search-input" id="index-search" type="search" placeholder="">
-          <button class="search-button" type="submit">Найти</button>
+          <input class="search-input transparent-field" id="index-search" type="search" placeholder="Поиск по сайту">
+          <button class="search-button transparent-field" type="submit">Найти</button>
         </form>
         <ul class="top-nav-list reset-list">
-          <li class="top-nav-item"><a class="nav-link user" href="#">Войти<a></li>
-          <li class="top-nav-item"><a class="nav-link compare" href="#">Сравнить<a></li>
-          <li class="top-nav-item"><a class="nav-link cart" href="#">Корзина<a></li>
+          <li class="top-nav-item">
+            <a class="nav-link user" href="#">Войти</a>
+            </li>
+          <li class="top-nav-item">
+            <a class="nav-link compare" href="#">Сравнить</a>
+          </li>
+          <li class="top-nav-item">
+            <a class="nav-link cart" href="#">Корзина</a>
+          </li>
         </ul>
       </section>
 
@@ -32,7 +39,9 @@
         <h2 class="visually-hidden">Основная навигация по сайту</h2>
           <nav>
             <ul class="main-nav-list reset-list">
-              <li class="main-nav-item"><a class="main-nav-link catalog-link" href="#">Каталог товаров</a></li>
+              <li class="main-nav-item">
+                <a class="main-nav-link catalog-link" href="#">Каталог товаров</a>
+              </li>
               <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Доставка</a></li>
               <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Гарантия</a></li>
               <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Контакты</a></li>
@@ -96,7 +105,7 @@
             </tr>
           </table>
 
-        <p><a class="button button-details" href="#">Подробнее</a></p>
+        <p><a class="button button-details"  href="#">Подробнее</a></p>
 
         <input class="promo-button" name="promo-radio"  type="radio" value="" checked/>
         <input class="promo-button" name="promo-radio"  type="radio" value=""/>
@@ -277,7 +286,7 @@
     <section class="map-modal">
       <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
       <p><img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"></p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
-      <button class="modal-close" type="button">Закрыть</button>
+      <button class="modal-close transparent-field" type="button">Закрыть</button>
     </section>
 
     <section class="feedback-modal">
@@ -292,7 +301,7 @@
         <label class="feedback-label" for="message-id">Текст письма:</label>
         <textarea class="clients-message" id="message-id" rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
 
-        <button class="modal-close" type="button">Закрыть</button>
+        <button class="modal-close  transparent-field" type="button">Закрыть</button>
         <button class="button modal-send" type="submit">Отправить</button>
       </form>
     </section>
