@@ -9,7 +9,7 @@
 
   <body>
     <header class="header-decor">
-      <p> <!-- ? нужен ли здесь тэг р -->
+      <p> <!-- ? нужен ли здесь тэг <р> -->
         <a class="logo-link" href="#">
           <img class="logo-image" src="img/icon_logo-device.svg" width="163" height="35" alt="Наш логотип">
         </a>
@@ -48,7 +48,7 @@
               <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Контакты</a></li>
             </ul>
           <!--Как правильнее, включить блок ниже (с группами товаров) в основную навигацию по сайту или сделать отдельным блоком? Пока исхожу из того, что группы товаров по смыслу связаны с каталогом -->
-            <div class="products-left-block">
+            <div class="products-block left">
               <ul class="product-groups-list reset-list">
                 <li class="product-groups-item">
                   <a class="product-groups-link" href="#">Виртуальная реальность</a>
@@ -61,7 +61,7 @@
                 </li>
               </ul>
             </div>
-            <div class="products-middle-block">
+            <div class="products-block middle">
               <ul class="product-groups-list reset-list">
                 <li class="product-groups-item">
                   <a class="product-groups-link" href="#">Фитнес-браслеты</a>
@@ -71,7 +71,7 @@
                 </li>
               </ul>
             </div>
-            <div class="products-right-block">
+            <div class="products-block right">
               <ul class="product-groups-list reset-list">
                 <li class="product-groups-item">
                   <a class="product-groups-link" href="#">Квадрокоптеры</a>
@@ -84,7 +84,7 @@
 
     <main>
 
-      <h1 class="selfi-monopods">Моноподы для селфи<h1>
+      <h1 class="monopods-h1">Моноподы для селфи<h1>
 
       <ul class="breadcrumbs reset-list"
         <li class="breadcrumbs-item">
@@ -101,7 +101,7 @@
       <section class="filter">
         <h2 class="filter-title">Фильтр:</h2>
           <form class="filter-form" name="products-filter" action="https://echo.htmlacademy.ru" method="get">
-         <!--Должен ли быть блок "стоимость" внутри формы или нужго вынести за ее пределы?-->
+         <!--Должен ли быть блок "стоимость" внутри формы или нужно вынести за пределы?-->
           <div class="range">
             <p class="filter-subtitle">Стоимость</p>
               <div class="scale">
@@ -119,7 +119,7 @@
           <fieldset class="filter-fieldset">
             <legend  class="filter-subtitle">Цвет</legend>
             <ul class="reset-list">
-              <li><!--исправить -->
+              <li>
                 <label class="color-choice">
                   <input class="color-checkbox transparent-field" type="checkbox" checked>Черный</input>
                 </label>
@@ -138,6 +138,7 @@
               </li>
             </ul>
           </fieldset>
+
           <fieldset class="filter-fieldset">
             <legend  class="filter-subtitle">Bluetooth</legend>
             <ul class="reset-list">
@@ -155,7 +156,8 @@
               </li>
             </ul>
           </fieldset>
-          <button class="button button-details" type="submit">Показать</button
+
+          <button class="button button-details" type="submit">Показать</button>
         </form>
 
       <section class="products-sorting">
@@ -175,7 +177,7 @@
 
         <ul class="catalog-list reset-list">
           <li class="catalog-item">
-            <img src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
+            <img class="catalog-img" src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
             <a class="item-link" href="#">
               <span>Любительская сэлфи-палка</span>
             </a>
@@ -185,7 +187,7 @@
           </li><!--переделать остальные эл-ты по аналогии -->
 
           <li class="catalog-item catalog-item-new">
-            <img src="img/catalog_product_2.jpg" width="" height="" alt="Профессиональная сэлфи-палка">
+            <img class="catalog-img" src="img/catalog_product_2.jpg" width="" height="" alt="Профессиональная сэлфи-палка">
             <a class="item-link" href="#">
               <span>Профессиональная<br> сэлфи-палка</span>
             </a>
@@ -193,14 +195,14 @@
           </li>
 
           <li class="catalog-item">
-            <img src="img/catalog_product_3.jpg" width="" height="" alt="Непотопляемая сэлфи-палка">
+            <img class="catalog-img" src="img/catalog_product_3.jpg" width="" height="" alt="Непотопляемая сэлфи-палка">
             <a class="item-link" href="#">
               <span>Непотопляемая сэлфи-палка</span>
             </a>
             <span class="catalog-price">2500 руб.</span>
           </li>
-          <li>
-            <img src="img/catalog_product_4.jpg" width="" height="" alt="Сэлфи-палка Следуй за мной">
+          <li class="catalog-item catalog-item-new">
+            <img class="catalog-img" src="img/catalog_product_4.jpg" width="" height="" alt="Сэлфи-палка Следуй за мной">
             <a class="item-link" href="#">
               <span>Сэлфи-палка "Следуй за<br> мной" </span>
             </a>
@@ -210,57 +212,68 @@
 
         <h2 class="visually-hidden">Навигация по страницам каталога товаров</h2>
         <ul class="pagination-list reset-list">
-          <li><a href="">Назад</a></li>
-          <li><a href="">1</a></li>
-          <li><a href="">2</a></li>
-          <li><a href="">3</a></li>
-          <li><a href="">Вперед</a></li>
+          <li><a class="pagination-link back-forward" href="#">Назад</a></li>
+          <li><a class="pagination-link nav-page" href="#">1</a></li>
+          <li><a class="pagination-link nav-page" href="#">2</a></li>
+          <li><a class="pagination-link nav-page" href="#">3</a></li>
+          <li><a class="pagination-link back-forward" href="#">Вперед</a></li>
         </ul>
       </section>
-      <div class="clear"></div> <!-- временно -->
-      <div class="space"></div> <!-- временно -->
+
     </main>
 
-    <footer class="main-footer">
-      <p><a class="logo-footer" href="#">DEVICE</a></p>
-      <ul class="bottom-nav-list reset-list">
-        <li class="bottom-nav-item">
-          <a href="#">Выйти</a>
-          <a href="#">Валентин Петухов</a>
-        </li>
-        <li class="bottom-nav-item">
-          <a href="#">Сравнить</a>
-        </li>
-        <li class="bottom-nav-item">
-          <a href="#">Корзина</a>
-        </li>
-      </ul>
-      <p>г. Москва, ул. Строителей, 15</p>
-      <nav>
-        <ul class="footer-nav-list reset-list">
-          <li class="footer-nav-item"><a href="#">Доставка</a></li>
-          <li class="footer-nav-item"><a href="#">Гарантия</a></li>
-          <li class="footer-nav-item"><a href="#">Контакты</a></li>
+    <footer class="footer">
+
+      <div class="footer-left-box">
+        <a class="logo-footer" href="#">
+          <img src="img/index_logo-device-footer.png" width="163" height="35" alt="Логотип DEVICE">
+        </a>
+        <p class="our-adress">г. Москва, ул. Строителей, 15</p>
+      </div>
+
+      <div class="footer-middle-box">
+        <nav>
+          <ul class="footer-nav-list reset-list">
+            <li class="main-nav-item footer-nav-item">
+              <a class="main-nav-link footer-link" href="#">Доставка</a>
+            </li>
+            <li class="main-nav-item footer-nav-item">
+              <a class="main-nav-link footer-link" href="#">Гарантия</a>
+            </li>
+            <li class="main-nav-item footer-nav-item">
+              <a class="main-nav-link footer-link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="social-list reset-list">
+          <li class="social-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
+          <li class="social-item"><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
+          <li class="social-item"><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
         </ul>
-      </nav>
-      <p>Тел.: +7(495)495-95-95</p>
-      <ul class="socialnetwork-list reset-list">
-        <li class="socialnetwork-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
-        <li class="socialnetwork-item"><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
-        <li class="socialnetwork-item"><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
-      </ul>
-      <p>
-        <a class="htmlacademy-logo" href="https://htmlacademy.ru"><img src="img/index_html_academy_logo.svg" width="" height="" alt="Иконка htmlacademy"></a>
-      </p>
+      </div>
+
+      <div class="footer-right-box">
+        <ul class="footer-nav-list reset-list">
+          <li class="footer-nav-item">
+            <a class="nav-link footer-link user-footer" href="#">Валентин Петухов</a>
+            <a class="nav-link footer-link" href="#">Выйти</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="nav-link footer-link compare-footer" href="#">Сравнить</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="nav-link footer-link cart-footer" href="#">Корзина</a>
+          </li>
+        </ul>
+
+        <p class="our-tel">Тел.: +7(495)495-95-95</p>
+
+        <p class="developer">
+          <a class="developer-logo" href="https://htmlacademy.ru" title="Ссылка на сайт разработчика" ></a>
+        </p>
+      </div>
+
     </footer>
-
-    <section class="map-modal">
-      <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
-      <p>
-        <img src="img/index_map_big.jpg" width="960" height="560" alt="Наш адрес: Москва, ул. Строителей, дом 15">
-      </p>
-      <button type="button">Закрыть</button>
-    </section>
-
   </body>
 </html>

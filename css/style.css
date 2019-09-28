@@ -622,6 +622,7 @@ a {
 }
 
 /*СТИЛИ ДЛЯ СТРАНИЦЫ КАТАЛОГА*/
+
 /* catalog.tnml  <header> */
 
 .nav-link-exit {
@@ -639,6 +640,10 @@ a {
 
 .nav-link-exit:active {
   color: rgba(0, 0, 0, 1);
+}
+
+.products-block {
+  display: inline-block;
 }
 
 .product-groups-link{
@@ -660,12 +665,18 @@ a {
 }
 
 /* catalog.html <main> */
-.selfi-monopods {
+
+.monopods-h1 {
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
 }
+
 .breadcrumbs-link {
+  /*
+  display: inline-block;  в линию так не отображаются
+  */
+
   color: rgba(0, 0, 0, 0.3);
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
@@ -681,25 +692,24 @@ a {
     color: rgba(0, 0, 0, 0.1);
 }
 
-.breadcrumbs:nth-child(1)::after, /* пока не получается спозиционировать*/
+.breadcrumbs:nth-child(1)::after,
 .breadcrumbs:nth-child(2)::after {
   content: "";
-  display: block;
 
+  /* пока не получается спозиционировать
+  display: inline-block;
   width: 4px;
   height: 7px;
-  margin-left: 16px;
 
+  margin-left: 16px;
+*/
   background-size: cover;
   background: url("../img/icon_nav-arrow.svg") no-repeat;
 }
 
 .filter-title {
-  display: block;
-
-  width: 468px;
-  height: 70px;
-  padding-links: 200px; /*не смещается*/
+  /* display: block; width: 468px;  height: 70px;  */
+  /* padding-links: 200px; не смещается */
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
@@ -711,10 +721,8 @@ a {
 }
 
 .filter-form {
-  display: block;
-
-  width: 468px;
-  height: 1217px;
+  border: 2px solid #F1DA64; /* временно, чобы видеть границы*/
+  /*display: block; width: 468px; height: 1217px;*/
   background-color: #eeeeee;
 }
 
@@ -724,7 +732,6 @@ a {
   line-height: 24px;
 }
 
-/* Доделать -  полоска 197 x 2 dbdbdb  115 x 2 91c92f */
 .bar-grey {
   z-index: 200;
 
@@ -736,32 +743,33 @@ a {
 .bar-green {
   z-index: 201;
 
+  margin-top: -2px;
   width: 115px;
   height: 2px;
   background-color: #91c92f;
 }
 
-.range-min,  /*кружочки не отображаются*/
+.range-min,
 .range-max {
+  /*кружочки не отображаются*/
   display: block;
   z-index:800;
 
   width: 20px;
   height: 22px;
 
-  background-size: 20px 22px;
   background-image: url("../img/icon_filter-button.svg") no-repeat;
+  background-size: cover;
 }
 
 .range-min-label,
 .range-max-label,
 .range-min-input,
-.range-max-input
- {
+.range-max-input  {
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
-  color: rgba(0, 0, 0, 0.2); /* цвет фона не применяется к placeholder*/
+  color: rgba(0, 0, 0, 0.2); /* цвет шрифа не применяется к placeholder*/
 }
 
 .range-min-input,
@@ -799,14 +807,15 @@ a {
   background: url("../img/icon_checkbox-off.svg") no-repeat;
 }
 
-.color-checkbox::before:active { /* в таком виде не работает. как правильно указать селектор?*/
+.color-checkbox:active::before {
+/* в таком виде не работает. как правильно указать селектор?*/
   content: "";
 
   width: 26px;
   height: 23px;
   margin-left: 0px;
 
-  background-size: 26px 23px;
+  background-size: cover;
   background: url("../img/icon_checkbox-on.svg") no-repeat;
 }
 
@@ -826,17 +835,21 @@ a {
   background: url("../img/icon_radio-off.svg") no-repeat;
 }
 
-.bluetooth-radio::before:active { /* как правильно указать селектор?*/
+.bluetooth-radio::before:active {
+ /* как правильно указать селектор?*/
   background: url("../img/icon_radio-on.svg") no-repeat;
   }
 
-.sorting-title {
-  display: block;
-
-  width: 1440px;
+.products-sorting {  /* <section class="products-sorting"> */
+border: 2px solid #000000; /* временно, чтобы видеть границы*/
+/*  width: 1440px;
   height: 70px;
-  padding-links: 72px; /*не смещается*/
+  padding-links: 72px; /*не смещается*/ */
 
+  background-color: #ebebeb;
+  }
+
+.sorting-title {
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -845,7 +858,6 @@ a {
 
   background-color: #ebebeb;
   }
-
 
 .sorting-link {
   display: inline-block;
@@ -896,14 +908,28 @@ a {
   color: rgba(0, 0, 0, 1);
 }
 
-/*.catalog {
+/* .catalog {
   display: block;
   width: 973px;
   height: 1220px;
 
   background-color: transparent;
+} */
+
+.catalog-img {
+  width: 360px;
+  height: 380px;
+
+  border: 2px solid orange; /* временно, чтобы видеть границы*/
 }
-*/
+
+
+.item-link {
+  color: #000000;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
 
 .catalog-price {
   display: inline-block;
@@ -912,16 +938,55 @@ a {
   font-size: 16px;
   line-height: 24px;
 }
-
-.catalog-item a {
-  color: #000000;
-  font-family: "Gilroy", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.main-footer {
+/* .catalog-item-new {
   display: block;
+  z-index: 800;
+
+  width: 60px;
+  height: 60px;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.2);
+
+
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+} */
+
+.pagination-list {
+  background-color: #ebebeb;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
 }
 
-/*ФУТЕР СТРАНИЦЫ КАТАЛОГА совпадает с главной страницей*/
+.back-forward  {
+  color: rgba(0,0,0, 1);
+}
+/* .back-forward { } как отформатировать предыдущее и следующее наведение?*/
+
+.nav-page {
+  color: rgba(0,0,0, 0.3);
+}
+
+.nav-page:hover,
+.nav-page:focus {
+  color: rgba(0,0,0, 0.6);
+}
+
+.nav-page: {
+  color: rgba(0,0,0, 1);
+}
+
+
+
+/*ФУТЕР СТРАНИЦЫ КАТАЛОГА: стили совпадают с главной страницей*/
+
+/* .main-footer {
+  display: block;
+} */
