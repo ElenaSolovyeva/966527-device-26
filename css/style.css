@@ -26,6 +26,16 @@
   font-style: normal;
 }
 
+html {
+  box-sizing: border-box;  /* чтобы при width: 100%; не вываливались из блока padding'и margin'ы */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -59,7 +69,7 @@ a {
   overflow: hidden;
   clip: rect(0 0 0 0);
 
-  white-space: nowrap; /*REM: Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
+  white-space: nowrap; /* Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
 }
 
 .transparent-field {
@@ -69,8 +79,11 @@ a {
   border: none;
 }
 
-.header-decor {
-  background-color: #f7e296;
+/*              HEADER           */
+
+.logo {
+  margin-top: 21px;
+  margin-left: 60px;
 }
 
 .logo-image:hover,
@@ -82,13 +95,45 @@ a {
   opacity: 0.3;
 }
 
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -16px; /* не получается "наезжанеи" логотипа на желтый фон */
 
-.search-label::before { /* ? не уверена, что правильно*/
+  padding-top: 51px;
+
+  width: 1160px;
+  min-height: 299px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: #f7e296;
+}
+
+/* ПОИСК ПО САЙТУ / ВОЙТИ / СРАВНИТЬ /КОРЗИНА  */
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+
+  width: 1160px;
+  height-min: 17px;
+}
+
+.search-field {
+  width: 144px;
+}
+
+.search-label::before {
   content: "";
   display: inline-block;
 
   width: 17px;
   height: 17px;
+  margin-left: 63px; /* не получается сместить вправо*/
 
   background: url("../img/icon_search.svg") no-repeat;
   background-size: 17px 17px;
@@ -136,7 +181,6 @@ a {
   background-color: #000000;
 }
 
-
 .search-input:focus + .search-button:active { /* ? не понимаю, в чем ошибка, почему отображается некорректно*/
   color: rgba(256, 256, 256, 0.3);
 
@@ -144,9 +188,9 @@ a {
   background-color: #000000;
 }
 
-.nav-link,
-.main-nav-link {
-    color: #000000;
+.top-nav-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-link {
@@ -155,12 +199,22 @@ a {
   line-height: 30px;
 }
 
+.nav-link.compare {
+  margin-left: 218px;
+}
+
+.nav-link.cart {
+  margin-right: 61px;
+  margin-left: 41px;
+}
+
 .user::before {
   content: "";
   display: inline-block;
   width: 13px;
   height: 12px;
   margin-right: 14px;
+  margin-left: auto;
 
   background-size: 13px 12px;
   background: url("../img/icon_user.svg") no-repeat;
@@ -186,6 +240,31 @@ a {
 
   background-size: 12px 12px;
   background: url("../img/icon_cart.svg") no-repeat;
+}
+
+/* КАТАЛОГ ТОВАРОВ / ДОСТАВКА / ГАРАНТИЯ / КОНТАКТЫ  */
+
+.main-nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav-item:nth-child(2) { /* ДОСТАВКА */
+  margin-left: auto;
+}
+
+.main-nav-item:nth-child(3) { /* ГАРАНТИЯ */
+  margin-right: 114px;
+  margin-left: 38px;
+}
+
+.main-nav-list:last-child { /* КОНТАКТЫ */
+    margin-right: 61px; /* почему не работает .main-nav-item:nth-child(4) */
+}
+
+.nav-link,
+.main-nav-link {
+    color: #000000;
 }
 
 .main-nav-link{
@@ -215,6 +294,45 @@ a {
   background-size: 17px 17px;
   background-repeat: no-repeat;
   opacity: 0.3;
+}
+
+/*       M A I N       */
+.logo {
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+    padding-left: 60px;
+}
+.logo-link {
+
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* <SECTION CLASS="SLIDER-PROMO"> - БЛОК СО СЛАЙДЕРОМ - тоже флексбокс, состоящий из 3х слайдеров, каждый из которых состоит из 2х частей */
+
+.slaider-promo {
+  display: flex;
+}
+
+.slider-page-1,
+.slider-page-2,
+.slider-page-3 {
+  display: flex;
+  justify-content: space-between; /* получилось неодинаковое расстояние между элементами */
+
+  z-index: 1000; /* номер страницы уползает под фон хэдера */
+  width: 1160px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.slider-description-wrapper {
+  width: 560px;
 }
 
 .page-number {
@@ -256,6 +374,7 @@ a {
   line-height: 24px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
+  vertical-align: middle; /*  не получается выровнить по вертикали*/
 }
 
 .button-details { /* Для "ПОДРОБНЕЕ" */
@@ -308,7 +427,19 @@ a {
   background-repeat: no-repeat;
 }
 
-.offers-link {  /*ССЫЛКИ НА РАЗДЕЛЫ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+ /* <SECTION CLASS="OFFERS"> - ССЫЛКИ НА РАЗДЕЛЫ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+
+.offers-list {
+  display: flex;
+  justify-content: space-around;
+
+  width: 1160px;
+  margin-right: auto;
+  margin-bottom: 185px;
+  margin-left: auto;
+}
+
+.offers-link {
   display: inline-block;
   width: 160px;
   height: 160px;
@@ -318,7 +449,7 @@ a {
 
 .offers-image { /*КАРТИНКИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
   display: block;
-  background-position: center bottom; /* не получается*/
+  background-position: 50% 50%;; /* не получается, наверно потому что <img> в html'е указан*/
 }
 
 .offers-title { /*ПОДПИСИ ПОД КАРТИНКАМИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
@@ -327,9 +458,27 @@ a {
   line-height: 24px;
 }
 
-/* Блок "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
+/* <SECTION CLASS="SLIDER-SERVICES"> - БЛОК "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
+
 .slider-services {
+  width: 100%;
+  min-height: 288px;
   background-color: #e5e5e5;  /*? как сделать правильный размер фона  height: 288px; ?*/
+}
+
+.slider-services-wrapper {
+  display: flex;
+
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.services-buttons {
+  width: 284px;
+  min-height: 319px;
+  margin-top: -30px;
+  border: 1px solid tomato;  /* временно */
 }
 
 .button-services {  /*Как сделать правильный размер фона для инпутов "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
@@ -337,9 +486,19 @@ a {
   z-index: 110;
 
   width: 160px;
-  /* height: 8px; */
+  height: 40px;
+  margin-bottom: 32px;
 
-  background-color: #f0c52e;
+  text-align: center;
+  margin-top: 9px;
+  padding-top: 7px; /*vertical-align: middle; не выравнивает (((( */
+
+  background-image: url("../img/service-button-background.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  border: 1px solid green; /* временно */
+
 }
 
 .button-services:hover,
@@ -357,30 +516,55 @@ a {
   z-index: 130;
 
   color: #f7e184;
-
+  background-image: none;
   background-color: #000000;
 
 }
 
-.services-title { /* Заголовок "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ" */
+.services-buttons.button-services:active {
+  background-image: url("../img/button-services-background.svg");
+}
+
+.services-list {
+  min-height: 319px;
+  margin-top: -30px;
+}
+
+.services-title { /* ЗАГОЛОВОК "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ" */
+  margin: 0;
+
   font-family: "Gilroy";
   font-size: 47px;
   line-height: 48px;
 }
 
-.services-description { /*Описание услуги "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ"*/
+.services-description { /*ОПИСАНИЕ УСЛУГИ "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ"*/
   color: #464646;
   font-family: "OpenSans light";
   font-size: 15px;
   line-height: 30px;
 }
 
-/*Сделать логотип для раздела Доставка задать через css - фоном или псевдоэлементом */
+.services-item {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid blue; /* временно */
+}
+
+.servises-wrapper {
+  align-items: flex-start;
+  width: 620px;
+  border: 1px solid orange; /* временно */
+}
+
 .delivery::after {
   content: "";
-  display: block;
+  display: inline-block;
+
   width: 130px;
   height: 160px;
+  margin-right: 66px;
+
   background: url("../img/icon_delivery.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
@@ -389,27 +573,84 @@ a {
 .warranty::after {
   content: "";
   display: block;
+
   width: 175px;
   height: 195px;
+  margin-right: 47px;
+
   background: url("../img/icon_warranty.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
 }
-
 
 .credit::after {
   content: "";
   display: block;
   width: 155px;
   height: 185px;
+  margin-right: 70px;
   background: url("../img/icon_credit.svg") no-repeat;
   background-size: 155px 185px;
   background-repeat: no-repeat;
 }
 
-.dji:hover { /*Не получается отображать другой фон при наведении мыши*/
-  z-index: 200;
-  background-image: url("../img/img/index_logo_1_active.png");
+/* <SECTION CLASS="PARTNERS">  - БЛОК С ЛОГОТИПАМИ ПАРТНЕРОВ */
+
+.partners-list {
+  display: flex;
+  justify-content: space-around; /* пока примерно */
+
+
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.partner-link {
+  display: block;
+
+  width :260px;
+  min-height: 100px;
+  margin: 0;
+  padding:0;
+
+  border: 1px solid grey; /* временно, чтобы видеть границы */
+}
+
+
+.dji:hover,
+.dji:focus {
+  background-image: url("../img/index_logo_1_active.png");
+}
+
+.sp-adgets:hover,
+.sp-adgets:focus {
+  background-image: url("../img/index_logo_2_active.png");
+}
+
+.gopro:hover,
+.gopro:focus {
+  background-image: url("../img/index_logo_3_active.png");
+}
+
+.vive:hover,
+.vive:focus {
+  background-image: url("../img/index_logo_4_active.png");
+}
+
+/* <SECTION CLASS="WE"> БЛОК "О НАС" И "КОНТАКТЫ" */
+
+.we {
+  display: flex;
+  justify-content: space-between;
+
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.we.about-us {
+  width: 560px;
 }
 
 .we-title {
@@ -417,7 +658,6 @@ a {
   font-size: 47px;
   line-height: 48px;
 }
-
 
 .we-details {
   font-family: "OpenSans light", Arial, sans-serif;
@@ -446,7 +686,6 @@ a {
   background-repeat: no-repeat;
 }
 
-
 .details-button {
   display: block;
 
@@ -463,6 +702,9 @@ a {
 }
 /*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
 
+.we.contacts {
+  width: 560px;
+}
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
 
@@ -692,17 +934,17 @@ a {
     color: rgba(0, 0, 0, 0.1);
 }
 
-.breadcrumbs:nth-child(1)::after,
-.breadcrumbs:nth-child(2)::after {
+.breadcrumbs-item:nth-child(1)::after,
+.breadcrumbs-item:nth-child(2)::after {
   content: "";
 
-  /* пока не получается спозиционировать
-  display: inline-block;
+  /* пока не получается спозиционировать*/
+  display: block;
   width: 4px;
   height: 7px;
 
   margin-left: 16px;
-*/
+
   background-size: cover;
   background: url("../img/icon_nav-arrow.svg") no-repeat;
 }
@@ -733,6 +975,7 @@ a {
 }
 
 .bar-grey {
+  position: relative;
   z-index: 200;
 
   width: 197px;
@@ -741,6 +984,7 @@ a {
 }
 
 .bar-green {
+  position: relative;
   z-index: 201;
 
   margin-top: -2px;
@@ -751,14 +995,16 @@ a {
 
 .range-min,
 .range-max {
-  /*кружочки не отображаются*/
+  /*спозиционировать кружочки*/
   display: block;
+  position: absolute; /*top left*/
   z-index:800;
 
   width: 20px;
   height: 22px;
 
-  background-image: url("../img/icon_filter-button.svg") no-repeat;
+  background-image: url("../img/icon_filter-button.svg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
