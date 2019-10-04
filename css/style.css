@@ -379,14 +379,17 @@ a {
 
 .button-details { /* Для "ПОДРОБНЕЕ" */
   display: block;
+
   width: 220px;
-  height: 8px; /*? Почему не отбражается фон в состоянии покоя*/
+  height: 40px; /*? Почему не отбражается фон в состоянии покоя*/
 
   text-align: center;
-  /*vertical-align: middle; ? Почему не выравнивается по вертикали*/
+  padding-top: 8px; /*vertical-align: middle; ? Почему не выравнивается по вертикали*/
 
   border: none;
-  background-color: #f0c52e;
+  background-image: url("../img/button-details-background.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .button-details:hover,
@@ -401,11 +404,9 @@ a {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.promo-button { /*РАДИО-КНОПКИ СЛАЙДЕРА*/
-    /*display: none; opacity: 0; - не работает, не получается скрыть "исходные" радио-кнопки*/
-}
+ /*РАДИО-КНОПКИ СЛАЙДЕРА*/
 
-.promo-button::before {
+.promo-label::before {
   content: "";
   display: inline-block;
   width: 12px;
@@ -417,7 +418,7 @@ a {
   background-repeat: no-repeat;
 }
 
-.promo-button::before:active { /* не получается*/
+.promo-label:active:before { /* косячит!!! */
   content: "";
   display: inline-block;
   width: 12px;
@@ -445,6 +446,16 @@ a {
   height: 160px;
 
   background-color: #f7e296;
+}
+
+.offers-link:hover,
+.offers-link:focus {
+background-color: #f0c52e;
+}
+
+.offers-link:active {
+  opacity: 0.3;
+  background-color: #f0c52e; /* не получается оставить фон нужного цвета, а изображение сделать полупрозрачным, применяя свойства, а не ссылку на другое изображение */
 }
 
 .offers-image { /*КАРТИНКИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
@@ -691,8 +702,13 @@ a {
 
   width: 260px;
 
-  background-color: #f0c52e;
+  text-align: center;
+
+  background-image: url("../img/button-details-background.png");
   background-size: 260px 8px;
+  background-repeat: repeat-x;
+  background-position: center;
+
 }
 
 .details-button:hover,
@@ -700,6 +716,11 @@ a {
   background-color: #f0c52e;
   background-size: 260px 40px;
 }
+
+.details-button:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
 /*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
 
 .we.contacts {
@@ -818,7 +839,25 @@ a {
 
   border: none;
   background-color: #f2f2f2;
+  opacity: 0.5;
 }
+
+.clients-data:hover,
+.clients-data:active,
+.clients-message:hover,
+.clients-message:active {
+  border: none;
+  background-color: #f2f2f2;
+  opacity: 0.8;
+}
+
+.clients-data:active,
+.clients-message:active {
+  background-color: #ffffff;
+  border: 3px solid #f7e296; /* почему проступает серая рамка?*/
+}
+
+/* как сделать селектор для невалидных значений? */
 
 .clients-data {
   width: 360px;
