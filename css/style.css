@@ -8,7 +8,7 @@
 @font-face {
   font-family: "Gilroy light";
   src: url("../fonts/gilroylight.woff2") format("woff2");
-  font-weight: lighter;
+  /* font-weight: lighter; */
   font-style: normal;
 }
 
@@ -22,7 +22,7 @@
 @font-face {
   font-family: "OpenSans light";
   src: url("../fonts/opensanslight.woff2") format("woff2");
-  font-weight: lighter;
+  /* font-weight: lighter; */
   font-style: normal;
 }
 
@@ -53,6 +53,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .reset-list {
   list-style: none;
   margin: 0;
@@ -61,15 +66,18 @@ a {
 
 .visually-hidden {
   position: absolute;
+
   width: 1px;
   height: 1px;
   margin: -1px -1px;
-  padding: 0;
   border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+  padding: 0;
 
   white-space: nowrap; /* Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
 }
 
 .transparent-field {
@@ -79,11 +87,28 @@ a {
   border: none;
 }
 
+.container {
+  width: 1160px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  border: 1px solid #FF1493; /* временно */
+  padding: 0;
+}
+
 /*              HEADER           */
 
-.logo {
-  margin-top: 21px;
+.logo-link {
+  position: relative;
+  display: block; /* нужно ли это свойство, учитывая что position: relative; */
+  top: 15px;
+  /* z-index: 2; */
+
+  /* margin-top: 9px; */
+  margin-bottom: 0px;
   margin-left: 60px;
+  padding: 0;
 }
 
 .logo-image:hover,
@@ -98,32 +123,29 @@ a {
 .header-wrapper {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -16px; /* не получается "наезжанеи" логотипа на желтый фон */
+  /* position: relative; */
 
+  min-height: 298px;
+  margin-top: -26px; /*методом подбора*/
+  padding-right: 60px;
   padding-top: 51px;
-
-  width: 1160px;
-  min-height: 299px;
-  margin-right: auto;
-  margin-left: auto;
+  padding-left: 60px;
 
   background-color: #f7e296;
 }
 
-/* ПОИСК ПО САЙТУ / ВОЙТИ / СРАВНИТЬ /КОРЗИНА  */
+/* ПОИСК по САЙТУ + ВОЙТИ СРАВНИТЬ КОРЗИНА  */
 
 .top-nav {
   display: flex;
   justify-content: space-between;
 
+  width: 1040px;
   margin-bottom: 50px;
-
-  width: 1160px;
-  height-min: 17px;
+  border: 1px solid grey;
 }
 
-.search-field {
+.search-field { /* ПОИСК по САЙТУ */
   width: 144px;
 }
 
@@ -133,7 +155,6 @@ a {
 
   width: 17px;
   height: 17px;
-  margin-left: 63px; /* не получается сместить вправо*/
 
   background: url("../img/icon_search.svg") no-repeat;
   background-size: 17px 17px;
@@ -181,14 +202,14 @@ a {
   background-color: #000000;
 }
 
-.search-input:focus + .search-button:active { /* ? не понимаю, в чем ошибка, почему отображается некорректно*/
+.search-field:hover .search-button:active { /* ? не понимаю, в чем ошибка, почему отображается некорректно*/
   color: rgba(256, 256, 256, 0.3);
 
   border: 2px solid #000000;
   background-color: #000000;
 }
 
-.top-nav-list {
+.top-nav-list { /* ВОЙТИ СРАВНИТЬ КОРЗИНА */
   display: flex;
   justify-content: space-between;
 }
@@ -204,7 +225,6 @@ a {
 }
 
 .nav-link.cart {
-  margin-right: 61px;
   margin-left: 41px;
 }
 
@@ -247,19 +267,20 @@ a {
 .main-nav-list {
   display: flex;
   justify-content: space-between;
+
+  border: 1px solid grey; /* временно */
 }
 
-.main-nav-item:nth-child(2) { /* ДОСТАВКА */
+.main-nav-item:nth-child(2) { /* ?nth-child ДОСТАВКА */
   margin-left: auto;
 }
 
-.main-nav-item:nth-child(3) { /* ГАРАНТИЯ */
+.main-nav-item:nth-child(3) { /* ?nth-child ГАРАНТИЯ */
   margin-right: 114px;
   margin-left: 38px;
 }
 
-.main-nav-list:last-child { /* КОНТАКТЫ */
-    margin-right: 61px; /* почему не работает .main-nav-item:nth-child(4) */
+.main-nav-list:last-child { /* ?nth-child КОНТАКТЫ */
 }
 
 .nav-link,
@@ -297,74 +318,125 @@ a {
 }
 
 /*       M A I N       */
-.logo {
-  width: 1160px;
-  margin-right: auto;
-  margin-left: auto;
-    padding-left: 60px;
-}
-.logo-link {
-
-}
-
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-}
 
 /* <SECTION CLASS="SLIDER-PROMO"> - БЛОК СО СЛАЙДЕРОМ - тоже флексбокс, состоящий из 3х слайдеров, каждый из которых состоит из 2х частей */
-
-.slaider-promo {
-  display: flex;
-}
 
 .slider-page-1,
 .slider-page-2,
 .slider-page-3 {
   display: flex;
-  justify-content: space-between; /* получилось неодинаковое расстояние между элементами */
+  justify-content: space-around; /* получилось неодинаковое расстояние между элементами */
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 
-  z-index: 1000; /* номер страницы уползает под фон хэдера */
-  width: 1160px;
+  width: 100%; /* 1160px; */
+  min-height: 500px;
 
+  margin-top: -115px;
   margin-right: auto;
   margin-left: auto;
 }
+
+.slider-page-1{border: 3px dashed #ADFF2F;}
+.slider-page-2{border: 3px dashed gold;}
+.slider-page-3{border: 3px dashed #00BFFF;}
+/* ? Почему столько места внизу пропадает. Не могу понять, как определяется высота этих блоков */
+
+.slider-page-1::before {
+  content: "01";
+  display: block;
+  position: absolute;
+  z-index: 4;
+  order: 2;
+  position: relative;
+  top: -560px;
+
+  margin-top: 60px;
+  padding-left: 900px; /*примерно*/
+
+  color: #ffffff;
+  font-family: "Gilroy";
+  font-size: 179.2px;
+  line-height: 179.2px;
+
+  color: grey;
+  text-align: right;
+}
+
+.slider-page-2::before {
+  content: "02";
+  display: block;
+  position: relative;
+  z-index: 4;
+  order: 2;
+  position: relative;
+  top: -565px;
+
+  margin-top: 60px;
+  padding-left: 900px; /*примерно*/
+
+  color: #ffffff;
+  font-family: "Gilroy";
+  font-size: 179.2px;
+  line-height: 179.2px;
+
+  color: grey;
+  text-align: right;
+}
+
+.slider-page-3::before {
+  content: "03";
+  display: block;
+  position: relative;
+  z-index: 4;
+  order: 2;
+  position: relative;
+  top: -565px;
+
+  margin-top: 60px;
+  padding-left: 900px; /*примерно*/
+
+  color: #ffffff;
+  font-family: "Gilroy";
+  font-size: 179.2px;
+  line-height: 179.2px;
+
+  color: grey;
+  text-align: right;
+}
+
+.slider-image {border: 1px solid grey;}
 
 .slider-description-wrapper {
   width: 560px;
 }
 
-.page-number {
-  color: #aaffff; /*Цвет пока такой, чтобы на белом фоне виднол было до того, как правильно спозиционирую*/
-  font-family: "Gilroy";
-  font-size: 179.2px;
-  lein-height: 179.2px;
-}
-
 .slider-slogan {
+  position: relative;
+  z-index: 5;
+
+  padding-top: 73px;
+
   font-family: "Gilroy";
   font-size: 47px;
   line-height: 56px;
 }
 
 .slider-info {
+  padding-top: 17px;
   font-family: "OpenSans light";
   font-size: 15px;
   line-height: 30px;
 }
 
-.description-parameter {
-  color: #464646;
-  font-family: "OpenSans light";
-  font-size: 13px;
-  line-height: 20px;
-}
+/* Кнопка ПОДРОБНЕЕ и радио-кнопки */
 
-.description-value {
-  font-family: "Gilroy light";
-  font-size: 36px;
-  line-height: 48px;
+.details {
+  display: flex;
+
+  margin-top: 50px; /* примерно */
+  margin-bottom: 50px; /* примерно */
 }
 
 .button { /*Базовый стиль для ссылок и кнопок "ПОДРОБНЕЕ", "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ", "ПОДРОБНЕЕ О НАС", "НАПИШИТЕ НАМ"*/
@@ -381,10 +453,11 @@ a {
   display: block;
 
   width: 220px;
-  height: 40px; /*? Почему не отбражается фон в состоянии покоя*/
+  height: 40px;
+  margin-right: 180px;
 
   text-align: center;
-  padding-top: 8px; /*vertical-align: middle; ? Почему не выравнивается по вертикали*/
+  padding-top: 8px; /*? Почему не выравнивается по вертикали посредством свойства vertical-align: middle; */
 
   border: none;
   background-image: url("../img/button-details-background.png");
@@ -409,23 +482,71 @@ a {
 .promo-label::before {
   content: "";
   display: inline-block;
+
   width: 12px;
   height: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
 
   opacity: 1;
-  background: url("../img/icon_radio-off.svg") no-repeat;
+  background-image: url("../img/icon_radio-off.svg");
   background-size: 12px 12px;
   background-repeat: no-repeat;
 }
 
-.promo-label:active:before { /* косячит!!! */
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background: url("../img/icon_radio-on.svg") no-repeat;
-  background-size: 12px 12px;
-  background-repeat: no-repeat;
+.promo-button:checked + label::before {
+    background-image: url("../img/icon_radio-on.svg");
+}
+
+/* Таблица с характеристиками */
+
+.item-parameters {
+  border: 1px dashed grey;
+}
+
+.description-parameter {
+  color: #464646;
+  font-family: "OpenSans light";
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.description-parameter:nth-child(1) {
+  width: 160px;
+  margin: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 15px; /*пока примерно*/
+  padding-left: 0;
+}
+
+.description-parameter:nth-child(2) {
+  width: 140px;
+  margin: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 15px; /*пока примерно*/
+  padding-left: 0;
+}
+
+.description-parameter:nth-child(3) {
+  width: 160px;
+  margin: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 15px; /*пока примерно*/
+  padding-left: 0;
+}
+
+
+.description-value {
+  font-family: "Gilroy light";
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.length {
+
 }
 
  /* <SECTION CLASS="OFFERS"> - ССЫЛКИ НА РАЗДЕЛЫ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
@@ -479,10 +600,6 @@ background-color: #f0c52e;
 
 .slider-services-wrapper {
   display: flex;
-
-  width: 1160px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .services-buttons {
@@ -660,8 +777,9 @@ background-color: #f0c52e;
   margin-left: auto;
 }
 
-.we.about-us {
+.we > .about-us {
   width: 560px;
+  border: 1px dashed tomato;
 }
 
 .we-title {
@@ -723,21 +841,48 @@ background-color: #f0c52e;
 
 /*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
 
-.we.contacts {
+.we > .contacts {
   width: 560px;
+  border: 1px dashed tomato;
 }
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
 
 .footer {
-  margin: 0;
-  padding: 0;
-
+  min-height: 323px;
   color: #ffffff;
-
   background-color: #464646;
 }
 
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 1160px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding: 0;
+
+  border: 1px solid orange;
+}
+
+.footer-left-box,
+.footer-middle-box,
+.footer-right-box
+ {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px dashed tomato;
+}
+
+.footer-left-box { /* ЛЕВЫЙ БЛОК В ФУТЕРЕ: ЛОГОТИП, АДРЕС */
+  flex-basis: 215px; /*201px; */
+  padding-top: 66px;
+}
 
 .logo-footer:hover,
 .logo-footer:focus {
@@ -748,10 +893,57 @@ background-color: #f0c52e;
   opacity: 0.3;
 }
 
+.our-adress {
+  margin-top: 40px;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.yellow-line {
+  width: 80px;
+  padding: 0;
+  margin-top: 85px;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  border-top: 7px solid #ffc600;
+}
+
+.footer-middle-box { /* БЛОК ПОСЕРЕДИНЕ ФУТЕРА: ДОСТАВКА..., СОЦ СЕТИ */
+  flex-basis: 423px;
+  padding-top: 140px;
+}
+
+.footer-nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav-item.footer-nav-item {
+  margin: 0;
+  padding: 0;
+}
+
 .footer-link {
   color: #ffffff;
 }
 
+.social-list {
+  display: flex;
+  justify-content: space-between;
+
+  width: 141px;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+.footer-right-box {
+  flex-basis: 325px;
+  padding-top: 66px;
+}
 
 .footer-nav-list a:hover,
 .footer-nav-list a:hover {
@@ -798,10 +990,22 @@ background-color: #f0c52e;
   background: url("../img/icon_cart.svg") no-repeat;
 }
 
+.our-tel {
+  margin-top: 52px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
 .developer-logo {
   display: block;
+
   width: 27px;
   height: 35px;
+  margin-top: 71px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: auto;
 
   background: url("../img/icon_logo-html.svg") no-repeat;
 }
@@ -815,17 +1019,100 @@ background-color: #f0c52e;
   opacity: 0.3;
 }
 
+/* ПОПАПЫ */
+
+.modal-close {
+  display: block;
+  position: relative;
+
+  width: 55px;
+  height: 55px;
+  z-index: 100;
+
+  background-image: url("../img/icon_modal-close.svg") ;
+  background-size: 55px 55px;
+}
+
+/* ПОПАП С КАРТОЙ */
+
+.map-modal {
+  display: block;
+  position: relative;
+
+  width: 960px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+
+  border: 1px solid gold;
+}
+
+.map {
+  margin: 0;
+  padding: 0;
+}
+
+.map-modal > .modal-close {
+  top: -550px; /* положение кнопки пока примерное */
+  left: 870px;
+}
+
+
 /* ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ*/
 
 .feedback-modal {
+  position: relative;
+
+  width: 960px;
+  height: 560px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+
   background-color:#ffffff;
+  border: 1px solid gold;
 }
+
+.feedback-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 5;
+
+  width: 760px;
+  min-height: 296px;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+
+  border: 1px solid green;
+  }
 
 .feedback-label {
   color: #000000;
   font-family:  "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+}
+
+.formfield-wrapper {
+  width: 360px;
+  min-height: 75px;
+  border: 1px dashed tomato; /* временно */
+}
+
+.message-wrapper {
+  width: 760px;
+  min-height: 181px;
+  margin-top: 39px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: 0;
+
+  border: 1px dashed tomato; /* временно */
 }
 
 .clients-data,
@@ -857,6 +1144,11 @@ background-color: #f0c52e;
   border: 3px solid #f7e296; /* почему проступает серая рамка?*/
 }
 
+.feedback-modal .modal-close {
+  top: -480px; /* положение кнопки пока примерное */
+  left: 880px;
+}
+
 /* как сделать селектор для невалидных значений? */
 
 .clients-data {
@@ -869,33 +1161,36 @@ background-color: #f0c52e;
   height: 156px;
 }
 
-.modal-close {
-  display: block;
-  width: 55px;
-  height: 55px;
-  z-index: 100;
-
-  background-image: url("../img/icon_modal-close.svg") ;
-  background-size: 55px 55px;
-}
-
 .modal-send { /* Для "ОТПРАВИТЬ" */
-  display: block;
+  /* display: block; */
+  position: relative;
+
   width: 200px;
+  height: 40px; /*? Почему не отбражается фон в состоянии покоя*/
+  margin-top: 55px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: 0;
+  padding-top: 0px;
+  /* vertical-align: top; */
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  background-size: 200px 8px;
+  background-color: transparent;
+  background-image: url("../img/button-send-background.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   /*height: 40px; ? Почему не меняется высота фона в состоянии покоя*/
-
+  border: 1px dashed gold;/*none;*/
   text-align: center;
-  vertical-align: middle; /*? Почему не выравнивается по вертикали*/
 
-  border: none;
-  background-color: #f0c52e;
-  background-size: 220px 8px;
 }
 
 .modal-send:hover,
 .modal-send:focus {
-  height: : 40px;
-  background-size: 220px 40px;
+  background-size: 200px 40px;
 }
 
 .modal-send:active {
@@ -904,7 +1199,7 @@ background-color: #f0c52e;
 
 /*СТИЛИ ДЛЯ СТРАНИЦЫ КАТАЛОГА*/
 
-/* catalog.tnml  <header> */
+/* catalog.html  <header> */
 
 .nav-link-exit {
   font-family: "OpenSans light", Arial, sans-serif;
@@ -924,7 +1219,41 @@ background-color: #f0c52e;
 }
 
 .products-block {
-  display: inline-block;
+  display: flex;
+  position: relative;
+  z-index: 2;
+
+  margin-top: -16px;
+  margin-right: auto;
+  margin-bottom: auto;
+  padding-left: 61px;
+
+  background-color: #f7e296;
+  border: 1px solid green; /* временно */
+}
+
+.products-block > .left {
+  width: 200px;
+  margin: 0;
+  border: 1px dashed tomato; /* временно */
+}
+
+.products-block > .middle {
+  width: 160px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: auto;
+  margin-left: 40px;
+  border: 1px dashed tomato; /* временно */
+}
+
+.products-block > .right {
+  width: 160px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: 40px;
+  border: 1px dashed tomato; /* временно */
 }
 
 .product-groups-link{
@@ -946,17 +1275,36 @@ background-color: #f0c52e;
 }
 
 /* catalog.html <main> */
+.wrapper-main {
+
+}
 
 .monopods-h1 {
+  position: relative;
+  z-index: 3;
+
+  margin-top: -33px; /*пока примерно, потом подгоню*/
+  padding-left: 61px;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
+
+}
+
+.breadcrumbs {
+  display: flex;
+  position: relative;
+
+  padding-left: 61px;
+}
+
+.breadcrumbs-item {
+  display: flex;
 }
 
 .breadcrumbs-link {
-  /*
-  display: inline-block;  в линию так не отображаются
-  */
+  display: block; /* в линию так не отображаются  */
 
   color: rgba(0, 0, 0, 0.3);
   font-family: "OpenSans light", Arial, sans-serif;
@@ -976,46 +1324,104 @@ background-color: #f0c52e;
 .breadcrumbs-item:nth-child(1)::after,
 .breadcrumbs-item:nth-child(2)::after {
   content: "";
-
-  /* пока не получается спозиционировать*/
   display: block;
+  position: relative;
+
   width: 4px;
   height: 7px;
-
-  margin-left: 16px;
+  margin-top: 9px;
 
   background-size: cover;
   background: url("../img/icon_nav-arrow.svg") no-repeat;
 }
 
+.breadcrumbs-item:nth-child(1)::after {
+    margin-right: 17px;
+    margin-left: 18px;
+}
+
+.breadcrumbs-item:nth-child(2)::after {
+    margin-right: 19px;
+    margin-left: 16px;
+}
+
+.page-container {
+  display: flex;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* БЛОК С ФИЛЬТРОМ */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+
+  width: 468px;
+  margin-left: auto;
+}
+
+
 .filter-title {
-  /* display: block; width: 468px;  height: 70px;  */
-  /* padding-links: 200px; не смещается */
+  min-height: 70px;
+  margin: 0;
+  padding-top: 29px;
+  padding-right: 180px;
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 3.6px;
+  text-align: right;
   text-transform: uppercase;
 
   background-color: #dbdbdb;
 }
 
 .filter-form {
-  border: 2px solid #F1DA64; /* временно, чобы видеть границы*/
-  /*display: block; width: 468px; height: 1217px;*/
+  min-height: 1217px;
+  width: 468px;
+
+  border: 1px solid #f1da64; /* временно, чобы видеть границы*/
   background-color: #eeeeee;
 }
 
-.filter-subtitle {
+.range {
+  position: relative;
+
+  width: 201px;
+  height: 141px;
+  margin-top: 69px;
+  margin-right: 68px;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-top: 16px;
+
+  border-top: 2px solid #000000;
+}
+
+.subtitle {
+  margin-right: auto;
+  margin-left: 0;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+  text-align: left;
+}
+
+.scale {
+  z-index: 5;
+
+  width: 207px;
+  margin-top: 0;
+  margin-right: 68px;
 }
 
 .bar-grey {
   position: relative;
-  z-index: 200;
+  z-index: 6;
 
   width: 197px;
   height: 2px;
@@ -1024,7 +1430,7 @@ background-color: #f0c52e;
 
 .bar-green {
   position: relative;
-  z-index: 201;
+  z-index: 7;
 
   margin-top: -2px;
   width: 115px;
@@ -1037,7 +1443,7 @@ background-color: #f0c52e;
   /*спозиционировать кружочки*/
   display: block;
   position: absolute; /*top left*/
-  z-index:800;
+  z-index:8;
 
   width: 20px;
   height: 22px;
@@ -1047,24 +1453,89 @@ background-color: #f0c52e;
   background-size: cover;
 }
 
+.range-min {
+  margin-top: -9px;
+  padding: 0;
+}
+
+.range-max {
+  margin-top: -9px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 115px;
+  padding: 0;
+}
+
 .range-min-label,
 .range-max-label,
 .range-min-input,
 .range-max-input  {
+  display: inline-block;
+
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.2); /* цвет шрифа не применяется к placeholder*/
 }
 
-.range-min-input,
-.range-max-input { } /* позиционирование пока не задано*/
+.range-min-label {
+  margin-top: 10px; /* примерно, пока не пойму, как померить*/
+  margin-right: 3px;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.range-min-input { /* позиционирование пока не задано*/
+  width: 50px;
+  margin-right: 0;
+}
+
+.range-max-label {
+  margin-top: 15px; /* примерно, пока не пойму, как померить*/
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 30px;
+}
+
+.range-max-input {
+  width: 50px;
+  margin-right: 0;
+  margin-left: 4px;
+  }
+
+.fieldset-container {
+  width: 201px;
+  margin-right: 68px;
+  margin-left: auto;
+  padding-top: 16px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  border-top: 2px solid #000000;
+}
 
 .filter-fieldset {
+  display: block;
+
   margin: 0;
   padding: 0;
 
   border: none;
+}
+
+.color {
+  min-height: 283px;
+  margin-bottom: 30px; /* примерно */
+}
+
+.color-subtitle {
+  padding-top: 16px;
+  padding-bottom: 29px;
+}
+
+.reset-list {
+  position: relative;
 }
 
 .color-choice,
@@ -1074,18 +1545,24 @@ background-color: #f0c52e;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
   line-height: 40px;
+  vertical-align: middle;/*  не получается вертикальное выравнивание  */
+
+  border: 1px dashed tomato;
 }
 
 .color-checkbox {
-  margin-right: 15px; /*пока примерно*/
+
 }
 
-.color-checkbox::before {
+.color-choice::before {
   content: "";
-  display: block;
+  display: inline-block;
 
   width: 23px;
   height: 23px;
+  margin-top: 10px;
+  margin-right: 15px; /*пока примерно*/
+  margin-bottom: auto;
   margin-left: 0px;
 
   background-size: cover;
@@ -1104,37 +1581,69 @@ background-color: #f0c52e;
   background: url("../img/icon_checkbox-on.svg") no-repeat;
 }
 
-.bluetooth-radio {
-    margin-right: 15px; /*пока примерно*/
+
+.bluetooth {
+  min-height: 175px;
 }
 
-.bluetooth-radio::before {
+.bluetooth-subtitle {
+  padding-top: 16px;
+  padding-bottom: 29px;
+}
+
+.bluetooth-choice::before {
   content: "";
-  display: block;
+  display: inline-block;
 
   width: 25px;
   height: 25px;
-  margin-left: 0px;
+  margin-right: 15px; /*пока примерно*/
 
   background-size: 25px 25px;
   background: url("../img/icon_radio-off.svg") no-repeat;
 }
 
-.bluetooth-radio::before:active {
+.bluetooth-choice:active:before {
  /* как правильно указать селектор?*/
   background: url("../img/icon_radio-on.svg") no-repeat;
   }
 
-.products-sorting {  /* <section class="products-sorting"> */
-border: 2px solid #000000; /* временно, чтобы видеть границы*/
-/*  width: 1440px;
-  height: 70px;
-  padding-links: 72px; /*не смещается*/ */
+.fieldset-container + .button { /* нужно выровнять желтую полоску фона*/
+  width: 200px;
+  margin-right: 68px;
+  margin-left: auto;
+  background-color: transparent;
+}
+
+/* 2Й БЛОК: СТРАНИЦА КАТАЛОГА */
+.catalog-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+
+  width: 972px;
+  margin-right: auto;
+
+  border: 1px solid gold;  /* временно, чтобы видеть границы*/
+  }
+
+/*
+  Секция сортировки по цене-типу-популярности
+  (1й flex-элемент блока 2 (страница каталога))
+*/
+
+.products-sorting {
+  display: flex;
+  align-items: baseline;
+  min-height: 70px;
 
   background-color: #ebebeb;
   }
 
 .sorting-title {
+  margin-left: 72px;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -1143,10 +1652,23 @@ border: 2px solid #000000; /* временно, чтобы видеть гран
 
   background-color: #ebebeb;
   }
+.sorting-list {
+    display: flex;
+
+    margin-right: auto;
+    margin-left: 55px;
+}
+
+.sorting-item {
+  display: block;
+}
+
+.sorting-item:nth-child(2) {
+  margin-right: 20px;
+  margin-left: 20px;
+}
 
 .sorting-link {
-  display: inline-block;
-
   font-family: "OpenSans", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -1181,6 +1703,7 @@ border: 2px solid #000000; /* временно, чтобы видеть гран
 }
 
 .arrow-down {
+    margin-left: 19px;
     background-image: url("../img/icon_down-dir.svg");
 }
 
@@ -1193,61 +1716,128 @@ border: 2px solid #000000; /* временно, чтобы видеть гран
   color: rgba(0, 0, 0, 1);
 }
 
-/* .catalog {
-  display: block;
-  width: 973px;
-  height: 1220px;
+.catalog {
+  border: 1px dashed tomato; /* временно */
+}
+
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 760px;
+  /* width:  973px; height: 1220px; */
+  margin-top: 70px;
+  margin-left: 72px;
 
   background-color: transparent;
-} */
+  border: 1px solid green; /* временно */
+}
+
+.catalog-item {
+  display: block;
+
+  width: 360px;
+  /* min-height: 440px; */
+  border: 2px solid tomato; /* временно */
+
+}
 
 .catalog-img {
   width: 360px;
   height: 380px;
+/* не могу разобраться, откуда берется расстояние между картинкой и подписью к ней: .catalog-img и .item-description */
+  margin: 0;
+  padding: 0;
 
-  border: 2px solid orange; /* временно, чтобы видеть границы*/
+  border: 1px dashed orange; /* временно, чтобы видеть границы*/
 }
 
+.item-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-top: 0;
+  padding-top: 0;
+
+  border: 1px solid grey;
+}
 
 .item-link {
+  display: block;
+
+  width: 260px;
+
   color: #000000;
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+  border: 1px dashed blue; /* временно*/
 }
 
 .catalog-price {
-  display: inline-block;
+  display: block;
+
+  min-width: 90px;
+
   color: #000000;
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
+  text-align: right;
+  border: 1px dashed blue; /* временно*/
 }
-/* .catalog-item-new {
-  display: block;
-  z-index: 800;
 
-  width: 60px;
-  height: 60px;
+.pagination {
+  width: 760px;
+  height: 70px;
 
-  font-family: "Gilroy", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  margin-top: 30px; /* примерно */
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: 72px;
 
-
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-} */
+  background-color: #ebebeb;
+  border: 1px dashed tomato; /* временно */
+}
 
 .pagination-list {
-  background-color: #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;   /* не выравнивается, vertical-align: middle; тоже не помогает */
+
+  min-height: 70px;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
+}
+
+.pagination-item {
+  display: block;
+
+  margin-top: auto;
+  margin-bottom: auto;
+
+  border: 1px dashed green;   /* временно */
+}
+
+.pagination-item:first-child {
+  margin-left: 28px;
+  margin-right: auto;
+}
+
+.pagination-item:nth-child(3) {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+.pagination-item:last-child {
+  margin-left: auto;
+  margin-right: 28px;
 }
 
 .back-forward  {
@@ -1264,14 +1854,14 @@ border: 2px solid #000000; /* временно, чтобы видеть гран
   color: rgba(0,0,0, 0.6);
 }
 
-.nav-page: {
+.nav-page {
   color: rgba(0,0,0, 1);
 }
 
 
 
-/*ФУТЕР СТРАНИЦЫ КАТАЛОГА: стили совпадают с главной страницей*/
+/*ФУТЕР СТРАНИЦЫ КАТАЛОГА: стили совпадают с главной страницей, КРОМЕ ПРАВОГО БЛОКА*/
 
-/* .main-footer {
-  display: block;
-} */
+.catalog-right-box .footer-nav-item:first-child {
+  margin-left: -200px; /*примерно*/
+}

@@ -8,124 +8,169 @@
   </head>
 
   <body>
-    <header class="header-decor">
-      <p class="logo"> <!-- ? нужен ли здесь тэг р -->
+    <header class="container">
+      <p> <!-- ? нужен ли здесь тэг р -->
         <a class="logo-link" href="#">
           <img class="logo-image" src="img/icon_logo-device.svg" width="163" height="35" alt="Наш логотип">
         </a>
       </p>
 
       <div class="header-wrapper">
+
         <section class="top-nav">
+
           <h2 class="visually-hidden">Верхнее меню</h2>
+
           <form name="search-field" action="https://echo.html-academy.ru" method="post">
             <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
             <input class="search-input transparent-field" id="index-search" type="search" placeholder="Поиск по сайту">
             <button class="search-button transparent-field" type="submit">Найти</button>
           </form>
+
           <ul class="top-nav-list reset-list">
-            <li class="top-nav-item">
+            <li>
               <a class="nav-link user" href="#">Войти</a>
             </li>
-            <li class="top-nav-item">
+            <li>
               <a class="nav-link compare" href="#">Сравнить</a>
             </li>
-            <li class="top-nav-item">
+            <li>
               <a class="nav-link cart" href="#">Корзина</a>
             </li>
           </ul>
-        </section>
+        </section><!-- class="top-nav" -->
 
         <section class="main-nav">
+
           <h2 class="visually-hidden">Основная навигация по сайту</h2>
-            <nav>
-              <ul class="main-nav-list reset-list">
-                <li class="main-nav-item">
-                  <a class="main-nav-link" href="#">Каталог товаров</a>
-                </li>
-                <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Доставка</a></li>
-                <li class="main-nav-item"><a class="main-nav-link footer-nav-link" href="#">Гарантия</a></li>
-                <li class="main-nav-itemm"><a class="main-nav-link footer-nav-link" href="#">Контакты</a></li>
-              </ul>
-            </nav>
-        </section>
-      </div>
+          <nav>
+            <ul class="main-nav-list reset-list">
+              <li class="main-nav-item">
+                <a class="main-nav-link" href="#">Каталог товаров</a>
+              </li>
+              <li class="main-nav-item">
+                <a class="main-nav-link footer-nav-link" href="#">Доставка</a>
+              </li>
+              <li class="main-nav-item">
+                <a class="main-nav-link footer-nav-link" href="#">Гарантия</a>
+              </li>
+              <li class="main-nav-item">
+                <a class="main-nav-link footer-nav-link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </section><!-- class="main-nav" -->
+      </div><!-- конец класса class="header-wrapper" -->
     </header>
 
     <main>
-    <div class="wrapper-main">
 
       <h1 class="visually-hidden">Интернет-магазин DEVICE</h1>
 
-      <section class="slider-promo">
+      <section class="container">
+
         <h2 class="visually-hidden">Промо-блок</h2>
-        <div class="slider-page-1">
-          <img class="slider-image" src="img/index_slider_1.png" width="" height="" alt="Изображение самой длинной палки для сэлфи">
-          <div class="slider-description-wrapper">
-            <div class="page-number">01</div>
-            <p class="slider-slogan">Делай селфи,</br> как Бен Стиллер!</p>
-            <p class="slider-info">Самая длинная палка для селфи доступна в нашем магазине.</br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-            <table class="item-description">
-              <tr>
-                <th class="description-parameter">Длина палки</th>
-                <th class="description-parameter">Вес палки</th>
-                <th class="description-parameter">Материал</th>
-              </tr>
-              <tr>
-                <td class="description-value">8,5 м</td>
-                <td class="description-value">5 кг</td>
-                <td class="description-value">Карбон</td>
-              </tr>
-            </table>
-          </div>
-        </div>
 
-        <div class="slider-page-2">
-          <img class="slider-image" src="img/index_slider_2.png" width="" height="" alt="Изображение фитнес-браслета">
-          <div class="slider-description-wrapper">
-            <div class="page-number">02</div>
-            <p class="slider-slogan">Худеем</br> правильно!</p>
-            <p class="slider-info">Мотивирующие фитнес-браслеты помогут найти в себе силы</br> не пропускать занятия и соблюдать диету.</p>
-            <table class="item-description">
-              <tr>
-                <th class="description-parameter">Без подзарядки</th>
-              </tr>
-              <tr>
-                <td class="description-value">48 часов</td>
-              </tr>
-            </table>
-          </div>
-        </div>
+        <ul class="slider-list reset-list"><!-- 1й элемент флексбокса секции "slider-promo"  -->
+          <li class="slider-page-1">
+            <img class="slider-image" src="img/index_slider_1.png" width="" height="" alt="Изображение самой длинной палки для сэлфи">
+            <div class="slider-description-wrapper">
+              <!--div class="page-number">01</div-->
+              <p class="slider-slogan">Делай селфи,</br> как Бен Стиллер!</p>
+              <p class="slider-info">Самая длинная палка для селфи доступна в нашем магазине.</br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+              <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
+                <p>
+                  <a class="button button-details"  href="#">Подробнее</a>
+                </p>
 
-        <div class="slider-page-3">
-          <img class="slider-image" src="img/index_slider_3.png" width="" height="" alt="Изображение квадрокоптера">
-          <div class="slider-description-wrapper">
-            <div class="page-number">03</div>
-            <p class="slider-slogan">Порхает как бабочка,</br> жалит как пчела!</p>
-            <p class="slider-info">Этот обычный, на первый взгляд, квадрокоптер оснащен</br> мощным лазером, замаскированным под стандартную камеру.</p>
-            <table class="item-description">
-              <tr>
-                <th class="description-parameter">Дальность полета</th>
-                <th class="description-parameter">Радиус поражения</th>
-              </tr>
-              <tr>
-                <td class="description-value">800 м</td>
-                <td class="description-value">50 м</td>
-              </tr>
-            </table>
-          <div>
-        <div>
+                <input class="promo-button visually-hidden" id="promo-button-1" name="promo-radio"  type="radio"  checked/>
+                <label class="promo-label" for="promo-button-1"/>
 
-        <p><a class="button button-details"  href="#">Подробнее</a></p>
-        <label class="promo-label" for="promo-button-1"/>
-        <input class="promo-button visually-hidden" id="promo-button-1" name="promo-radio"  type="radio" value="" checked/>
-        <label class="promo-label" for="promo-button-2"/>
-        <input class="promo-button visually-hidden" id="promo-button-2" name="promo-radio"  type="radio" value=""/>
-        <label class="promo-label" for="promo-button-3"/>
-        <input class="promo-button visually-hidden" id="promo-button-3" name="promo-radio"  type="radio" value=""/>
-      </section>
+                <input class="promo-button visually-hidden" id="promo-button-2" name="promo-radio"  type="radio" />
+                <label class="promo-label" for="promo-button-2"/>
 
-      <section class="offers">
+                <input class="promo-button visually-hidden" id="promo-button-3" name="promo-radio"  type="radio" />
+                <label class="promo-label" for="promo-button-3"/>
+              </div><!-- Конец разметки для кнопки ПОДРОБНЕЕ и радио-кнопок -->
+              <table class="item-parameters"><!-- ? нужно ли переделать на flex -->
+                <tr>
+                  <th class="description-parameter">Длина палки</th>
+                  <th class="description-parameter">Вес палки</th>
+                  <th class="description-parameter">Материал</th>
+                </tr>
+                <tr>
+                  <td class="description-value">8,5 м</td>
+                  <td class="description-value">5 кг</td>
+                  <td class="description-value">Карбон</td>
+                </tr>
+              </table>
+            </div><!--конец div class="slider-description-wrapper"-->
+          </li>
+          <li class="slider-page-2">
+            <img class="slider-image" src="img/index_slider_2.png" width="" height="" alt="Изображение фитнес-браслета">
+            <div class="slider-description-wrapper">
+              <p class="slider-slogan">Худеем</br> правильно!</p>
+              <p class="slider-info">Мотивирующие фитнес-браслеты помогут найти в себе силы</br> не пропускать занятия и соблюдать диету.</p>
+              <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
+                <p>
+                  <a class="button button-details"  href="#">Подробнее</a>
+                </p>
+
+                <input class="promo-button visually-hidden" id="promo-button-1" name="promo-radio"  type="radio"  checked/>
+                <label class="promo-label" for="promo-button-1"/>
+
+                <input class="promo-button visually-hidden" id="promo-button-2" name="promo-radio"  type="radio" />
+                <label class="promo-label" for="promo-button-2"/>
+
+                <input class="promo-button visually-hidden" id="promo-button-3" name="promo-radio"  type="radio" />
+                <label class="promo-label" for="promo-button-3"/>
+              </div><!-- Конец разметки для кнопки ПОДРОБНЕЕ и радио-кнопок -->
+              <table class="item-parameters">
+                <tr>
+                  <th class="description-parameter">Без подзарядки</th>
+                </tr>
+                <tr>
+                  <td class="description-value">48 часов</td>
+                </tr>
+              </table>
+            </div><!--конец div class="slider-description-wrapper"-->
+          </li>
+          <li class="slider-page-3">
+            <img class="slider-image" src="img/index_slider_3.png" width="" height="" alt="Изображение квадрокоптера">
+            <div class="slider-description-wrapper">
+              <p class="slider-slogan">Порхает как бабочка,</br> жалит как пчела!</p>
+              <p class="slider-info">Этот обычный, на первый взгляд, квадрокоптер оснащен</br> мощным лазером, замаскированным под стандартную камеру.</p>
+              <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
+                <p>
+                  <a class="button button-details"  href="#">Подробнее</a>
+                </p>
+
+                <input class="promo-button visually-hidden" id="promo-button-1" name="promo-radio"  type="radio"  checked/>
+                <label class="promo-label" for="promo-button-1"/>
+
+                <input class="promo-button visually-hidden" id="promo-button-2" name="promo-radio"  type="radio" />
+                <label class="promo-label" for="promo-button-2"/>
+
+                <input class="promo-button visually-hidden" id="promo-button-3" name="promo-radio"  type="radio" />
+                <label class="promo-label" for="promo-button-3"/>
+              </div><!-- Конец разметки для кнопки ПОДРОБНЕЕ и радио-кнопок -->
+              <table class="item-parameters">
+                <tr>
+                  <th class="description-parameter">Дальность полета</th>
+                  <th class="description-parameter">Радиус поражения</th>
+                </tr>
+                <tr>
+                  <td class="description-value">800 м</td>
+                  <td class="description-value">50 м</td>
+                </tr>
+              </table>
+            </div><!--конец div class="slider-description-wrapper"-->
+          </li>
+        </ul>
+
+      </section><!--конец слайдера-->
+
+      <section class="offers container">
         <h2 class="visually-hidden">Наши предложения (группы товаров)</h2>
         <ul class="offers-list reset-list">
           <li class="offers-item">
@@ -169,15 +214,15 @@
 
       <section class="slider-services"> <!-- label - input -->
         <h2 class="visually-hidden">Сервис</h2>
-        <div class=slider-services-wrapper>
-          <div class="services-buttons">
+        <div class="slider-services-wrapper container">
+          <ul class="services-buttons  reset-list">
             <label class="button button-services" for="delivery" class="button-yellow-black">Доставка</label>
             <input class="services-switch visually-hidden" id="delivery" type="radio" value="delivery"/>
             <label class="button button-services" for="guarantee" class="button-yellow-black">Гарантия</label>
             <input class="services-switch visually-hidden" id="guarantee" type="radio" value="guarantee"/>
             <label class="button button-services" for="loan" class="button-yellow-black">Кредит</label>
             <input class="services-switch visually-hidden" id="loan" type="radio" value="loan"/>
-          </div>
+          </ul>
           <ul class="services-list reset-list">
             <li class="services-item delivery">
               <div class="servises-wrapper">
@@ -201,7 +246,7 @@
         </div>
       </section>
 
-      <section class="partners">
+      <section class="partners container">
         <h2 class="visually-hidden">Наши партнеры. Представляем торговые марки</h2>
         <ul class="partners-list reset-list">
           <li class="partner-icon">
@@ -227,7 +272,7 @@
         </ul>
       </section>
 
-      <section class="we">
+      <section class="we container">
         <div class="about-us">
           <h2 class="we-title">О нас</h2>
           <p class="we-details">Огромный выбор гаджетов не оставит равнодушным гика,<br> который есть в каждом из нас.</p>
@@ -248,83 +293,98 @@
         </div>
       </section>
 
-    </div> <!-- конец блока с классом class="wrapper-main" -->
     </main>
 
     <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left-box">
+          <a class="logo-footer" href="#">
+            <img src="img/index_logo-device-footer.png" width="163" height="35" alt="Логотип DEVICE">
+          </a>
+          <p class="our-adress">г. Москва, ул. Строителей, 15</p>
+          <figure class="yellow-line"></figure>
+        </div>
 
-      <div class="footer-left-box">
-        <a class="logo-footer" href="#">
-          <img src="img/index_logo-device-footer.png" width="163" height="35" alt="Логотип DEVICE">
-        </a>
-        <p class="our-adress">г. Москва, ул. Строителей, 15</p>
-      </div>
+        <div class="footer-middle-box">
+          <nav>
+            <ul class="footer-nav-list reset-list">
+              <li class="main-nav-item footer-nav-item">
+                <a class="main-nav-link footer-link" href="#">Доставка</a>
+              </li>
+              <li class="main-nav-item footer-nav-item">
+                <a class="main-nav-link footer-link" href="#">Гарантия</a>
+              </li>
+              <li class="main-nav-item footer-nav-item">
+                <a class="main-nav-link footer-link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
 
-      <div class="footer-middle-box">
-        <nav>
+          <ul class="social-list reset-list">
+            <li class="social-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
+            <li class="social-item"><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
+            <li class="social-item"><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
+          </ul>
+        </div>
+
+        <div class="footer-right-box">
           <ul class="footer-nav-list reset-list">
-            <li class="main-nav-item footer-nav-item">
-              <a class="main-nav-link footer-link" href="#">Доставка</a>
+            <li class="footer-nav-item">
+              <a class="nav-link footer-link user-footer" href="#">Войти</a>
             </li>
-            <li class="main-nav-item footer-nav-item">
-              <a class="main-nav-link footer-link" href="#">Гарантия</a>
+            <li class="footer-nav-item">
+              <a class="nav-link footer-link compare-footer" href="#">Сравнить</a>
             </li>
-            <li class="main-nav-item footer-nav-item">
-              <a class="main-nav-link footer-link" href="#">Контакты</a>
+            <li class="footer-nav-item">
+              <a class="nav-link footer-link cart-footer" href="#">Корзина</a>
             </li>
           </ul>
-        </nav>
 
-        <ul class="social-list reset-list">
-          <li class="social-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
-          <li class="social-item"><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
-          <li class="social-item"><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
-        </ul>
+          <p class="our-tel">Тел.: +7(495)495-95-95</p>
+
+          <p class="developer">
+            <a class="developer-logo" href="https://htmlacademy.ru" title="Ссылка на сайт разработчика" ></a>
+          </p>
+        </div>
       </div>
-
-      <div class="footer-right-box">
-        <ul class="footer-nav-list reset-list">
-          <li class="footer-nav-item">
-            <a class="nav-link footer-link user-footer" href="#">Войти</a>
-          </li>
-          <li class="footer-nav-item">
-            <a class="nav-link footer-link compare-footer" href="#">Сравнить</a>
-          </li>
-          <li class="footer-nav-item">
-            <a class="nav-link footer-link cart-footer" href="#">Корзина</a>
-          </li>
-        </ul>
-
-        <p class="our-tel">Тел.: +7(495)495-95-95</p>
-
-        <p class="developer">
-          <a class="developer-logo" href="https://htmlacademy.ru" title="Ссылка на сайт разработчика" ></a>
-        </p>
-      </div>
-
     </footer>
 
     <!-- MODAL-WINDOWS -->
     <section class="map-modal">
       <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
-      <p><img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"></p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
+      <p class="map"><img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"></p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
       <button class="modal-close transparent-field" type="button">Закрыть</button>
     </section>
 
     <section class="feedback-modal">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <form class="feedback-form" name="write-us" action="" method="post">
-        <label class="feedback-label" for="name-id">Ваше имя:</label>
-        <input class="clients-data feedback-field" type="text" id="name-id"placeholder="Имя Фамилия" requared>
+      <form name="write-us" action="https://echo.html-academy.ru" method="post">
 
-        <label class="feedback-label" for="email-id">Ваш e-mail:</label>
-        <input class="clients-data feedback-field" type="email" class="" id="email-id"  placeholder="email@example.com" requared>
+        <div class="feedback-wrapper">
 
-        <label class="feedback-label" for="message-id">Текст письма:</label>
-        <textarea class="clients-message" id="message-id" rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
+          <div class="formfield-wrapper">
+            <label class="feedback-label your-name">Ваше имя:
+              <input class="clients-data feedback-field" type="text" placeholder="Имя  Фамилия" requared>
+            </label>
+          </div>
+
+          <div class="formfield-wrapper">
+            <label class="feedback-label your-email">Ваш e-mail:
+              <input class="clients-data feedback-field" type="email" placeholder="email@example.com" requared>
+            </label>
+          </div>
+
+          <div class="message-wrapper">
+            <label class="feedback-label your-message">Текст письма:
+              <textarea class="clients-message" rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
+            </label>
+          </div>
+
+          <button class="button modal-send" type="submit">Отправить</button>
+        </div>
 
         <button class="modal-close  transparent-field" type="button">Закрыть</button>
-        <button class="button modal-send" type="submit">Отправить</button>
+
       </form>
     </section>
   </body>

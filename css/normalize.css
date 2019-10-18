@@ -37,10 +37,10 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
+/* h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
+} */
 
 /* Grouping content
    ========================================================================== */
@@ -346,4 +346,10 @@ template {
 
 [hidden] {
   display: none;
+}
+
+ul {
+  margin-block-start: 0; /*1em;*/
+  margin-block-end: 0; /*1em;*/
+  padding-inline-start: 0; /*40px;*/
 }
