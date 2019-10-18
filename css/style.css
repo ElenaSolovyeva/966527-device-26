@@ -545,9 +545,6 @@ p {
   line-height: 48px;
 }
 
-.length {
-
-}
 
  /* <SECTION CLASS="OFFERS"> - ССЫЛКИ НА РАЗДЕЛЫ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
 
@@ -555,7 +552,8 @@ p {
   display: flex;
   justify-content: space-around;
 
-  width: 1160px;
+width: 100%;  /* 1160px; */
+  margin-top: 0;
   margin-right: auto;
   margin-bottom: 185px;
   margin-left: auto;
@@ -581,7 +579,34 @@ background-color: #f0c52e;
 
 .offers-image { /*КАРТИНКИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
   display: block;
-  background-position: 50% 50%;; /* не получается, наверно потому что <img> в html'е указан*/
+  position: relative;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.offers-item:nth-child(1) > .offers-link > .offers-image {
+  margin-top: 51px;
+}
+
+.offers-item:nth-child(2) > .offers-link > .offers-image {
+  margin-top: 42px;
+}
+
+.offers-item:nth-child(3) > .offers-link > .offers-image {
+  margin-top: 38px;
+}
+
+.offers-item:nth-child(4) > .offers-link > .offers-image {
+  margin-top: 49px;
+}
+
+.offers-item:nth-child(5) > .offers-link > .offers-image {
+  margin-top: 32px;
+}
+
+.offers-item:nth-child(6) > .offers-link > .offers-image {
+  margin-top: 47px;
 }
 
 .offers-title { /*ПОДПИСИ ПОД КАРТИНКАМИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
