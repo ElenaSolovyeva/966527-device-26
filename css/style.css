@@ -88,6 +88,8 @@ p {
 }
 
 .container {
+  position: relative;
+
   width: 1160px;
   margin-top: 0;
   margin-right: auto;
@@ -324,11 +326,12 @@ p {
 .slider-page-1,
 .slider-page-2,
 .slider-page-3 {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-around; /* получилось неодинаковое расстояние между элементами */
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
+
 
   width: 100%; /* 1160px; */
   min-height: 500px;
@@ -550,7 +553,7 @@ p {
 
 .offers-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
 width: 100%;  /* 1160px; */
   margin-top: 0;
@@ -617,26 +620,26 @@ background-color: #f0c52e;
 
 /* <SECTION CLASS="SLIDER-SERVICES"> - БЛОК "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
 
-.slider-services {
+.slider-services { /* задает серый фон по всей ширине экрана*/
   width: 100%;
-  min-height: 288px;
-  background-color: #e5e5e5;  /*? как сделать правильный размер фона  height: 288px; ?*/
+  min-height: 288px; /*? размер фона видимой части height: 288px; ?*/
+  background-color: #e5e5e5;
 }
 
-.slider-services-wrapper {
+.services-wrapper { /* Флекс-контейнер для кнопок ДОСТАВКА ГАРАНТИЯ КРЕДИТ и описания услуг */
+  /* position: relative; */
   display: flex;
 }
 
 .services-buttons {
-  width: 284px;
+  width: 280px;
   min-height: 319px;
   margin-top: -30px;
-  border: 1px solid tomato;  /* временно */
+  /* border: 4px solid gold;   временно */
 }
 
-.button-services {  /*Как сделать правильный размер фона для инпутов "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
+.button-service {
   display: block;
-  z-index: 110;
 
   width: 160px;
   height: 40px;
@@ -644,43 +647,64 @@ background-color: #f0c52e;
 
   text-align: center;
   margin-top: 9px;
-  padding-top: 7px; /*vertical-align: middle; не выравнивает (((( */
+  padding-top: 7px; /*? vertical-align: middle; не выравнивает */
 
   background-image: url("../img/service-button-background.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 
-  border: 1px solid green; /* временно */
-
+  /*border: 3px solid green;   временно */
 }
 
-.button-services:hover,
-.button-services:focus { /*Отображается некорректно*/
-  z-index: 120;
-
+.button-service:hover,
+.button-service:focus { /*Отображается некорректно*/
   height: 40px;
 
   background-color: #f0c52e;
 }
 
-.button-services:active {
+.button-service:active {
   width: 277px;
   height: 40px;
-  z-index: 130;
 
   color: #f7e184;
   background-image: none;
   background-color: #000000;
-
 }
 
-.services-buttons.button-services:active {
-  background-image: url("../img/button-services-background.svg");
-}
+/* Описание услуг*/
 
-.services-list {
-  min-height: 319px;
+.services-list {  /* <ul> */
   margin-top: -30px;
+}
+
+.services-item { /* <li> */
+  display: flex; /* чтобы логотипы .delivery::after и тд встали на свое место */
+  justify-content: space-between;
+
+  width: 880px;
+  border: 2px solid blue; /*временно */
+}
+
+.services-item::before { /* черная вертикальная линия */
+  content: "";
+  position: absolute;
+  top: -80px;
+  display: inline-block;
+
+  width: 0;
+  height: 319px;
+  margin-left: 0px;
+
+  border-left: 7px solid #000000;
+}
+
+.text-wrapper {
+  width: 460px;
+  min-height: 239px; /*319px-80px*/
+  margin-left: 120px;
+
+  /* border: 3px dashed gold; */
 }
 
 .services-title { /* ЗАГОЛОВОК "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ" */
@@ -692,59 +716,56 @@ background-color: #f0c52e;
 }
 
 .services-description { /*ОПИСАНИЕ УСЛУГИ "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ"*/
+  margin-top: 40px;
+
   color: #464646;
   font-family: "OpenSans light";
   font-size: 15px;
   line-height: 30px;
 }
 
-.services-item {
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid blue; /* временно */
-}
-
-.servises-wrapper {
-  align-items: flex-start;
-  width: 620px;
-  border: 1px solid orange; /* временно */
-}
-
-.delivery::after {
+.delivery::after { /*<li class="services-item delivery">*/
   content: "";
   display: inline-block;
 
   width: 130px;
   height: 160px;
   margin-right: 66px;
+  margin-left: auto;
 
   background: url("../img/icon_delivery.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
+  border: 2px solid #00FF00; /*временно */
 }
 
-.warranty::after {
+.warranty::after { /*<li class="services-item warranty">*/
   content: "";
   display: block;
 
   width: 175px;
   height: 195px;
   margin-right: 47px;
+  margin-left: auto;
 
   background: url("../img/icon_warranty.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
+  border: 2px solid #00FF00; /*временно */
 }
 
-.credit::after {
+.credit::after { /*<li class="services-item credit">*/
   content: "";
   display: block;
+
   width: 155px;
   height: 185px;
   margin-right: 70px;
+  margin-left: auto;
   background: url("../img/icon_credit.svg") no-repeat;
   background-size: 155px 185px;
   background-repeat: no-repeat;
+  border: 2px solid #00FF00; /*временно */
 }
 
 /* <SECTION CLASS="PARTNERS">  - БЛОК С ЛОГОТИПАМИ ПАРТНЕРОВ */
