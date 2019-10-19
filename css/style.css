@@ -128,7 +128,7 @@ p {
   /* position: relative; */
 
   min-height: 298px;
-  margin-top: -26px; /*методом подбора*/
+  margin-top: -15px; /*roughly*/
   padding-right: 60px;
   padding-top: 51px;
   padding-left: 60px;
@@ -148,11 +148,25 @@ p {
 }
 
 .search-field { /* ПОИСК по САЙТУ */
-  width: 144px;
+  display: block;
+
+  width: 355px;
+  min-height: 15px;
+
+  border: 5px solid blue; /*? почему не видно border*/
+}
+
+.search-label {
+  position: relative;
+  z-index: 1;
+
+  width: 355px;
+
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .search-label::before {
-  content: "";
+  content: " ";
   display: inline-block;
 
   width: 17px;
@@ -163,21 +177,24 @@ p {
   background-repeat: no-repeat;
 }
 
-.search-label {
-  color: rgba(0, 0, 0, 0.3);
-}
-
 .search-label:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 
 .search-label:focus,
 .search-label:active {
-  color: rgba(0, 0, 0, 1);
+  z-index: 1;
+  color: rgba(0, 0, 0, 0);
 }
 
 .search-input,
 .search-input:visited {
+  position: relative;
+  z-index: 2;
+  left: -130px;
+  width: 355px;
+
+  padding-right: 0;
   padding-left: 36px;
 
   font-family: "OpenSans light";
@@ -185,13 +202,23 @@ p {
   line-height: 30px;
   color: rgba(256, 256, 256, 0.3);
 
-  border: none;
-  background: url("../img/icon_search.svg") no-repeat;
+  border: 2px dashed tomato;
+  /* background: url("../img/icon_search.svg") no-repeat; */
+}
+
+
+.search-button {
+    padding: 0px 0px 0px 0px;
 }
 
 .search-input:focus + .search-button {
-  color: #000000;
+  display: inline-block;
 
+  width:85px;
+  height: 49px;
+  padding: 0px 0px;
+
+  color: #000000;
   border: 2px solid #000000;
   background-color: transparent;
 }
@@ -199,14 +226,12 @@ p {
 .search-input:focus + .search-button:hover,
 .search-input:focus + .search-button:focus {
   color: #ffffff;
-
   border: 2px solid #000000;
   background-color: #000000;
 }
 
 .search-field:hover .search-button:active { /* ? не понимаю, в чем ошибка, почему отображается некорректно*/
   color: rgba(256, 256, 256, 0.3);
-
   border: 2px solid #000000;
   background-color: #000000;
 }
@@ -223,7 +248,7 @@ p {
 }
 
 .nav-link.compare {
-  margin-left: 218px;
+  margin-left: 200px;
 }
 
 .nav-link.cart {
@@ -267,13 +292,26 @@ p {
 /* КАТАЛОГ ТОВАРОВ / ДОСТАВКА / ГАРАНТИЯ / КОНТАКТЫ  */
 
 .main-nav-list {
+  position: relative;
   display: flex;
   justify-content: space-between;
 
   border: 1px solid grey; /* временно */
 }
 
-.main-nav-item:nth-child(2) { /* ?nth-child ДОСТАВКА */
+.main-nav-item:nth-child(1)::after {
+  content: " ";
+  display: inline-block;
+
+  width: 17px;
+  height: 17px;
+  vertical-align: middle; /* ? не выравнивается по вертикали*/
+  background-image: url(../img/icon_plus.svg); /*? как сделать цвет "плюсика" правильно*/
+  opacity: 0.3;
+
+}
+
+.main-nav-item:nth-child(2) { /* nth-child ДОСТАВКА */
   margin-left: auto;
 }
 
@@ -309,7 +347,7 @@ p {
 }
 
 .catalog-link::after {
-  content: "";
+  content: " ";
   display: inline-block;
   width: 17px;
   height: 17px;
@@ -819,13 +857,20 @@ background-color: #f0c52e;
   justify-content: space-between;
 
   width: 1160px;
+  margin-top: 108px;
   margin-right: auto;
+  margin-bottom: 85px; /*примерно - roughly*/
   margin-left: auto;
 }
 
-.we > .about-us {
+.about-us {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
   width: 560px;
-  border: 1px dashed tomato;
+  margin-top: 51px;
+  border: 2px dashed gold;
 }
 
 .we-title {
@@ -834,10 +879,27 @@ background-color: #f0c52e;
   line-height: 48px;
 }
 
+.we-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -52px;
+
+  width: 80px;
+  height: 0;
+  border-top: 7px solid #000000;
+
+}
+
 .we-details {
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
+}
+
+.we-title + .we-details,
+.we-details + .we-details {
+  padding-bottom: 35px; /*примерно*/
 }
 
 .delivery-partner {   /*Примерные значения, точные не могу получить из макета*/
@@ -856,7 +918,7 @@ background-color: #f0c52e;
 
   width: 8px;
   height: 8px;
-  background: url("../img/icon_radio-off.svg") no-repeat;
+  background-image: url("../img/icon_radio-off.svg");
   background-size: 8px 8px;
   background-repeat: no-repeat;
 }
@@ -865,6 +927,7 @@ background-color: #f0c52e;
   display: block;
 
   width: 260px;
+  margin-top: 60px; /*примерно*/
 
   text-align: center;
 
@@ -885,12 +948,18 @@ background-color: #f0c52e;
   color: rgba(0, 0, 0, 0.3);
 }
 
-/*сделать черную черту сверху ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТЫ width: 80px; height: 7px;*/
 
-.we > .contacts {
+.contacts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
   width: 560px;
-  border: 1px dashed tomato;
+  margin-top: 51px;
+
+  border: 2px dashed gold;
 }
+
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
 
@@ -986,6 +1055,19 @@ background-color: #f0c52e;
   margin-left: auto;
 }
 
+.social-link { /* ?нужно ли вставлять svg-файл в html-код (цвет не получается как в стайлгайде)*/
+  opacity: 0.3;
+}
+
+.social-link:hover,
+.social-link:focus {
+  opacity: 0.6;
+}
+
+.social-link:active {
+  opacity: 0.1;
+}
+
 .footer-right-box {
   flex-basis: 325px;
   padding-top: 66px;
@@ -1011,7 +1093,7 @@ background-color: #f0c52e;
 
   background-size: 13px 12px;
   background: url("../img/icon_user.svg") no-repeat;
-  fill: #ffffff; /*Не получается изменить цвет заливки*/
+  fill: #ffffff; /*? Не получается изменить цвет заливки*/
 }
 
 .compare-footer::before {

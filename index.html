@@ -22,9 +22,13 @@
           <h2 class="visually-hidden">Верхнее меню</h2>
 
           <form name="search-field" action="https://echo.html-academy.ru" method="post">
-            <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
-            <input class="search-input transparent-field" id="index-search" type="search" placeholder="Поиск по сайту">
+
+            <label class="search-label" for="index-search">Поиск по сайту</label><!--было class="search-label visually-hidden" -->
+
+            <input class="search-input transparent-field" id="index-search" type="search" placeholder=""><!-- было  class="search-input transparent-field" -->
+
             <button class="search-button transparent-field" type="submit">Найти</button>
+
           </form>
 
           <ul class="top-nav-list reset-list">
@@ -280,6 +284,7 @@
       </section>
 
       <section class="we container">
+
         <div class="about-us">
           <h2 class="we-title">О нас</h2>
           <p class="we-details">Огромный выбор гаджетов не оставит равнодушным гика,<br> который есть в каждом из нас.</p>
@@ -328,9 +333,21 @@
           </nav>
 
           <ul class="social-list reset-list">
-            <li class="social-item"><a href="#"><img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука"></a></li> <!-- фэйсбук-->
-            <li class="social-item"><a href="#"><img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма"></a></li> <!-- инстаграм-->
-            <li class="social-item"><a href="#"><img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера"></a></li> <!-- твиттер-->
+            <li>
+              <a class="social-link" href="https://www.facebook.com">
+                <img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука">
+              </a>
+            </li> <!-- фэйсбук-->
+            <li>
+              <a  class="social-link"href="https://www.instagram.com">
+                <img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма">
+              </a>
+            </li> <!-- инстаграм-->
+            <li>
+              <a  class="social-link"href="https://www.twitter.com">
+                <img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера">
+              </a>
+            </li> <!-- твиттер-->
           </ul>
         </div>
 
