@@ -21,11 +21,11 @@
 
           <h2 class="visually-hidden">Верхнее меню</h2>
 
-          <form name="search-field" action="https://echo.html-academy.ru" method="post">
+          <form class="search-form" name="search-field" action="https://echo.html-academy.ru" method="post">
 
-            <label class="search-label" for="index-search">Поиск по сайту</label><!--было class="search-label visually-hidden" -->
+            <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
 
-            <input class="search-input transparent-field" id="index-search" type="search" placeholder=""><!-- было  class="search-input transparent-field" -->
+            <input class="search-input" id="index-search" type="search" placeholder="Поиск по сайту" autocomplete="off">
 
             <button class="search-button transparent-field" type="submit">Найти</button>
 
@@ -50,7 +50,7 @@
           <nav>
             <ul class="main-nav-list reset-list">
               <li class="main-nav-item">
-                <a class="main-nav-link" href="#">Каталог товаров</a>
+                <a class="main-nav-link plus" href="#">Каталог товаров</a>
               </li>
               <li class="main-nav-item">
                 <a class="main-nav-link footer-nav-link" href="#">Доставка</a>
@@ -80,7 +80,7 @@
             <img class="slider-image" src="img/index_slider_1.png" width="" height="" alt="Изображение самой длинной палки для сэлфи">
             <div class="slider-description-wrapper">
               <!--div class="page-number">01</div-->
-              <p class="slider-slogan">Делай селфи,</br> как Бен Стиллер!</p>
+              <p class="slider-slogan">Делай селфи,<br> как Бен Стиллер!</p>
               <p class="slider-info">Самая длинная палка для селфи доступна в нашем магазине.</br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
               <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
                 <p>
@@ -88,13 +88,13 @@
                 </p>
 
                 <input class="promo-button visually-hidden" id="promo-button-1" name="promo-radio"  type="radio"  checked/>
-                <label class="promo-label" for="promo-button-1"/>
+                <label class="promo-label" for="promo-button-1">
 
                 <input class="promo-button visually-hidden" id="promo-button-2" name="promo-radio"  type="radio" />
-                <label class="promo-label" for="promo-button-2"/>
+                <label class="promo-label" for="promo-button-2">
 
                 <input class="promo-button visually-hidden" id="promo-button-3" name="promo-radio"  type="radio" />
-                <label class="promo-label" for="promo-button-3"/>
+                <label class="promo-label" for="promo-button-3">
               </div><!-- Конец разметки для кнопки ПОДРОБНЕЕ и радио-кнопок -->
               <table class="item-parameters"><!-- ? нужно ли переделать на flex -->
                 <tr>
@@ -222,13 +222,13 @@
         <div class="services-wrapper container"><!--Флекс-контейнер для кнопок ДОСТАВКА ГАРАНТИЯ КРЕДИТ и описания услуг-->
 
           <ul class="services-buttons  reset-list"><!--Кнопки ДОСТАВКА ГАРАНТИЯ КРЕДИТ и описания услуг-->
-            <label class="button button-service" for="delivery" class="button-yellow-black">Доставка</label>
+            <label class="button button-service delivery-button" for="delivery" class="button-yellow-black">Доставка</label>
             <input class="visually-hidden" id="delivery" type="radio" value="delivery"/>
 
-            <label class="button button-service" for="guarantee" class="button-yellow-black">Гарантия</label>
+            <label class="button button-service guarantee-button" for="guarantee" class="button-yellow-black">Гарантия</label>
             <input class="visually-hidden" id="guarantee" type="radio" value="guarantee"/>
 
-            <label class="button button-service" for="loan" class="button-yellow-black">Кредит</label>
+            <label class="button button-service loan-button" for="loan" class="button-yellow-black">Кредит</label>
             <input class="visually-hidden" id="loan" type="radio" value="loan"/>
           </ul>
 
@@ -335,17 +335,17 @@
           <ul class="social-list reset-list">
             <li>
               <a class="social-link" href="https://www.facebook.com">
-                <img src="img/index_facebook.png" width="" height="" alt="Иконка фэйсбука">
+                <img src="img/index_facebook_hover.png" width="" height="" alt="Иконка фэйсбука"><!--index_facebook.png -->
               </a>
             </li> <!-- фэйсбук-->
             <li>
               <a  class="social-link"href="https://www.instagram.com">
-                <img src="img/index_instagram.png" width="" height="" alt="Иконка инстаграма">
+                <img src="img/index_instagram_hover.png" width="32px" height="32px" alt="Иконка инстаграма">
               </a>
             </li> <!-- инстаграм-->
             <li>
               <a  class="social-link"href="https://www.twitter.com">
-                <img src="img/index_twiter.png" width="" height="" alt="Иконка твиттера">
+                <img src="img/index_twiter_hover.png" width="" height="" alt="Иконка твиттера">
               </a>
             </li> <!-- твиттер-->
           </ul>
@@ -376,7 +376,9 @@
     <!-- MODAL-WINDOWS -->
     <section class="map-modal">
       <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
-      <p class="map"><img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"></p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
+      <p class="map">
+        <img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере">
+      </p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
       <button class="modal-close transparent-field" type="button">Закрыть</button>
     </section>
 

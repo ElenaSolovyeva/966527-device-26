@@ -75,7 +75,7 @@ p {
 
   white-space: nowrap; /* Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой;*/
 
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(100%);
   overflow: hidden;
 }
@@ -144,95 +144,96 @@ p {
 
   width: 1040px;
   margin-bottom: 50px;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+}
+
+.search-form {
+  position: relative;
 }
 
 .search-field { /* ПОИСК по САЙТУ */
   display: block;
 
+
   width: 355px;
   min-height: 15px;
 
-  border: 5px solid blue; /*? почему не видно border*/
+  border: 5px solid blue;
 }
 
-.search-label {
-  position: relative;
-  z-index: 1;
-
+.search-input { /*, .search-input:visited*/
   width: 355px;
+  padding-left: 37px;
 
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.search-label::before {
-  content: " ";
-  display: inline-block;
-
-  width: 17px;
-  height: 17px;
-
-  background: url("../img/icon_search.svg") no-repeat;
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-}
-
-.search-label:hover {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.search-label:focus,
-.search-label:active {
-  z-index: 1;
-  color: rgba(0, 0, 0, 0);
-}
-
-.search-input,
-.search-input:visited {
-  position: relative;
-  z-index: 2;
-  left: -130px;
-  width: 355px;
-
-  padding-right: 0;
-  padding-left: 36px;
-
+  border: none;
   font-family: "OpenSans light";
   font-size: 15px;
   line-height: 30px;
-  color: rgba(256, 256, 256, 0.3);
 
-  border: 2px dashed tomato;
-  /* background: url("../img/icon_search.svg") no-repeat; */
+  background-color: transparent;
+  background-image: url("../img/icon_search.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
 }
 
+.search-input::-webkit-input-placeholder
+ {
+   color: rgba(0, 0, 0, 0.3);
+}
+
+.search-input:hover::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-input:focus::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+.search-input:focus,
+.search-input:active {
+  outline: none;
+}
 
 .search-button {
-    padding: 0px 0px 0px 0px;
-}
-
-.search-input:focus + .search-button {
+  position: absolute;
+  top: -7px;
   display: inline-block;
 
   width:85px;
   height: 49px;
   padding: 0px 0px;
 
+  color: transparent;
+  background-color: transparent;
+}
+
+.search-input:focus + .search-button {
   color: #000000;
   border: 2px solid #000000;
   background-color: transparent;
 }
 
+.search-input:focus + .search-button::before {/*?20 окт: не получается*/
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 300;
+  display: inline-block;
+
+  width: 350px;
+  height: 2px;
+
+  border: 2px solid #000000;
+}
+
 .search-input:focus + .search-button:hover,
 .search-input:focus + .search-button:focus {
   color: #ffffff;
-  border: 2px solid #000000;
   background-color: #000000;
 }
 
-.search-field:hover .search-button:active { /* ? не понимаю, в чем ошибка, почему отображается некорректно*/
-  color: rgba(256, 256, 256, 0.3);
-  border: 2px solid #000000;
+.search-input:active + .search-button:active { /*?20 окт: при нажатии стили исчезают*/
+  color: rgba(255, 255, 255, 0.3);
   background-color: #000000;
 }
 
@@ -296,17 +297,18 @@ p {
   display: flex;
   justify-content: space-between;
 
-  border: 1px solid grey; /* временно */
+  /*border: 1px solid grey;  временно */
 }
 
-.main-nav-item:nth-child(1)::after {
+.plus::after {
   content: " ";
   display: inline-block;
 
   width: 17px;
   height: 17px;
-  vertical-align: middle; /* ? не выравнивается по вертикали*/
-  background-image: url(../img/icon_plus.svg); /*? как сделать цвет "плюсика" правильно*/
+  margin-left: 12px; /*примерно*/
+  vertical-align: middle; /* ! по вертикали position:absolute, top-left*/
+  background-image: url(../img/icon_plus.svg);
   opacity: 0.3;
 
 }
@@ -315,12 +317,12 @@ p {
   margin-left: auto;
 }
 
-.main-nav-item:nth-child(3) { /* ?nth-child ГАРАНТИЯ */
+.main-nav-item:nth-child(3) { /* nth-child ГАРАНТИЯ */
   margin-right: 114px;
   margin-left: 38px;
 }
 
-.main-nav-list:last-child { /* ?nth-child КОНТАКТЫ */
+.main-nav-list:last-child { /* nth-child КОНТАКТЫ */
 }
 
 .nav-link,
@@ -346,17 +348,6 @@ p {
   opacity: 0.3;
 }
 
-.catalog-link::after {
-  content: " ";
-  display: inline-block;
-  width: 17px;
-  height: 17px;
-  background: url("../img/icon_plus.svg") no-repeat;
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-  opacity: 0.3;
-}
-
 /*       M A I N       */
 
 /* <SECTION CLASS="SLIDER-PROMO"> - БЛОК СО СЛАЙДЕРОМ - тоже флексбокс, состоящий из 3х слайдеров, каждый из которых состоит из 2х частей */
@@ -374,35 +365,44 @@ p {
   width: 100%; /* 1160px; */
   min-height: 500px;
 
-  margin-top: -115px;
+  margin-top: -109px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.slider-page-1{border: 3px dashed #ADFF2F;}
-.slider-page-2{border: 3px dashed gold;}
-.slider-page-3{border: 3px dashed #00BFFF;}
-/* ? Почему столько места внизу пропадает. Не могу понять, как определяется высота этих блоков */
+.slider-page-1{
+  /* border: 3px dashed #ADFF2F; */
+}
 
-.slider-page-1::before {
+.slider-page-2{
+  border: 3px dashed gold;
+  display: none;
+}
+
+.slider-page-3{
+  border: 3px dashed #00BFFF;
+  display: none;
+}
+
+.slider-page-1::before { /*? 20 окт: почему размеры содержимого у ""01 отличаются от заданных*/
   content: "01";
   display: block;
   position: absolute;
+  top: -13px;
+  right: 60px; /*примерно*/
   z-index: 4;
   order: 2;
-  position: relative;
-  top: -560px;
 
-  margin-top: 60px;
-  padding-left: 900px; /*примерно*/
+  margin: 0;
+  padding: 0;
 
   color: #ffffff;
   font-family: "Gilroy";
   font-size: 179.2px;
   line-height: 179.2px;
 
-  color: grey;
   text-align: right;
+  /* border: 1px solid grey; */
 }
 
 .slider-page-2::before {
@@ -447,7 +447,9 @@ p {
   text-align: right;
 }
 
-.slider-image {border: 1px solid grey;}
+ .slider-image {
+/*border: 1px solid grey;*/
+}
 
 .slider-description-wrapper {
   width: 560px;
@@ -462,6 +464,19 @@ p {
   font-family: "Gilroy";
   font-size: 47px;
   line-height: 56px;
+}
+
+.slider-slogan::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 30px; /*примерно*/
+  left: 0px;
+
+  width: 100px;
+  height: 7px;
+
+  border-bottom: 7px solid #ffffff;
 }
 
 .slider-info {
@@ -487,23 +502,32 @@ p {
   line-height: 24px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
-  vertical-align: middle; /*  не получается выровнить по вертикали*/
+  text-align: center;
+}
+
+
+.button-details::before { /*? 20 окт: не получается сделать фон через z-index*/
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 16px;
+  z-index: 1;
+
+  width: 220px;
+  height: 8px;
+  background-color: #f0c52e;
 }
 
 .button-details { /* Для "ПОДРОБНЕЕ" */
   display: block;
+  position: relative;
+  z-index: 2;
 
   width: 220px;
   height: 40px;
   margin-right: 180px;
 
-  text-align: center;
-  padding-top: 8px; /*? Почему не выравнивается по вертикали посредством свойства vertical-align: middle; */
-
-  border: none;
-  background-image: url("../img/button-details-background.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  padding-top: 8px; /*! Изменить фон на псевдоэлемент  */
 }
 
 .button-details:hover,
@@ -542,7 +566,7 @@ p {
 /* Таблица с характеристиками */
 
 .item-parameters {
-  border: 1px dashed grey;
+  /* border: 1px dashed grey; */
 }
 
 .description-parameter {
@@ -593,8 +617,8 @@ p {
   display: flex;
   justify-content: space-between;
 
-width: 100%;  /* 1160px; */
-  margin-top: 0;
+  width: 100%;  /* 1160px; */
+  margin-top: 110px; /*примерно*/
   margin-right: auto;
   margin-bottom: 185px;
   margin-left: auto;
@@ -660,7 +684,7 @@ background-color: #f0c52e;
 
 .slider-services { /* задает серый фон по всей ширине экрана*/
   width: 100%;
-  min-height: 288px; /*? размер фона видимой части height: 288px; ?*/
+  min-height: 288px; /*размер фона видимой части height: 288px;*/
   background-color: #e5e5e5;
 }
 
@@ -678,6 +702,8 @@ background-color: #f0c52e;
 
 .button-service {
   display: block;
+  position: relative;
+  z-index: 3;
 
   width: 160px;
   height: 40px;
@@ -685,17 +711,31 @@ background-color: #f0c52e;
 
   text-align: center;
   margin-top: 9px;
-  padding-top: 7px; /*? vertical-align: middle; не выравнивает */
-
-  background-image: url("../img/service-button-background.png");
+  padding-top: 7px;
+  /* background-image: url("../img/service-button-background.png");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 50%; */
 
   /*border: 3px solid green;   временно */
 }
 
+.delivery-button::before,
+.guarantee-button::before,
+.loan-button::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+
+  width: 160px;
+  height: 8px;
+
+  background-color: #f0c52e;
+}
+
 .button-service:hover,
-.button-service:focus { /*Отображается некорректно*/
+.button-service:focus {
   height: 40px;
 
   background-color: #f0c52e;
@@ -721,13 +761,14 @@ background-color: #f0c52e;
   justify-content: space-between;
 
   width: 880px;
-  border: 2px solid blue; /*временно */
+  /*border: 2px solid blue; временно */
 }
 
 .services-item::before { /* черная вертикальная линия */
   content: "";
   position: absolute;
   top: -80px;
+  left: -5px;
   display: inline-block;
 
   width: 0;
@@ -768,13 +809,17 @@ background-color: #f0c52e;
 
   width: 130px;
   height: 160px;
-  margin-right: 66px;
+  margin-right: 66px;/*!position: absolut + top/right, margin не нужен*/
   margin-left: auto;
 
   background: url("../img/icon_delivery.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
   border: 2px solid #00FF00; /*временно */
+}
+
+.warranty {
+  display: none;
 }
 
 .warranty::after { /*<li class="services-item warranty">*/
@@ -790,6 +835,10 @@ background-color: #f0c52e;
   background-size: 130px 160px;
   background-repeat: no-repeat;
   border: 2px solid #00FF00; /*временно */
+}
+
+.credit {
+  display: none;
 }
 
 .credit::after { /*<li class="services-item credit">*/
@@ -814,6 +863,7 @@ background-color: #f0c52e;
 
 
   width: 1160px;
+  margin-top: 110px; /*примерно*/
   margin-right: auto;
   margin-left: auto;
 }
@@ -826,7 +876,7 @@ background-color: #f0c52e;
   margin: 0;
   padding:0;
 
-  border: 1px solid grey; /* временно, чтобы видеть границы */
+  /*border: 1px solid grey;  временно */
 }
 
 
@@ -870,7 +920,7 @@ background-color: #f0c52e;
 
   width: 560px;
   margin-top: 51px;
-  border: 2px dashed gold;
+  /* border: 2px dashed gold; */
 }
 
 .we-title {
@@ -923,25 +973,39 @@ background-color: #f0c52e;
   background-repeat: no-repeat;
 }
 
+.details-button::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+
+  width: 260px;
+  height: 8px;
+
+  background-color: #f0c52e;
+}
+
 .details-button {
+  position: relative;
+  z-index: 3;
   display: block;
 
   width: 260px;
+  height: 40px;
   margin-top: 60px; /*примерно*/
-
-  text-align: center;
-
+  padding-top: 8px;
+/*
   background-image: url("../img/button-details-background.png");
   background-size: 260px 8px;
   background-repeat: repeat-x;
-  background-position: center;
-
+  background-position: center; */
 }
 
 .details-button:hover,
 .details-button:focus {
   background-color: #f0c52e;
-  background-size: 260px 40px;
+  /* background-size: 260px 40px; */
 }
 
 .details-button:active {
@@ -957,7 +1021,7 @@ background-color: #f0c52e;
   width: 560px;
   margin-top: 51px;
 
-  border: 2px dashed gold;
+  /* border: 2px dashed gold; */
 }
 
 
@@ -990,8 +1054,8 @@ background-color: #f0c52e;
  {
   display: flex;
   flex-direction: column;
-
-  border: 1px dashed tomato;
+/*
+  border: 1px dashed tomato; */
 }
 
 .footer-left-box { /* ЛЕВЫЙ БЛОК В ФУТЕРЕ: ЛОГОТИП, АДРЕС */
@@ -1055,17 +1119,17 @@ background-color: #f0c52e;
   margin-left: auto;
 }
 
-.social-link { /* ?нужно ли вставлять svg-файл в html-код (цвет не получается как в стайлгайде)*/
-  opacity: 0.3;
+.social-link {
+  opacity: 0.5;
 }
 
 .social-link:hover,
 .social-link:focus {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .social-link:active {
-  opacity: 0.1;
+  opacity: 0.17;
 }
 
 .footer-right-box {
@@ -1085,15 +1149,14 @@ background-color: #f0c52e;
 
 
 .user-footer::before {
-  content: "";
+  content: " ";
   display: inline-block;
   width: 13px;
   height: 12px;
   margin-right: 14px;
 
   background-size: 13px 12px;
-  background: url("../img/icon_user.svg") no-repeat;
-  fill: #ffffff; /*? Не получается изменить цвет заливки*/
+  background: url("../img/icon_user_footer.png") no-repeat;
 }
 
 .compare-footer::before {
@@ -1104,7 +1167,7 @@ background-color: #f0c52e;
   margin-right: 10px;
 
   background-size: 10px 12px;
-  background: url("../img/icon_compare.svg") no-repeat;
+  background: url("../img/icon_compare_footer.png") no-repeat;
 }
 
 .cart-footer::before {
@@ -1115,7 +1178,7 @@ background-color: #f0c52e;
   margin-right: 12px;
 
   background-size: 12px 12px;
-  background: url("../img/icon_cart.svg") no-repeat;
+  background: url("../img/icon_cart_footer.png") no-repeat;
 }
 
 .our-tel {
@@ -1155,7 +1218,7 @@ background-color: #f0c52e;
 
   width: 55px;
   height: 55px;
-  z-index: 100;
+  z-index: 10;
 
   background-image: url("../img/icon_modal-close.svg") ;
   background-size: 55px 55px;
@@ -1165,15 +1228,20 @@ background-color: #f0c52e;
 
 .map-modal {
   display: block;
-  position: relative;
+  position: fixed;
+  bottom: 385px;
+  left: 120px;
+  z-index: 10;
+  display: none;
 
   width: 960px;
+  height: 560px;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-
-  border: 1px solid gold;
+/*
+  border: 1px solid gold; */
 }
 
 .map {
@@ -1182,25 +1250,30 @@ background-color: #f0c52e;
 }
 
 .map-modal > .modal-close {
-  top: -550px; /* положение кнопки пока примерное */
+  position: absolute;
+  top: 10px; /* положение кнопки пока примерное */
   left: 870px;
 }
 
 
 /* ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ*/
 
-.feedback-modal {
-  position: relative;
+.feedback-modal { /*? 20 окт: как померить параметры тени*/
+  position: fixed;
+  display: none;
+  z-index: : 10;
+  bottom: 515px;
+  right: 50%;
 
-  width: 960px;
+  width: 962px;
   height: 560px;
   margin-top: 0;
-  margin-right: auto;
+  margin-right: -481px;
   margin-bottom: 0;
   margin-left: auto;
 
-  background-color:#ffffff;
-  border: 1px solid gold;
+  background-color: #ffffff; /*? 20 Okt почему фон прозрачный*/
+  /* border: 1px solid gold; */
 }
 
 .feedback-wrapper {
@@ -1216,7 +1289,7 @@ background-color: #f0c52e;
   margin-right: auto;
   margin-left: auto;
 
-  border: 1px solid green;
+  /* border: 1px solid green; */
   }
 
 .feedback-label {
@@ -1229,7 +1302,7 @@ background-color: #f0c52e;
 .formfield-wrapper {
   width: 360px;
   min-height: 75px;
-  border: 1px dashed tomato; /* временно */
+  /* border: 1px dashed tomato;  временно */
 }
 
 .message-wrapper {
@@ -1240,7 +1313,7 @@ background-color: #f0c52e;
   margin-bottom: auto;
   margin-left: 0;
 
-  border: 1px dashed tomato; /* временно */
+  /* border: 1px dashed tomato;  временно */
 }
 
 .clients-data,
@@ -1269,15 +1342,17 @@ background-color: #f0c52e;
 .clients-data:active,
 .clients-message:active {
   background-color: #ffffff;
-  border: 3px solid #f7e296; /* почему проступает серая рамка?*/
+  border: 3px solid #f7e296;
 }
 
 .feedback-modal .modal-close {
-  top: -480px; /* положение кнопки пока примерное */
-  left: 880px;
+  position: absolute;
+  top: 10px;
+  right: 20px;/* положение кнопки пока примерное */
+
 }
 
-/* как сделать селектор для невалидных значений? */
+/*! селектор для невалидных значений :invalid*/
 
 .clients-data {
   width: 360px;
@@ -1289,12 +1364,26 @@ background-color: #f0c52e;
   height: 156px;
 }
 
+.modal-send::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  z-index: 1;
+
+  width: 200px;
+  height: 8px;
+  margin-top: 8px;
+
+  background-color: #f0c52e;
+}
+
 .modal-send { /* Для "ОТПРАВИТЬ" */
   /* display: block; */
   position: relative;
+  z-index: 11;
 
   width: 200px;
-  height: 40px; /*? Почему не отбражается фон в состоянии покоя*/
+  height: 40px;
   margin-top: 55px;
   margin-right: auto;
   margin-bottom: auto;
@@ -1305,20 +1394,18 @@ background-color: #f0c52e;
   padding-bottom: 0;
   padding-left: 0;
 
-  background-size: 200px 8px;
   background-color: transparent;
+  /* background-size: 200px 8px;
   background-image: url("../img/button-send-background.png");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  /*height: 40px; ? Почему не меняется высота фона в состоянии покоя*/
-  border: 1px dashed gold;/*none;*/
+  background-position: 50% 50%; */
+  border: none;
   text-align: center;
-
 }
 
 .modal-send:hover,
 .modal-send:focus {
-  background-size: 200px 40px;
+  background-color: #f0c52e;
 }
 
 .modal-send:active {
