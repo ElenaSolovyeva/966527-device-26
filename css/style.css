@@ -1012,7 +1012,6 @@ background-color: #f0c52e;
   color: rgba(0, 0, 0, 0.3);
 }
 
-
 .contacts {
   position: relative;
   display: flex;
@@ -1023,7 +1022,6 @@ background-color: #f0c52e;
 
   /* border: 2px dashed gold; */
 }
-
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
 
@@ -1444,7 +1442,6 @@ background-color: #f0c52e;
   padding-left: 61px;
 
   background-color: #f7e296;
-  border: 1px solid green; /* временно */
 }
 
 .products-block > .left {
@@ -1595,6 +1592,7 @@ background-color: #f0c52e;
 }
 
 .filter-form {
+  position: relative;
   min-height: 1217px;
   width: 468px;
 
@@ -1753,9 +1751,12 @@ background-color: #f0c52e;
   position: relative;
 }
 
-.color-choice,
-.bluetooth-choice {
+.color-choice,      /*<label class="color-choice">Черный*/
+.bluetooth-choice { /*<label class="bluetooth-choice">  Есть*/
   display: block;
+  position: relative;
+
+  padding-left: 40px;
 
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
@@ -1765,27 +1766,21 @@ background-color: #f0c52e;
   border: 1px dashed tomato;
 }
 
-.color-checkbox {
-
-}
-
 .color-choice::before {
   content: "";
   display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: 0;
 
   width: 23px;
   height: 23px;
-  margin-top: 10px;
-  margin-right: 15px; /*пока примерно*/
-  margin-bottom: auto;
-  margin-left: 0px;
 
   background-size: cover;
   background: url("../img/icon_checkbox-off.svg") no-repeat;
 }
 
-.color-checkbox:active::before {
-/* в таком виде не работает. как правильно указать селектор?*/
+.color-choice:active:before { /*? 21окт: так ли получилось, как должно быть*/
   content: "";
 
   width: 26px;
@@ -1809,25 +1804,50 @@ background-color: #f0c52e;
 .bluetooth-choice::before {
   content: "";
   display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: 0;
 
   width: 25px;
   height: 25px;
-  margin-right: 15px; /*пока примерно*/
 
   background-size: 25px 25px;
   background: url("../img/icon_radio-off.svg") no-repeat;
 }
 
 .bluetooth-choice:active:before {
- /* как правильно указать селектор?*/
   background: url("../img/icon_radio-on.svg") no-repeat;
   }
 
-.fieldset-container + .button { /* нужно выровнять желтую полоску фона*/
+.button-show { /* нужно выровнять желтую полоску фона*/
+  display: block;
+  position: relative;
+
   width: 200px;
-  margin-right: 68px;
+  height: 40px;
+  margin-top: 20px; /*примерно*/
+  margin-right: 70px;
   margin-left: auto;
+
   background-color: transparent;
+}
+
+.button-show::before { /*? 20 окт: этой кнопки нет в стайлгайде, нужны ли стили для hover, active*/
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 0;
+
+  width: 200px;
+  height: 8px;
+
+  background-color: #f0c52e;
+}
+
+.button-show:hover {
+  height: 40px;
+  background-color: #f0c52e;
 }
 
 /* 2Й БЛОК: СТРАНИЦА КАТАЛОГА */
@@ -1839,8 +1859,6 @@ background-color: #f0c52e;
 
   width: 972px;
   margin-right: auto;
-
-  border: 1px solid gold;  /* временно, чтобы видеть границы*/
   }
 
 /*
@@ -1931,9 +1949,7 @@ background-color: #f0c52e;
   color: rgba(0, 0, 0, 1);
 }
 
-.catalog {
-  border: 1px dashed tomato; /* временно */
-}
+.catalog {}
 
 .catalog-list {
   display: flex;
@@ -1946,7 +1962,6 @@ background-color: #f0c52e;
   margin-left: 72px;
 
   background-color: transparent;
-  border: 1px solid green; /* временно */
 }
 
 .catalog-item {
@@ -1954,7 +1969,6 @@ background-color: #f0c52e;
 
   width: 360px;
   /* min-height: 440px; */
-  border: 2px solid tomato; /* временно */
 
 }
 
@@ -1964,8 +1978,6 @@ background-color: #f0c52e;
 /* не могу разобраться, откуда берется расстояние между картинкой и подписью к ней: .catalog-img и .item-description */
   margin: 0;
   padding: 0;
-
-  border: 1px dashed orange; /* временно, чтобы видеть границы*/
 }
 
 .item-description {
@@ -1975,8 +1987,6 @@ background-color: #f0c52e;
 
   margin-top: 0;
   padding-top: 0;
-
-  border: 1px solid grey;
 }
 
 .item-link {
@@ -1988,7 +1998,6 @@ background-color: #f0c52e;
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
-  border: 1px dashed blue; /* временно*/
 }
 
 .catalog-price {
@@ -2001,7 +2010,6 @@ background-color: #f0c52e;
   font-size: 16px;
   line-height: 24px;
   text-align: right;
-  border: 1px dashed blue; /* временно*/
 }
 
 .pagination {
@@ -2014,7 +2022,6 @@ background-color: #f0c52e;
   margin-left: 72px;
 
   background-color: #ebebeb;
-  border: 1px dashed tomato; /* временно */
 }
 
 .pagination-list {
@@ -2036,8 +2043,6 @@ background-color: #f0c52e;
 
   margin-top: auto;
   margin-bottom: auto;
-
-  border: 1px dashed green;   /* временно */
 }
 
 .pagination-item:first-child {

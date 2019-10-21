@@ -21,10 +21,14 @@
 
           <h2 class="visually-hidden">Верхнее меню</h2>
 
-          <form name="search-field" action="https://echo.html-academy.ru" method="post">
+          <form class="search-form" name="search-field" action="https://echo.html-academy.ru" method="post">
+
             <label class="search-label visually-hidden" for="index-search">Поиск по сайту</label>
-            <input class="search-input transparent-field" id="index-search" type="search" placeholder="Поиск по сайту">
+
+            <input class="search-input" id="index-search" type="search" placeholder="Поиск по сайту" autocomplete="off">
+
             <button class="search-button transparent-field" type="submit">Найти</button>
+
           </form>
 
           <ul class="top-nav-list reset-list">
@@ -157,7 +161,7 @@
                       <input class="color-checkbox visually-hidden" type="checkbox" checked>
                     </label>
                     <label class="color-choice">Розовый
-                      <input class="color-checkbox visually-hidden" type="checkbox">
+                      <input class="visually-hidden" type="checkbox">
                     </label>
                   </li>
                 </ul>
@@ -176,7 +180,7 @@
                   </li>
                   <li>
                     <label  class="bluetooth-choice">
-                      <input  class="bluetooth-radio visually-hidden" type="radio">
+                      <input  class="visually-hidden" type="radio">
                       Нет
                     </label>
                   </li>
@@ -184,7 +188,7 @@
               </fieldset>
             </div>
 
-            <button class="button button-details" type="submit">Показать</button>
+            <button class="button button-show transparent-field" type="submit">Показать</button>
           </form>
 
         </section> <!-- КОНЕЦ БЛОКА 1, С ФИЛЬТРОМ -->
