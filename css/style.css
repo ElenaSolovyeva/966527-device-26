@@ -95,7 +95,7 @@ p {
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-  border: 1px solid #FF1493; /* временно */
+  /*border: 1px solid #FF1493;  временно */
   padding: 0;
 }
 
@@ -1043,7 +1043,7 @@ background-color: #f0c52e;
   margin-left: auto;
   padding: 0;
 
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 }
 
 .footer-left-box,
@@ -1435,6 +1435,7 @@ background-color: #f0c52e;
   display: flex;
   position: relative;
   z-index: 2;
+  /* display: none; */
 
   margin-top: -16px;
   margin-right: auto;
@@ -1447,7 +1448,7 @@ background-color: #f0c52e;
 .products-block > .left {
   width: 200px;
   margin: 0;
-  border: 1px dashed tomato; /* временно */
+  /*border: 1px dashed tomato;  временно */
 }
 
 .products-block > .middle {
@@ -1456,7 +1457,7 @@ background-color: #f0c52e;
   margin-right: 0;
   margin-bottom: auto;
   margin-left: 40px;
-  border: 1px dashed tomato; /* временно */
+  /*border: 1px dashed tomato;  временно */
 }
 
 .products-block > .right {
@@ -1465,7 +1466,7 @@ background-color: #f0c52e;
   margin-right: auto;
   margin-bottom: auto;
   margin-left: 40px;
-  border: 1px dashed tomato; /* временно */
+/*  border: 1px dashed tomato;  временно */
 }
 
 .product-groups-link{
@@ -1487,27 +1488,24 @@ background-color: #f0c52e;
 }
 
 /* catalog.html <main> */
-.wrapper-main {
-
-}
-
 .monopods-h1 {
   position: relative;
   z-index: 3;
 
-  margin-top: -33px; /*пока примерно, потом подгоню*/
+  margin-top: 30px; /*пока примерно, потом подгоню*/
+  margin-bottom: 30px;/*пока примерно, потом подгоню*/
   padding-left: 61px;
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
-
 }
 
 .breadcrumbs {
   display: flex;
   position: relative;
 
+  margin-bottom: 50px;/*пока примерно, потом подгоню*/
   padding-left: 61px;
 }
 
@@ -1596,8 +1594,8 @@ background-color: #f0c52e;
   min-height: 1217px;
   width: 468px;
 
-  border: 1px solid #f1da64; /* временно, чобы видеть границы*/
   background-color: #eeeeee;
+  /*border: 1px solid #f1da64;  временно, чобы видеть границы*/
 }
 
 .range {
@@ -1751,6 +1749,8 @@ background-color: #f0c52e;
   position: relative;
 }
 
+
+/*? 20 окт: не понятно, как сделать стили по стайлгайду*/
 .color-choice,      /*<label class="color-choice">Черный*/
 .bluetooth-choice { /*<label class="bluetooth-choice">  Есть*/
   display: block;
@@ -1761,9 +1761,7 @@ background-color: #f0c52e;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
   line-height: 40px;
-  vertical-align: middle;/*  не получается вертикальное выравнивание  */
-
-  border: 1px dashed tomato;
+  /*  border: 1px dashed tomato;*/
 }
 
 .color-choice::before {
@@ -1919,7 +1917,7 @@ background-color: #f0c52e;
    color: rgba(0, 0, 0, 1);
 }
 
-.arrow-up,  /*не отображаются*/
+.arrow-up,
 .arrow-down {
   display: inline-block;
   z-index: 300;
@@ -1928,7 +1926,8 @@ background-color: #f0c52e;
   height: 10px;
   background-size: cover;
 
-  color: rgba(0, 0, 0, 0.2); /* как изменить цвет cvg-иконки (к чему применить fill)*/
+  opacity: 0.2;
+  /*color: rgba(0, 0, 0, 0.2);  как изменить цвет cvg-иконки (к чему применить fill)*/
 }
 
 .arrow-up {
@@ -1942,11 +1941,11 @@ background-color: #f0c52e;
 
 .arrow-up:hover,
 .arrow-down:hover {
-  color: rgba(0, 0, 0, 0.4);
+  opacity: 0.4;
 }
 
 .arrow-up:active {
-  color: rgba(0, 0, 0, 1);
+  opacity: 1;
 }
 
 .catalog {}
@@ -1965,19 +1964,38 @@ background-color: #f0c52e;
 }
 
 .catalog-item {
+  position: relative;
+  z-index: : 1;
   display: block;
 
   width: 360px;
   /* min-height: 440px; */
+}
 
+.catalog-item-new::before { /*?20 окт: не получается добавить псевдоэлемент NEW*/
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+
+  background-image: url("../img/catalog_new.svg");
+  background-size: 60px 60px;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
 }
 
 .catalog-img {
   width: 360px;
   height: 380px;
-/* не могу разобраться, откуда берется расстояние между картинкой и подписью к ней: .catalog-img и .item-description */
+/* ? 20 окт: не могу разобраться, откуда берется расстояние между картинкой и подписью к ней: .catalog-img и .item-description */
   margin: 0;
   padding: 0;
+}
+
+.catalog-img:hover {
+  opacity: 0.7;
 }
 
 .item-description {
@@ -2012,7 +2030,33 @@ background-color: #f0c52e;
   text-align: right;
 }
 
-.pagination {
+.item-hover-wrapper {
+  position: absolute;
+  top: 175px;
+  left: 80px;
+
+  width: 200px;
+  height: 86px;
+
+  border: 2px dashed tomato;
+}
+
+.modal-send.into-the-cart {
+  margin: 0;
+  padding: 0;
+}
+
+.add-to-compare {
+  margin-top: 10px; /*примерно*/
+
+  font-family: "OpenSans light", Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.pagination { /*? 20 окт: не понятно, как сделать стили по стайлгайду*/
   width: 760px;
   height: 70px;
 
