@@ -148,21 +148,20 @@
                 <legend  class="color-subtitle subtitle">Цвет</legend>
                 <ul class="reset-list">
                   <li>
-                    <label class="color-choice">Черный
-                      <input class="color-checkbox visually-hidden" type="checkbox" checked>
-                    </label>
-                    <label class="color-choice">Белый
-                      <input class="color-checkbox visually-hidden" type="checkbox">
-                    </label>
-                    <label class="color-choice">Синий
-                      <input class="color-checkbox visually-hidden" type="checkbox" checked>
-                    </label>
-                    <label class="color-choice">Красный
-                      <input class="color-checkbox visually-hidden" type="checkbox" checked>
-                    </label>
-                    <label class="color-choice">Розовый
-                      <input class="visually-hidden" type="checkbox">
-                    </label>
+                    <input class="color-checkbox visually-hidden" type="checkbox" id="black" checked>
+                    <label class="color-choice" for="black">Черный</label>
+
+                    <input class="color-checkbox visually-hidden" type="checkbox" id="white" >
+                    <label class="color-choice" for="white">Белый</label>
+
+                    <input class="color-checkbox visually-hidden" type="checkbox" id="blue" >
+                    <label class="color-choice" for="blue">Синий</label>
+
+                    <input class="color-checkbox visually-hidden" type="checkbox" id="red" checked>
+                    <label class="color-choice" for="red">Красный</label>
+
+                    <input class="color-checkbox visually-hidden" type="checkbox" id="pink" >
+                    <label class="color-choice" for="pink">Розовый</label>
                   </li>
                 </ul>
               </fieldset>
@@ -173,22 +172,21 @@
                 <legend  class="bluetooth-subtitle subtitle">Bluetooth</legend>
                 <ul class="reset-list">
                   <li>
-                    <label class="bluetooth-choice">
-                      <input class="bluetooth-radio visually-hidden" type="radio" checked>
-                      Есть
+                    <input class="bluetooth-radio visually-hidden" type="radio" name="bluetooth" id="yes">
+                    <label class="bluetooth-choice" for="yes">Есть
                     </label>
                   </li>
                   <li>
-                    <label  class="bluetooth-choice">
-                      <input  class="visually-hidden" type="radio">
-                      Нет
+                    <input class="bluetooth-radio visually-hidden" type="radio" id="no" name="bluetooth" checked>
+                    <label class="bluetooth-choice" for="no">Нет
                     </label>
                   </li>
                 </ul>
               </fieldset>
             </div>
 
-            <button class="button button-show transparent-field" type="submit">Показать</button>
+            <button class="button button-show transparent-field" type="submit">
+              <span class="button-text">Показать</button>
           </form>
 
         </section> <!-- КОНЕЦ БЛОКА 1, С ФИЛЬТРОМ -->
@@ -212,26 +210,20 @@
 
             <ul class="catalog-list reset-list">
               <li class="catalog-item">
-                <img class="catalog-img" src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка">
-                <div class="item-hover-wrapper">
-                  <button class="button modal-send into-the-cart" type="submit">В корзину</button>
+                <img class="catalog-img" src="img/catalog_product_1.jpg" width="" height="" alt="Любительская сэлфи-палка"><div class="item-description"><a class="item-link" href="#"><span>Любительская сэлфи-палка</span></a><span class="catalog-price">500 руб.</span></div>
+
+                <div class="item-hover-wrapper ">
+                  <button class="button modal-send into-the-cart" type="submit">
+                    <span class="button-text">В корзину</span>
+                  </button>
                   <p class="add-to-compare">Добавить к сравнению</p>
-                </div>
-                <div class="item-description">
-                  <a class="item-link" href="#">
-                    <span>Любительская сэлфи-палка</span>
-                  </a>
-                  <span class="catalog-price">500 руб.</span>
                 </div>
 
               </li>
 
-              <li class="catalog-item catalog-item-new">
+              <li class="catalog-item">
                 <img class="catalog-img" src="img/catalog_product_2.jpg" width="" height="" alt="Профессиональная сэлфи-палка">
-                <div class="item-hover-wrapper">
-                  <button class="button modal-send into-the-cart" type="submit">В корзину</button>
-                  <p class="add-to-compare">Добавить к сравнению</p>
-                </div>
+
                 <div class="item-description">
                   <a class="item-link" href="#">
                     <span>Профессиональная<br> сэлфи-палка</span>
@@ -239,14 +231,17 @@
                   <span class="catalog-price">1500 руб.</span>
                 </div>
 
+                <div class="item-hover-wrapper visually-hidden">
+                  <button class="button modal-send into-the-cart" type="submit">
+                    <span class="button-text">В корзину</span>
+                  </button>
+                  <p class="add-to-compare">Добавить к сравнению</p>
+                </div>
               </li>
 
               <li class="catalog-item">
                 <img class="catalog-img" src="img/catalog_product_3.jpg" width="" height="" alt="Непотопляемая сэлфи-палка">
-                <div class="item-hover-wrapper">
-                  <button class="button modal-send into-the-cart" type="submit">В корзину</button>
-                  <p class="add-to-compare">Добавить к сравнению</p>
-                </div>
+
                 <div class="item-description">
                   <a class="item-link" href="#">
                     <span>Непотопляемая сэлфи-палка</span>
@@ -254,21 +249,31 @@
                   <span class="catalog-price">2500 руб.</span>
                 </div>
 
+                <div class="item-hover-wrapper visually-hidden">
+                  <button class="button modal-send into-the-cart" type="submit">
+                    <span class="button-text">В корзину</span>
+                  </button>
+                  <p class="add-to-compare">Добавить к сравнению</p>
+                </div>
               </li>
 
               <!-- надпись "new" не активна, но может появиться:
                  - Эту надпись можно сделать псевдоэлементом (в контенте, кружок- бордер), который будет появляться только у классов catalog-item-new -->
               <li class="catalog-item catalog-item-new">
                 <img class="catalog-img" src="img/catalog_product_4.jpg" width="" height="" alt="Сэлфи-палка Следуй за мной">
-                <div class="item-hover-wrapper">
-                  <button class="button modal-send into-the-cart" type="submit">В корзину</button>
-                  <p class="add-to-compare">Добавить к сравнению</p>
-                </div>
+
                 <div class="item-description">
                   <a class="item-link" href="#">
                     <span>Сэлфи-палка "Следуй за<br> мной" </span>
                   </a>
                   <span class="catalog-price">4900 руб.</span>
+                </div>
+
+                <div class="item-hover-wrapper visually-hidden">
+                  <button class="button modal-send into-the-cart" type="submit">
+                    <span class="button-text">В корзину</span>
+                  </button>
+                  <p class="add-to-compare">Добавить к сравнению</p>
                 </div>
 
               </li>
@@ -279,11 +284,11 @@
           <section class="pagination"> <!-- 3й flex-элемент блока 2 (страница каталога) -->
             <h2 class="visually-hidden">Навигация по страницам каталога товаров</h2>
             <ul class="pagination-list reset-list">
-              <li class="pagination-item"><a class="pagination-link back-forward" href="#">Назад</a></li>
-              <li class="pagination-item"><a class="pagination-link nav-page" href="#">1</a></li>
-              <li class="pagination-item"><a class="pagination-link nav-page" href="#">2</a></li>
-              <li class="pagination-item"><a class="pagination-link nav-page" href="#">3</a></li>
-              <li class="pagination-item"><a class="pagination-link back-forward" href="#">Вперед</a></li>
+              <li class="pagination-item"><a class="pagination-link back" href="#">Назад</a></li>
+              <li class="pagination-item"><a class="pagination-link pagination-active" href="#">1</a></li>
+              <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
+              <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
+              <li class="pagination-item"><a class="pagination-link forward" href="#">Вперед</a></li>
             </ul>
           </section>
         </div> <!-- Конец КОНТЕЙНЕРА ДЛЯ ДВУХ БЛОКОВ: блок 2, каталог -->
@@ -306,7 +311,7 @@
           <nav>
             <ul class="footer-nav-list reset-list">
               <li class="main-nav-item footer-nav-item">
-                <a class="main-nav-link footer-link" href="#">Доставка</a>
+                <a class="main-nav-link footer-link" href="#">     Доставка</a>
               </li>
               <li class="main-nav-item footer-nav-item">
                 <a class="main-nav-link footer-link" href="#">Гарантия</a>

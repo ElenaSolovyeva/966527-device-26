@@ -213,17 +213,9 @@ p {
   background-color: transparent;
 }
 
-.search-input:focus + .search-button::before {/*?20 окт: не получается*/
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 300;
-  display: inline-block;
+.search-input:focus {
 
-  width: 350px;
-  height: 2px;
-
-  border: 2px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 
 .search-input:focus + .search-button:hover,
@@ -232,7 +224,7 @@ p {
   background-color: #000000;
 }
 
-.search-input:active + .search-button:active { /*?20 окт: при нажатии стили исчезают*/
+.search-form:hover .search-button:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #000000;
 }
@@ -327,6 +319,7 @@ p {
 
 .nav-link,
 .main-nav-link {
+    position: relative;
     color: #000000;
 }
 
@@ -384,7 +377,7 @@ p {
   display: none;
 }
 
-.slider-page-1::before { /*? 20 окт: почему размеры содержимого у ""01 отличаются от заданных*/
+.slider-page-1::before {
   content: "01";
   display: block;
   position: absolute;
@@ -506,7 +499,7 @@ p {
 }
 
 
-.button-details::before { /*? 20 окт: не получается сделать фон через z-index*/
+.button-details::before {
   content: " ";
   display: block;
   position: absolute;
@@ -518,10 +511,15 @@ p {
   background-color: #f0c52e;
 }
 
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
 .button-details { /* Для "ПОДРОБНЕЕ" */
   display: block;
   position: relative;
-  z-index: 2;
+
 
   width: 220px;
   height: 40px;
@@ -694,6 +692,8 @@ background-color: #f0c52e;
 }
 
 .services-buttons {
+  position: relative;
+
   width: 280px;
   min-height: 319px;
   margin-top: -30px;
@@ -703,7 +703,7 @@ background-color: #f0c52e;
 .button-service {
   display: block;
   position: relative;
-  z-index: 3;
+  /* z-index: 3; */
 
   width: 160px;
   height: 40px;
@@ -742,11 +742,28 @@ background-color: #f0c52e;
 }
 
 .button-service:active {
-  width: 277px;
+  /* width: 278px; */
   height: 40px;
 
   color: #f7e184;
+
   background-image: none;
+  background-color: #000000;
+}
+
+.button-service:active:before {
+  background-color: transparent;
+}
+.button-service:active:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 160px;
+
+  width: 118px;
+  height: 40px;
+
   background-color: #000000;
 }
 
@@ -1256,10 +1273,10 @@ background-color: #f0c52e;
 
 /* ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ*/
 
-.feedback-modal { /*? 20 окт: как померить параметры тени*/
+.feedback-modal { /*Доделать:  параметры тени*/
   position: fixed;
   display: none;
-  z-index: : 10;
+  z-index: 10;
   bottom: 515px;
   right: 50%;
 
@@ -1270,8 +1287,7 @@ background-color: #f0c52e;
   margin-bottom: 0;
   margin-left: auto;
 
-  background-color: #ffffff; /*? 20 Okt почему фон прозрачный*/
-  /* border: 1px solid gold; */
+  background-color: #ffffff;
 }
 
 .feedback-wrapper {
@@ -1749,8 +1765,6 @@ background-color: #f0c52e;
   position: relative;
 }
 
-
-/*? 20 окт: не понятно, как сделать стили по стайлгайду*/
 .color-choice,      /*<label class="color-choice">Черный*/
 .bluetooth-choice { /*<label class="bluetooth-choice">  Есть*/
   display: block;
@@ -1761,7 +1775,6 @@ background-color: #f0c52e;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
   line-height: 40px;
-  /*  border: 1px dashed tomato;*/
 }
 
 .color-choice::before {
@@ -1778,7 +1791,7 @@ background-color: #f0c52e;
   background: url("../img/icon_checkbox-off.svg") no-repeat;
 }
 
-.color-choice:active:before { /*? 21окт: так ли получилось, как должно быть*/
+.color-checkbox:checked + .color-choice:before {
   content: "";
 
   width: 26px;
@@ -1789,6 +1802,10 @@ background-color: #f0c52e;
   background: url("../img/icon_checkbox-on.svg") no-repeat;
 }
 
+.color-choice:hover,
+.bluetooth-choice:hover {
+  opacity: 0.5;
+}
 
 .bluetooth {
   min-height: 175px;
@@ -1812,10 +1829,22 @@ background-color: #f0c52e;
   background-size: 25px 25px;
   background: url("../img/icon_radio-off.svg") no-repeat;
 }
-
+/*
 .bluetooth-choice:active:before {
   background: url("../img/icon_radio-on.svg") no-repeat;
-  }
+  } */
+
+
+  .bluetooth-radio:checked + .bluetooth-choice:before {
+    content: "";
+
+    width: 25px;
+    height: 25px;
+    margin-left: 0px;
+
+    background-size: cover;
+    background: url("../img/icon_radio-on.svg") no-repeat;
+}
 
 .button-show { /* нужно выровнять желтую полоску фона*/
   display: block;
@@ -1830,10 +1859,11 @@ background-color: #f0c52e;
   background-color: transparent;
 }
 
-.button-show::before { /*? 20 окт: этой кнопки нет в стайлгайде, нужны ли стили для hover, active*/
+.button-show::before { /*доделать нужны ли стили для hover, active*/
   content: " ";
   display: block;
   position: absolute;
+  z-index: 1;
   top: 16px;
   left: 0;
 
@@ -1924,6 +1954,7 @@ background-color: #f0c52e;
 
   width: 11px;
   height: 10px;
+
   background-size: cover;
 
   opacity: 0.2;
@@ -1935,6 +1966,7 @@ background-color: #f0c52e;
 }
 
 .arrow-down {
+    margin-right: 140px;
     margin-left: 19px;
     background-image: url("../img/icon_down-dir.svg");
 }
@@ -1965,22 +1997,31 @@ background-color: #f0c52e;
 
 .catalog-item {
   position: relative;
-  z-index: : 1;
+  z-index: 1;
   display: block;
 
   width: 360px;
   /* min-height: 440px; */
 }
 
-.catalog-item-new::before { /*?20 окт: не получается добавить псевдоэлемент NEW*/
-  content: " ";
+.catalog-item-new::before { /*доделать NEW*/
+  content: "NEW";
   display: block;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 29px;
+  right: 27px;
   z-index: 10;
 
-  background-image: url("../img/catalog_new.svg");
+  width: 60px;
+  height: 60px;
+
+  font-family: "Gilroy";
+
+  font-size: 14px;
+  line-height: 60px;
+  color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  /* background-image: url("../img/catalog_new.svg"); */
   background-size: 60px 60px;
   border: 2px solid #d6d6d6;
   border-radius: 50%;
@@ -2037,13 +2078,22 @@ background-color: #f0c52e;
 
   width: 200px;
   height: 86px;
-
-  border: 2px dashed tomato;
 }
 
-.modal-send.into-the-cart {
+.modal-send.into-the-cart {  /*? какие стили нужны для "В корзину" и "Добавить к сравнению"*/
   margin: 0;
   padding: 0;
+}
+
+.modal-send.into-the-cart:hover,
+.modal-send.into-the-cart:focus {
+  background-color: #f0c52e;
+}
+
+.modal-send.into-the-cart:active {
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #f0c52e;
+  border: none;
 }
 
 .add-to-compare {
@@ -2056,7 +2106,7 @@ background-color: #f0c52e;
   text-align: center;
 }
 
-.pagination { /*? 20 окт: не понятно, как сделать стили по стайлгайду*/
+.pagination { /*доделать стили по стайлгайду через класс pagination-active*/
   width: 760px;
   height: 70px;
 
@@ -2071,7 +2121,7 @@ background-color: #f0c52e;
 .pagination-list {
   display: flex;
   justify-content: space-between;
-  align-content: center;   /* не выравнивается, vertical-align: middle; тоже не помогает */
+  align-content: baseline;   /* не выравнивается, vertical-align: middle; тоже не помогает */
 
   min-height: 70px;
 
@@ -2090,37 +2140,83 @@ background-color: #f0c52e;
 }
 
 .pagination-item:first-child {
-  margin-left: 28px;
+  /* padding-left: 28px; */
   margin-right: auto;
 }
 
-.pagination-item:nth-child(3) {
-  margin-left: 28px;
-  margin-right: 28px;
-}
 
 .pagination-item:last-child {
   margin-left: auto;
-  margin-right: 28px;
 }
 
-.back-forward  {
-  color: rgba(0,0,0, 1);
-}
-/* .back-forward { } как отформатировать предыдущее и следующее наведение?*/
+.pagination-link {
+  display: inline-block;
+  position: relative;
 
-.nav-page {
-  color: rgba(0,0,0, 0.3);
+  width: 40px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  padding-top: 23px;
+
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-.nav-page:hover,
-.nav-page:focus {
-  color: rgba(0,0,0, 0.6);
+.pagination-link:hover,
+.pagination-link:focus {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.nav-page {
-  color: rgba(0,0,0, 1);
+.pagination-link:active {
+  color: rgba(0, 0, 0, 1);
 }
+
+
+.back,
+.forward {
+  display: inline-block;
+  position: relative;
+
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  padding-top: 23px;
+
+  color: rgba(0, 0, 0, 1);
+}
+
+.pagination-link.back  {
+  width: 126px;
+}
+
+.pagination-link.forward  {
+  width: 137px;
+}
+
+.pagination-link.back:hover,
+.pagination-link.forward:hover,
+.pagination-link.back:focus,
+.pagination-link.forward:focus {
+  color: rgba(0, 0, 0, 1);
+  background-color: #d9d9d9;
+}
+
+.pagination-link.back:active,
+.pagination-link.forward:active {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-link:hover,
+.pagination-link:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.pagination-link:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+
 
 
 
