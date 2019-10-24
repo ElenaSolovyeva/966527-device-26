@@ -161,7 +161,7 @@ p {
   padding-left: 37px;
 
   border: none;
-  font-family: "OpenSans light";
+  font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
 
@@ -192,6 +192,7 @@ p {
 .search-button {
   position: absolute;
   display: inline-block;
+  vertical-align: middle;
 
   width:81px;
   height: 49px;
@@ -257,6 +258,8 @@ flex-wrap: wrap;
 .user::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   width: 13px;
   height: 12px;
   margin-right: 14px;
@@ -269,6 +272,8 @@ flex-wrap: wrap;
 .compare::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   width: 10px;
   height: 12px;
   margin-right: 10px;
@@ -281,6 +286,8 @@ flex-wrap: wrap;
 .cart::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   width: 12px;
   height: 12px;
   margin-right: 12px;
@@ -301,6 +308,7 @@ flex-wrap: wrap;
 .plus::after {
   content: " ";
   display: inline-block;
+  vertical-align: middle;
 
   width: 17px;
   height: 17px;
@@ -395,7 +403,7 @@ flex-wrap: wrap;
   padding: 0;
 
   color: #ffffff;
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 179.2px;
   line-height: 179.2px;
 
@@ -416,7 +424,7 @@ flex-wrap: wrap;
   padding-left: 900px; /*примерно*/
 
   color: #ffffff;
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 179.2px;
   line-height: 179.2px;
 
@@ -437,7 +445,7 @@ flex-wrap: wrap;
   padding-left: 900px; /*примерно*/
 
   color: #ffffff;
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 179.2px;
   line-height: 179.2px;
 
@@ -459,7 +467,7 @@ flex-wrap: wrap;
 
   padding-top: 73px;
 
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 56px;
 }
@@ -479,7 +487,7 @@ flex-wrap: wrap;
 
 .slider-info {
   padding-top: 17px;
-  font-family: "OpenSans light";
+  font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
 }
@@ -497,7 +505,7 @@ flex-wrap: wrap;
 
 .button { /*Базовый стиль для ссылок и кнопок "ПОДРОБНЕЕ", "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ", "ПОДРОБНЕЕ О НАС", "НАПИШИТЕ НАМ"*/
   color: #000000;
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 3.6px;
@@ -552,6 +560,7 @@ flex-wrap: wrap;
 .promo-label::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
 
   width: 12px;
   height: 12px;
@@ -576,7 +585,7 @@ flex-wrap: wrap;
 
 .description-parameter {
   color: #464646;
-  font-family: "OpenSans light";
+  font-family: "OpenSans light", Arial, sans-serif;
   font-size: 13px;
   line-height: 20px;
 }
@@ -610,7 +619,7 @@ flex-wrap: wrap;
 
 
 .description-value {
-  font-family: "Gilroy light";
+  font-family: "Gilroy light", Arial, sans-serif;
   font-size: 36px;
   line-height: 48px;
 }
@@ -632,6 +641,8 @@ flex-wrap: wrap;
 
 .offers-link {
   display: inline-block;
+  vertical-align: middle;
+
   width: 160px;
   height: 160px;
 
@@ -681,7 +692,7 @@ background-color: #f0c52e;
 }
 
 .offers-title { /*ПОДПИСИ ПОД КАРТИНКАМИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
 }
@@ -795,6 +806,7 @@ background-color: #f0c52e;
   top: -80px;
   left: -5px;
   display: inline-block;
+  vertical-align: middle;
 
   width: 0;
   height: 319px;
@@ -814,7 +826,7 @@ background-color: #f0c52e;
 .services-title { /* ЗАГОЛОВОК "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ" */
   margin: 0;
 
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
 }
@@ -823,7 +835,7 @@ background-color: #f0c52e;
   margin-top: 40px;
 
   color: #464646;
-  font-family: "OpenSans light";
+  font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
 }
@@ -831,6 +843,7 @@ background-color: #f0c52e;
 .delivery::after { /*<li class="services-item delivery">*/
   content: "";
   display: inline-block;
+  vertical-align: middle;
 
   width: 130px;
   height: 160px;
@@ -840,7 +853,6 @@ background-color: #f0c52e;
   background: url("../img/icon_delivery.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
-  border: 2px solid #00FF00; /*временно */
 }
 
 .warranty {
@@ -951,7 +963,7 @@ background-color: #f0c52e;
 }
 
 .we-title {
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
 }
@@ -980,7 +992,7 @@ background-color: #f0c52e;
 }
 
 .delivery-partner {   /*Примерные значения, точные не могу получить из макета*/
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
   font-size: 20px;
   line-height: 40px;
 }
@@ -988,6 +1000,8 @@ background-color: #f0c52e;
 .delivery-partner::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   margin-right: 25px;
   vertical-align: middle;
 
@@ -1187,6 +1201,8 @@ background-color: #f0c52e;
 .user-footer::before {
   content: " ";
   display: inline-block;
+  vertical-align: middle;
+
   width: 13px;
   height: 12px;
   margin-right: 14px;
@@ -1199,6 +1215,8 @@ background-color: #f0c52e;
 .compare-footer::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   width: 10px;
   height: 12px;
   margin-right: 10px;
@@ -1210,6 +1228,8 @@ background-color: #f0c52e;
 .cart-footer::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   width: 12px;
   height: 12px;
   margin-right: 12px;
@@ -1729,6 +1749,7 @@ background-color: #f0c52e;
 .range-min-input,
 .range-max-input  {
   display: inline-block;
+  vertical-align: middle;
 
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 14px;
@@ -1811,6 +1832,8 @@ background-color: #f0c52e;
 .color-choice::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+
   position: absolute;
   top: 8px;
   left: 0;
@@ -1850,6 +1873,7 @@ background-color: #f0c52e;
 .bluetooth-choice::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
   position: absolute;
   top: 8px;
   left: 0;
@@ -1983,6 +2007,7 @@ background-color: #f0c52e;
 .arrow-up,
 .arrow-down {
   display: inline-block;
+  vertical-align: middle;
   z-index: 5;
 
   width: 11px;
@@ -2047,7 +2072,7 @@ background-color: #f0c52e;
   width: 60px;
   height: 60px;
 
-  font-family: "Gilroy";
+  font-family: "Gilroy", Arial, sans-serif;
 
   font-size: 14px;
   line-height: 60px;
@@ -2065,6 +2090,8 @@ background-color: #f0c52e;
 /* ? 20 окт: не могу разобраться, откуда берется расстояние между картинкой и подписью к ней: .catalog-img и .item-description */
   margin: 0;
   padding: 0;
+
+  backfgound-color: #eeeeee;
 }
 
 .catalog-img:hover {
@@ -2203,6 +2230,7 @@ background-color: #f0c52e;
 
 .pagination-link {
   display: inline-block;
+  vertical-align: middle;
   position: relative;
 
   min-width: 40px;
@@ -2235,6 +2263,7 @@ background-color: #f0c52e;
 .back,
 .forward {
   display: inline-block;
+  vertical-align: middle;
   position: relative;
 
   height: 70px;
