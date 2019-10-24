@@ -147,22 +147,17 @@ p {
   /* border: 1px solid grey; */
 }
 
-.search-form {
+.search-form { /* ПОИСК по САЙТУ */
   position: relative;
-}
-
-.search-field { /* ПОИСК по САЙТУ */
   display: block;
 
-
-  width: 355px;
+  width: 440px;
   min-height: 15px;
-
-  border: 5px solid blue;
 }
 
 .search-input { /*, .search-input:visited*/
   width: 355px;
+  height: 49px;
   padding-left: 37px;
 
   border: none;
@@ -196,10 +191,9 @@ p {
 
 .search-button {
   position: absolute;
-  top: -7px;
   display: inline-block;
 
-  width:85px;
+  width:81px;
   height: 49px;
   padding: 0px 0px;
 
@@ -231,7 +225,9 @@ p {
 
 .top-nav-list { /* ВОЙТИ СРАВНИТЬ КОРЗИНА */
   display: flex;
-  justify-content: space-between;
+flex-wrap: wrap;
+
+  width: 600px;
 }
 
 .nav-link {
@@ -240,12 +236,22 @@ p {
   line-height: 30px;
 }
 
+.nav-link.user {
+  width: 160px;
+}
+
+.compare-item {
+  margin-left: auto;
+}
+
 .nav-link.compare {
-  margin-left: 200px;
+  width: 100px;
+  margin-left: auto;
 }
 
 .nav-link.cart {
-  margin-left: 41px;
+  width: 100px;
+  margin-left: 20px;
 }
 
 .user::before {
@@ -266,6 +272,7 @@ p {
   width: 10px;
   height: 12px;
   margin-right: 10px;
+  margin-left: auto;
 
   background-size: 10px 12px;
   background: url("../img/icon_compare.svg") no-repeat;
@@ -287,9 +294,8 @@ p {
 .main-nav-list {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-
-  /*border: 1px solid grey;  временно */
 }
 
 .plus::after {
@@ -302,7 +308,6 @@ p {
   vertical-align: middle; /* ! по вертикали position:absolute, top-left*/
   background-image: url(../img/icon_plus.svg);
   opacity: 0.3;
-
 }
 
 .main-nav-item:nth-child(2) { /* nth-child ДОСТАВКА */
@@ -483,7 +488,9 @@ p {
 
 .details {
   display: flex;
+  flex-wrap: wrap;
 
+  width: 560px;
   margin-top: 50px; /* примерно */
   margin-bottom: 50px; /* примерно */
 }
@@ -613,6 +620,7 @@ p {
 
 .offers-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   width: 100%;  /* 1160px; */
@@ -876,6 +884,7 @@ background-color: #f0c52e;
 
 .partners-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around; /* пока примерно */
 
 
@@ -921,6 +930,7 @@ background-color: #f0c52e;
 
 .we {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   width: 1160px;
@@ -1050,6 +1060,7 @@ background-color: #f0c52e;
 
 .footer-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 
@@ -1065,12 +1076,10 @@ background-color: #f0c52e;
 
 .footer-left-box,
 .footer-middle-box,
-.footer-right-box
- {
+.footer-right-box {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-/*
-  border: 1px dashed tomato; */
 }
 
 .footer-left-box { /* ЛЕВЫЙ БЛОК В ФУТЕРЕ: ЛОГОТИП, АДРЕС */
@@ -1105,13 +1114,24 @@ background-color: #f0c52e;
 }
 
 .footer-middle-box { /* БЛОК ПОСЕРЕДИНЕ ФУТЕРА: ДОСТАВКА..., СОЦ СЕТИ */
-  flex-basis: 423px;
+  width: 440px;
   padding-top: 140px;
 }
 
 .footer-nav-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  width: 440px;
+}
+
+.footer-right-box > .footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 330px;
 }
 
 .main-nav-item.footer-nav-item {
@@ -1125,6 +1145,7 @@ background-color: #f0c52e;
 
 .social-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   width: 141px;
@@ -1148,7 +1169,7 @@ background-color: #f0c52e;
 }
 
 .footer-right-box {
-  flex-basis: 325px;
+  width: 325px;
   padding-top: 66px;
 }
 
@@ -1169,6 +1190,7 @@ background-color: #f0c52e;
   width: 13px;
   height: 12px;
   margin-right: 14px;
+  /* margin-left: 14px; */
 
   background-size: 13px 12px;
   background: url("../img/icon_user_footer.png") no-repeat;
@@ -1430,7 +1452,10 @@ background-color: #f0c52e;
 
 /* catalog.html  <header> */
 
-.nav-link-exit {
+
+.nav-link.exit {
+  width: 80px;
+  margin-left: 20px;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
@@ -1449,6 +1474,7 @@ background-color: #f0c52e;
 
 .products-block {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   z-index: 2;
   /* display: none; */
@@ -1519,10 +1545,11 @@ background-color: #f0c52e;
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
 
+  width: 1040px;
   margin-bottom: 50px;/*пока примерно, потом подгоню*/
-  padding-left: 61px;
 }
 
 .breadcrumbs-item {
@@ -1530,7 +1557,7 @@ background-color: #f0c52e;
 }
 
 .breadcrumbs-link {
-  display: block; /* в линию так не отображаются  */
+  display: block;
 
   color: rgba(0, 0, 0, 0.3);
   font-family: "OpenSans light", Arial, sans-serif;
@@ -1545,6 +1572,10 @@ background-color: #f0c52e;
 
 .breadcrumbs-link:active {
     color: rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumbs-item:nth-child(n+4) {
+  margin-left: 50px;
 }
 
 .breadcrumbs-item:nth-child(1)::after,
@@ -1915,7 +1946,9 @@ background-color: #f0c52e;
   }
 .sorting-list {
     display: flex;
+    flex-wrap: wrap;
 
+    width: 500px;
     margin-right: auto;
     margin-left: 55px;
 }
@@ -1924,7 +1957,7 @@ background-color: #f0c52e;
   display: block;
 }
 
-.sorting-item:nth-child(2) {
+.sorting-item:nth-child(2n) {
   margin-right: 20px;
   margin-left: 20px;
 }
@@ -1950,7 +1983,7 @@ background-color: #f0c52e;
 .arrow-up,
 .arrow-down {
   display: inline-block;
-  z-index: 300;
+  z-index: 5;
 
   width: 11px;
   height: 10px;
@@ -1958,7 +1991,6 @@ background-color: #f0c52e;
   background-size: cover;
 
   opacity: 0.2;
-  /*color: rgba(0, 0, 0, 0.2);  как изменить цвет cvg-иконки (к чему применить fill)*/
 }
 
 .arrow-up {
@@ -2108,7 +2140,7 @@ background-color: #f0c52e;
 
 .pagination { /*доделать стили по стайлгайду через класс pagination-active*/
   width: 760px;
-  height: 70px;
+  min-height: 70px;
 
   margin-top: 30px; /* примерно */
   margin-right: auto;
@@ -2120,6 +2152,7 @@ background-color: #f0c52e;
 
 .pagination-list {
   display: flex;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-content: baseline;   /* не выравнивается, vertical-align: middle; тоже не помогает */
 
@@ -2139,21 +2172,40 @@ background-color: #f0c52e;
   margin-bottom: auto;
 }
 
-.pagination-item:first-child {
-  /* padding-left: 28px; */
+.page-numbers {
+  display: flex;
+  flex-wrap:wrap;
+
+  width: 500px;
   margin-right: auto;
+  margin-left: auto;
 }
 
 
-.pagination-item:last-child {
+.page-number {
+  min-width: 40px;
+
+  text-align: center;
+}
+
+.page-number:first-child {
+  /* padding-left: 28px; */
   margin-left: auto;
+}
+
+.page-number:nth-child(2n) {
+  margin: 0;
+}
+
+.page-number:last-child {
+  margin-right: auto;
 }
 
 .pagination-link {
   display: inline-block;
   position: relative;
 
-  width: 40px;
+  min-width: 40px;
   height: 70px;
   margin: 0;
   padding: 0;
@@ -2161,6 +2213,13 @@ background-color: #f0c52e;
 
   color: rgba(0, 0, 0, 0.3);
   text-align: center;
+}
+
+.page-number > .pagination-link {
+  min-width: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+
 }
 
 .pagination-link:hover,
