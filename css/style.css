@@ -50,6 +50,9 @@ body {
 }
 
 a {
+  margin: 0;
+  padding: 0;
+
   text-decoration: none;
 }
 
@@ -95,21 +98,19 @@ p {
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-  /*border: 1px solid #FF1493;  временно */
   padding: 0;
 }
 
 /*              HEADER           */
 
 .logo-link {
-  position: relative;
-  display: block; /* нужно ли это свойство, учитывая что position: relative; */
-  top: 15px;
-  /* z-index: 2; */
+  position: absolute;
+  z-index: 2;
+  display: block;
+  top: 21px;
+  left: 60px;
 
-  /* margin-top: 9px; */
-  margin-bottom: 0px;
-  margin-left: 60px;
+  margin: 0;
   padding: 0;
 }
 
@@ -125,12 +126,14 @@ p {
 .header-wrapper {
   display: flex;
   flex-direction: column;
-  /* position: relative; */
+  position: relative;
+  top: 40px;
+  left: 0;
 
   min-height: 298px;
-  margin-top: -15px; /*roughly*/
+  margin: 0;
   padding-right: 60px;
-  padding-top: 51px;
+  padding-top: 35px;
   padding-left: 60px;
 
   background-color: #f7e296;
@@ -141,9 +144,10 @@ p {
 .top-nav {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 
   width: 1040px;
-  margin-bottom: 50px;
+  /* margin-bottom: 25px; */
   /* border: 1px solid grey; */
 }
 
@@ -153,11 +157,14 @@ p {
 
   width: 440px;
   min-height: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .search-input { /*, .search-input:visited*/
   width: 355px;
   height: 49px;
+  margin-left: 3px;
   padding-left: 37px;
 
   border: none;
@@ -239,6 +246,7 @@ flex-wrap: wrap;
 
 .nav-link.user {
   width: 160px;
+  margin-left: 100px;
 }
 
 .compare-item {
@@ -252,7 +260,7 @@ flex-wrap: wrap;
 
 .nav-link.cart {
   width: 100px;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .user::before {
@@ -303,6 +311,8 @@ flex-wrap: wrap;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  margin-top: 28px;
 }
 
 .plus::after {
@@ -312,6 +322,7 @@ flex-wrap: wrap;
 
   width: 17px;
   height: 17px;
+  margin-top: -2px;
   margin-left: 12px; /*примерно*/
   vertical-align: middle; /* ! по вертикали position:absolute, top-left*/
   background-image: url(../img/icon_plus.svg);
@@ -323,11 +334,12 @@ flex-wrap: wrap;
 }
 
 .main-nav-item:nth-child(3) { /* nth-child ГАРАНТИЯ */
-  margin-right: 114px;
-  margin-left: 38px;
+  margin-right: 110px;
+  margin-left: 35px;
 }
 
 .main-nav-list:last-child { /* nth-child КОНТАКТЫ */
+    margin-right: -5px;
 }
 
 .nav-link,
