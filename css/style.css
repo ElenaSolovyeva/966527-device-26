@@ -376,14 +376,14 @@ flex-wrap: wrap;
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: space-around; /* получилось неодинаковое расстояние между элементами */
+  /* justify-content: space-around; */
   flex-wrap: wrap;
 
 
   width: 100%; /* 1160px; */
   min-height: 500px;
 
-  margin-top: -109px;
+  margin-top: -70px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -393,12 +393,12 @@ flex-wrap: wrap;
 }
 
 .slider-page-2{
-  border: 3px dashed gold;
+  /* border: 3px dashed gold; */
   display: none;
 }
 
 .slider-page-3{
-  border: 3px dashed #00BFFF;
+  /* border: 3px dashed #00BFFF; */
   display: none;
 }
 
@@ -407,7 +407,7 @@ flex-wrap: wrap;
   display: block;
   position: absolute;
   top: -13px;
-  right: 60px; /*примерно*/
+  right: 50px;
   z-index: 4;
   order: 2;
 
@@ -465,30 +465,33 @@ flex-wrap: wrap;
   text-align: right;
 }
 
- .slider-image {
-/*border: 1px solid grey;*/
+ .slider-page-1 > .slider-image {
+   margin-left: 90px;
 }
 
 .slider-description-wrapper {
-  width: 560px;
+  width: 480px;
+  margin-left: 125px;
 }
 
 .slider-slogan {
   position: relative;
   z-index: 5;
 
-  padding-top: 73px;
+  padding-top: 83px;
+  /* padding-left: 40px; */
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 56px;
+  letter-spacing: 0.7px;
 }
 
 .slider-slogan::before {
   content: " ";
   display: block;
   position: absolute;
-  top: 30px; /*примерно*/
+  top: 37px; /*примерно*/
   left: 0px;
 
   width: 100px;
@@ -502,6 +505,7 @@ flex-wrap: wrap;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
+  letter-spacing: 0.099px;
 }
 
 /* Кнопка ПОДРОБНЕЕ и радио-кнопки */
@@ -511,7 +515,7 @@ flex-wrap: wrap;
   flex-wrap: wrap;
 
   width: 560px;
-  margin-top: 50px; /* примерно */
+  margin-top: 45px; /* примерно */
   margin-bottom: 50px; /* примерно */
 }
 
@@ -524,7 +528,6 @@ flex-wrap: wrap;
   text-transform: uppercase;
   text-align: center;
 }
-
 
 .button-details::before {
   content: " ";
@@ -547,10 +550,10 @@ flex-wrap: wrap;
   display: block;
   position: relative;
 
-
   width: 220px;
   height: 40px;
   margin-right: 180px;
+  margin-left: 2px;
 
   padding-top: 8px; /*! Изменить фон на псевдоэлемент  */
 }
@@ -569,6 +572,11 @@ flex-wrap: wrap;
 
  /*РАДИО-КНОПКИ СЛАЙДЕРА*/
 
+.promo-label {
+  margin-top: 4px;
+  margin-left: -2px;
+}
+
 .promo-label::before {
   content: "";
   display: inline-block;
@@ -576,8 +584,7 @@ flex-wrap: wrap;
 
   width: 12px;
   height: 12px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 23px;
 
   opacity: 1;
   background-image: url("../img/icon_radio-off.svg");
@@ -592,7 +599,7 @@ flex-wrap: wrap;
 /* Таблица с характеристиками */
 
 .item-parameters {
-  /* border: 1px dashed grey; */
+  margin-top: -2px;
 }
 
 .description-parameter {
@@ -603,7 +610,7 @@ flex-wrap: wrap;
 }
 
 .description-parameter:nth-child(1) {
-  width: 160px;
+  width: 155px;
   margin: 0;
   padding-top: 0;
   padding-right: 0;
@@ -631,6 +638,8 @@ flex-wrap: wrap;
 
 
 .description-value {
+  padding-bottom: 7px;
+
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 36px;
   line-height: 48px;
@@ -645,7 +654,7 @@ flex-wrap: wrap;
   justify-content: space-between;
 
   width: 100%;  /* 1160px; */
-  margin-top: 110px; /*примерно*/
+  margin-top: 92px; /*примерно*/
   margin-right: auto;
   margin-bottom: 185px;
   margin-left: auto;
@@ -704,6 +713,7 @@ background-color: #f0c52e;
 }
 
 .offers-title { /*ПОДПИСИ ПОД КАРТИНКАМИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+  padding-top: 18px;
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -714,6 +724,8 @@ background-color: #f0c52e;
 .slider-services { /* задает серый фон по всей ширине экрана*/
   width: 100%;
   min-height: 288px; /*размер фона видимой части height: 288px;*/
+  margin-top: -20px;
+
   background-color: #e5e5e5;
 }
 
@@ -738,7 +750,7 @@ background-color: #f0c52e;
 
   width: 160px;
   height: 40px;
-  margin-bottom: 32px;
+  margin-bottom: 25px;
 
   text-align: center;
   margin-top: 9px;
@@ -841,26 +853,31 @@ background-color: #f0c52e;
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
+
+  letter-spacing: 1px;
 }
 
 .services-description { /*ОПИСАНИЕ УСЛУГИ "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ"*/
-  margin-top: 40px;
+  margin-top: 33px;
 
   color: #464646;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
+  letter-spacing: 0.3px;
 }
 
 .delivery::after { /*<li class="services-item delivery">*/
   content: "";
   display: inline-block;
   vertical-align: middle;
+  position: absolute;
+  right: 66px;
+  top: 12px;
 
-  width: 130px;
-  height: 160px;
-  margin-right: 66px;/*!position: absolut + top/right, margin не нужен*/
-  margin-left: auto;
+  width: 136px;
+  height: 164px;
+
 
   background: url("../img/icon_delivery.svg") no-repeat;
   background-size: 130px 160px;
@@ -909,11 +926,11 @@ background-color: #f0c52e;
 .partners-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* пока примерно */
+  justify-content: space-between;
 
 
   width: 1160px;
-  margin-top: 110px; /*примерно*/
+  margin-top: 92px; /*примерно*/
   margin-right: auto;
   margin-left: auto;
 }
@@ -958,9 +975,9 @@ background-color: #f0c52e;
   justify-content: space-between;
 
   width: 1160px;
-  margin-top: 108px;
+  margin-top: 80px;
   margin-right: auto;
-  margin-bottom: 85px; /*примерно - roughly*/
+  margin-bottom: 80px; /*примерно - roughly*/
   margin-left: auto;
 }
 
@@ -970,8 +987,7 @@ background-color: #f0c52e;
   flex-direction: column;
 
   width: 560px;
-  margin-top: 51px;
-  /* border: 2px dashed gold; */
+  margin-top: 16px;
 }
 
 .we-title {
@@ -984,7 +1000,7 @@ background-color: #f0c52e;
   content: "";
   display: block;
   position: absolute;
-  top: -52px;
+  top: -17px;
 
   width: 80px;
   height: 0;
@@ -1000,13 +1016,20 @@ background-color: #f0c52e;
 
 .we-title + .we-details,
 .we-details + .we-details {
-  padding-bottom: 35px; /*примерно*/
+  padding-top: 2px;
+  padding-bottom: 30px;
+}
+
+.delivery-list {
+  margin-top: 37px;
+  margin-bottom: -5px;
 }
 
 .delivery-partner {   /*Примерные значения, точные не могу получить из макета*/
   font-family: "Gilroy", Arial, sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 40px;
+  letter-spacing: 0.8px;
 }
 
 .delivery-partner::before {
@@ -1071,9 +1094,12 @@ background-color: #f0c52e;
   flex-direction: column;
 
   width: 560px;
-  margin-top: 51px;
+  margin-top: 16px;
+}
 
-  /* border: 2px dashed gold; */
+.our-location {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
@@ -1088,7 +1114,7 @@ background-color: #f0c52e;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   width: 1160px;
   margin-top: 0;
@@ -1123,16 +1149,18 @@ background-color: #f0c52e;
 }
 
 .our-adress {
-  margin-top: 40px;
+  margin-top: 22px;
   margin-left: 0;
   margin-bottom: 0;
   margin-right: 0;
+
+  letter-spacing: 0.001px;
 }
 
 .yellow-line {
   width: 80px;
   padding: 0;
-  margin-top: 85px;
+  margin-top: 80px;
   margin-left: 0;
   margin-bottom: 0;
   margin-right: 0;
@@ -1140,8 +1168,9 @@ background-color: #f0c52e;
 }
 
 .footer-middle-box { /* БЛОК ПОСЕРЕДИНЕ ФУТЕРА: ДОСТАВКА..., СОЦ СЕТИ */
-  width: 440px;
-  padding-top: 140px;
+  width: 430px;
+  margin-left: 150px;
+  padding-top: 135px;
 }
 
 .footer-nav-list {
@@ -1149,7 +1178,13 @@ background-color: #f0c52e;
   flex-wrap: wrap;
   justify-content: space-between;
 
-  width: 440px;
+  width: 428px;
+}
+
+.footer-right-box {
+margin-right: 0;
+margin-left: auto;
+border: 1px solid gold;
 }
 
 .footer-right-box > .footer-nav-list {
@@ -1157,7 +1192,7 @@ background-color: #f0c52e;
   flex-wrap: wrap;
   justify-content: space-between;
 
-  width: 330px;
+  width: 325px;
 }
 
 .main-nav-item.footer-nav-item {
@@ -1169,13 +1204,17 @@ background-color: #f0c52e;
   color: #ffffff;
 }
 
+.main-nav-link.footer-link {
+  letter-spacing: 3.3px;
+}
+
 .social-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   width: 141px;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
@@ -1196,7 +1235,7 @@ background-color: #f0c52e;
 
 .footer-right-box {
   width: 325px;
-  padding-top: 66px;
+  padding-top: 63px;
 }
 
 .footer-nav-list a:hover,
@@ -1251,7 +1290,7 @@ background-color: #f0c52e;
 }
 
 .our-tel {
-  margin-top: 52px;
+  margin-top: 38px;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: auto;
@@ -1262,7 +1301,7 @@ background-color: #f0c52e;
 
   width: 27px;
   height: 35px;
-  margin-top: 71px;
+  margin-top: 65px;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: auto;
