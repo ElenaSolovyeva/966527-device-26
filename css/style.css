@@ -49,6 +49,10 @@ body {
   background-color: #ffffff;
 }
 
+main {
+  background-color: #ffffff;
+}
+
 a {
   margin: 0;
   padding: 0;
@@ -62,6 +66,8 @@ p {
 }
 
 .reset-list {
+  position: relative;
+
   list-style: none;
   margin: 0;
   padding: 0;
@@ -139,6 +145,10 @@ p {
   background-color: #f7e296;
 }
 
+.header-wrapper.catalog-wrapper {
+  min-height: 186px;
+}
+
 /* ПОИСК по САЙТУ + ВОЙТИ СРАВНИТЬ КОРЗИНА  */
 
 .top-nav {
@@ -147,8 +157,6 @@ p {
   align-items: baseline;
 
   width: 1040px;
-  /* margin-bottom: 25px; */
-  /* border: 1px solid grey; */
 }
 
 .search-form { /* ПОИСК по САЙТУ */
@@ -420,7 +428,6 @@ flex-wrap: wrap;
   line-height: 179.2px;
 
   text-align: right;
-  /* border: 1px solid grey; */
 }
 
 .slider-page-2::before {
@@ -740,7 +747,6 @@ background-color: #f0c52e;
   width: 280px;
   min-height: 319px;
   margin-top: -30px;
-  /* border: 4px solid gold;   временно */
 }
 
 .button-service {
@@ -755,11 +761,6 @@ background-color: #f0c52e;
   text-align: center;
   margin-top: 9px;
   padding-top: 7px;
-  /* background-image: url("../img/service-button-background.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%; */
-
-  /*border: 3px solid green;   временно */
 }
 
 .delivery-button::before,
@@ -821,7 +822,6 @@ background-color: #f0c52e;
   justify-content: space-between;
 
   width: 880px;
-  /*border: 2px solid blue; временно */
 }
 
 .services-item::before { /* черная вертикальная линия */
@@ -843,8 +843,6 @@ background-color: #f0c52e;
   width: 460px;
   min-height: 239px; /*319px-80px*/
   margin-left: 120px;
-
-  /* border: 3px dashed gold; */
 }
 
 .services-title { /* ЗАГОЛОВОК "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ" */
@@ -942,8 +940,6 @@ background-color: #f0c52e;
   min-height: 100px;
   margin: 0;
   padding:0;
-
-  /*border: 1px solid grey;  временно */
 }
 
 
@@ -1122,8 +1118,6 @@ background-color: #f0c52e;
   margin-bottom: 0;
   margin-left: auto;
   padding: 0;
-
-  /* border: 1px solid orange; */
 }
 
 .footer-left-box,
@@ -1184,13 +1178,12 @@ background-color: #f0c52e;
 .footer-right-box {
 margin-right: 0;
 margin-left: auto;
-border: 1px solid gold;
 }
 
 .footer-right-box > .footer-nav-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   width: 325px;
 }
@@ -1248,6 +1241,14 @@ border: 1px solid gold;
   opacity: 0.3;
 }
 
+.cart-footer {
+  margin-left: 0px;
+}
+
+.compare-footer {
+  margin-right: 0;
+  margin-left: 0;
+}
 
 .user-footer::before {
   content: " ";
@@ -1340,7 +1341,7 @@ border: 1px solid gold;
   bottom: 385px;
   left: 120px;
   z-index: 10;
-  display: none;
+  /* display: none; */
 
   width: 960px;
   height: 560px;
@@ -1546,13 +1547,13 @@ border: 1px solid gold;
 .products-block {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-  /* display: none; */
+  position: absolute;
+  z-index: 4;
+  display: none;
 
-  margin-top: -16px;
+  margin-top: 10px;
   margin-right: auto;
-  margin-bottom: auto;
+  padding-bottom: 35px;
   padding-left: 61px;
 
   background-color: #f7e296;
@@ -1603,10 +1604,10 @@ border: 1px solid gold;
 /* catalog.html <main> */
 .monopods-h1 {
   position: relative;
+  left: 0;
   z-index: 3;
 
-  margin-top: 30px; /*пока примерно, потом подгоню*/
-  margin-bottom: 30px;/*пока примерно, потом подгоню*/
+  margin-top: 65px; /*пока примерно, потом подгоню*/
   padding-left: 61px;
 
   font-family: "Gilroy", Arial, sans-serif;
@@ -1620,7 +1621,8 @@ border: 1px solid gold;
   position: relative;
 
   width: 1040px;
-  margin-bottom: 50px;/*пока примерно, потом подгоню*/
+  margin-top: 35px;
+  margin-bottom: 45px;/*пока примерно, потом подгоню*/
 }
 
 .breadcrumbs-item {
@@ -1694,7 +1696,7 @@ border: 1px solid gold;
 .filter-title {
   min-height: 70px;
   margin: 0;
-  padding-top: 29px;
+  padding-top: 22px;
   padding-right: 180px;
 
   font-family: "Gilroy", Arial, sans-serif;
@@ -1725,12 +1727,12 @@ border: 1px solid gold;
   margin-right: 68px;
   margin-bottom: auto;
   margin-left: auto;
-  padding-top: 16px;
+  padding-top: 12px;
 
   border-top: 2px solid #000000;
 }
 
-.subtitle {
+.range-subtitle {
   margin-right: auto;
   margin-left: 0;
 
@@ -1744,7 +1746,7 @@ border: 1px solid gold;
   z-index: 5;
 
   width: 207px;
-  margin-top: 0;
+  margin-top: 35px;
   margin-right: 68px;
 }
 
@@ -1778,30 +1780,34 @@ border: 1px solid gold;
   height: 22px;
 
   background-image: url("../img/icon_filter-button.svg");
+  font-family: ""
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .range-min {
-  margin-top: -9px;
+  margin-top: -12px;
+  margin-left: -3px;
   padding: 0;
 }
 
 .range-max {
-  margin-top: -9px;
+  margin-top: -12px;
   margin-right: 0;
   margin-bottom: 0;
-  margin-left: 115px;
+  margin-left: 111px;
   padding: 0;
+}
+
+.values {
+  display: flex;
+  align-items: baseline;
 }
 
 .range-min-label,
 .range-max-label,
 .range-min-input,
 .range-max-input  {
-  display: inline-block;
-  vertical-align: middle;
-
   font-family: "Gilroy light", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
@@ -1809,19 +1815,19 @@ border: 1px solid gold;
 }
 
 .range-min-label {
-  margin-top: 10px; /* примерно, пока не пойму, как померить*/
+  margin-top: 7px;
   margin-right: 3px;
   margin-bottom: 0;
   margin-left: 0;
 }
 
-.range-min-input { /* позиционирование пока не задано*/
+.range-min-input {
   width: 50px;
   margin-right: 0;
 }
 
 .range-max-label {
-  margin-top: 15px; /* примерно, пока не пойму, как померить*/
+  margin-top: 7px; /* примерно, пока не пойму, как померить*/
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 30px;
@@ -1829,15 +1835,14 @@ border: 1px solid gold;
 
 .range-max-input {
   width: 50px;
-  margin-right: 0;
-  margin-left: 4px;
+  margin-right: 5;
+
   }
 
 .fieldset-container {
   width: 201px;
   margin-right: 68px;
   margin-left: auto;
-  padding-top: 16px;
   padding-right: 0;
   padding-bottom: 0;
   padding-left: 0;
@@ -1856,17 +1861,18 @@ border: 1px solid gold;
 
 .color {
   min-height: 283px;
-  margin-bottom: 30px; /* примерно */
+  margin-top: -8px;
 }
 
 .color-subtitle {
   padding-top: 16px;
   padding-bottom: 29px;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
 }
 
-.reset-list {
-  position: relative;
-}
 
 .color-choice,      /*<label class="color-choice">Черный*/
 .bluetooth-choice { /*<label class="bluetooth-choice">  Есть*/
@@ -1878,6 +1884,14 @@ border: 1px solid gold;
   font-family: "OpenSans light", Arial, sans-serif;
   font-size: 14px;
   line-height: 40px;
+}
+
+.black {
+  margin-top: -10px;
+}
+
+.pink {
+  margin-bottom: 30px;
 }
 
 .color-choice::before {
@@ -1917,9 +1931,14 @@ border: 1px solid gold;
 }
 
 .bluetooth-subtitle {
-  padding-top: 16px;
-  padding-bottom: 29px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
 }
+
 
 .bluetooth-choice::before {
   content: "";
@@ -1958,7 +1977,7 @@ border: 1px solid gold;
 
   width: 200px;
   height: 40px;
-  margin-top: 20px; /*примерно*/
+  margin-top: -10px;
   margin-right: 70px;
   margin-left: auto;
 
@@ -2010,6 +2029,7 @@ border: 1px solid gold;
 
 .sorting-title {
   margin-left: 72px;
+  padding-top: 10px;
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
@@ -2023,9 +2043,9 @@ border: 1px solid gold;
     display: flex;
     flex-wrap: wrap;
 
-    width: 500px;
+    width: 560px;
     margin-right: auto;
-    margin-left: 55px;
+    margin-left: 53px;
 }
 
 .sorting-item {
@@ -2033,8 +2053,8 @@ border: 1px solid gold;
 }
 
 .sorting-item:nth-child(2n) {
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 30px;
+  margin-left: 25px;
 }
 
 .sorting-link {
@@ -2162,6 +2182,8 @@ border: 1px solid gold;
   display: block;
 
   width: 260px;
+  margin-top: 25px; /*!!! не отображается в отладчике*/
+  margin-bottom: 45px;
 
   color: #000000;
   font-family: "Gilroy", Arial, sans-serif;
@@ -2173,6 +2195,7 @@ border: 1px solid gold;
   display: block;
 
   min-width: 90px;
+  margin-top: 25px;
 
   color: #000000;
   font-family: "Gilroy light", Arial, sans-serif;
@@ -2220,9 +2243,10 @@ border: 1px solid gold;
   width: 760px;
   min-height: 70px;
 
-  margin-top: 30px; /* примерно */
+
   margin-right: auto;
-  margin-bottom: 0;
+  margin-top: -10px;
+  margin-bottom: 10px;
   margin-left: 72px;
 
   background-color: #ebebeb;
@@ -2234,6 +2258,7 @@ border: 1px solid gold;
   justify-content: space-between;
   align-content: baseline;   /* не выравнивается, vertical-align: middle; тоже не помогает */
 
+  width: 760px;
   min-height: 70px;
 
   font-family: "Gilroy", Arial, sans-serif;
@@ -2254,7 +2279,7 @@ border: 1px solid gold;
   display: flex;
   flex-wrap:wrap;
 
-  width: 500px;
+  width: 497px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -2284,7 +2309,7 @@ border: 1px solid gold;
   vertical-align: middle;
   position: relative;
 
-  min-width: 40px;
+  min-width: 42px;
   height: 70px;
   margin: 0;
   padding: 0;
@@ -2294,12 +2319,6 @@ border: 1px solid gold;
   text-align: center;
 }
 
-.page-number > .pagination-link {
-  min-width: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-
-}
 
 .pagination-link:hover,
 .pagination-link:focus {
@@ -2325,11 +2344,11 @@ border: 1px solid gold;
   color: rgba(0, 0, 0, 1);
 }
 
-.pagination-link.back  {
+.back  {
   width: 126px;
 }
 
-.pagination-link.forward  {
+.forward  {
   width: 137px;
 }
 
