@@ -53,6 +53,39 @@
             <ul class="main-nav-list reset-list">
               <li class="main-nav-item">
                 <a class="main-nav-link plus " href="#">Каталог товаров</a>
+                      <section class="products-block container">
+                        <h2 class="visually-hidden">Разделы каталога</h2>
+                        <div class="left">
+                          <ul class="product-groups-list reset-list">
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Виртуальная реальность</a>
+                            </li>
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Моноподы для селфи</a>
+                            </li>
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Экшн-камеры</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="middle">
+                          <ul class="product-groups-list reset-list">
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Фитнес-браслеты</a>
+                            </li>
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Умные часы</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="right">
+                          <ul class="product-groups-list reset-list">
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Квадрокоптеры</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </section>   <!-- конец класса class="products-block" -->
               </li>
               <li class="main-nav-item">
                 <a class="main-nav-link footer-nav-link" href="#">Доставка</a>
@@ -64,47 +97,10 @@
                 <a class="main-nav-link footer-nav-link" href="#">Контакты</a>
               </li>
             </ul>
-            <!--Как правильнее, включить блок ниже (с группами товаров) в основную навигацию по сайту или сделать отдельным блоком? Пока исхожу из того, что группы товаров по смыслу связаны с каталогом -->
-
           </nav>
         </section><!-- class="main-nav" -->
       </div> <!-- конец класса class="header-wrapper" -->
 
-      <section class="products-block container">
-        <h2 class="visually-hidden">Разделы каталога</h2>
-        <div class="left">
-          <ul class="product-groups-list reset-list">
-            <li class="product-groups-item">
-              <a class="product-groups-link" href="#">Виртуальная реальность</a>
-            </li>
-            <li class="product-groups-item">
-              <a class="product-groups-link" href="#">Моноподы для селфи</a>
-            </li>
-            <li class="product-groups-item">
-              <a class="product-groups-link" href="#">Экшн-камеры</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="middle">
-          <ul class="product-groups-list reset-list">
-            <li class="product-groups-item">
-              <a class="product-groups-link" href="#">Фитнес-браслеты</a>
-            </li>
-            <li class="product-groups-item">
-              <a class="product-groups-link" href="#">Умные часы</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="right">
-          <ul class="product-groups-list reset-list">
-            <li class="product-groups-item">
-              <a class="product-groups-link" href="#">Квадрокоптеры</a>
-            </li>
-          </ul>
-        </div>
-      </section>   <!-- конец класса class="products-block" -->
     </header>
 
     <main>
@@ -215,75 +211,65 @@
 
             <ul class="catalog-list reset-list">
               <li class="catalog-item">
-                <img class="catalog-img" src="img/catalog_product_1.jpg" width="360" height="380" alt="Любительская сэлфи-палка"><div class="item-description"><a class="item-link" href="#"><span>Любительская сэлфи-палка</span></a><span class="catalog-price">500 руб.</span></div>
-
-                <div class="item-hover-wrapper ">
+                <img class="catalog-img" src="img/catalog_product_1.jpg" width="360" height="380" alt="Любительская сэлфи-палка">
+                <div class="item-hover-wrapper">
                   <button class="button modal-send into-the-cart" type="submit">
                     <span class="button-text">В корзину</span>
                   </button>
                   <p class="add-to-compare">Добавить к сравнению</p>
                 </div>
-
+                <div class="item-description"><a class="item-link" href="#"><span>Любительская сэлфи-палка</span></a><span class="catalog-price">500 руб.</span></div>
               </li>
 
               <li class="catalog-item">
                 <img class="catalog-img" src="img/catalog_product_2.jpg" width="360" height="380" alt="Профессиональная сэлфи-палка">
-
+                <div class="item-hover-wrapper">
+                  <button class="button modal-send into-the-cart" type="submit">
+                    <span class="button-text">В корзину</span>
+                  </button>
+                  <p class="add-to-compare">Добавить к сравнению</p>
+                </div>
                 <div class="item-description">
                   <a class="item-link" href="#">
                     <span>Профессиональная<br> сэлфи-палка</span>
                   </a>
                   <span class="catalog-price">1 500 руб.</span>
                 </div>
+              </li>
 
-                <div class="item-hover-wrapper visually-hidden">
+              <li class="catalog-item">
+                <img class="catalog-img" src="img/catalog_product_3.jpg" width="360" height="380" alt="Непотопляемая сэлфи-палка">
+                <div class="item-hover-wrapper">
                   <button class="button modal-send into-the-cart" type="submit">
                     <span class="button-text">В корзину</span>
                   </button>
                   <p class="add-to-compare">Добавить к сравнению</p>
                 </div>
-              </li>
-
-              <li class="catalog-item">
-                <img class="catalog-img" src="img/catalog_product_3.jpg" width="360" height="380" alt="Непотопляемая сэлфи-палка">
-
                 <div class="item-description">
                   <a class="item-link" href="#">
                     <span>Непотопляемая сэлфи-палка</span>
                   </a>
                   <span class="catalog-price">2 500 руб.</span>
                 </div>
-
-                <div class="item-hover-wrapper visually-hidden">
+              </li>
+              <!-- надпись "new" не активна, но может появиться:
+                 - Эту надпись можно сделать псевдоэлементом (в контенте, кружок- бордер), который будет появляться только у классов catalog-item-new -->
+              <li class="catalog-item catalog-item-new">
+                <img class="catalog-img" src="img/catalog_product_4.jpg" width="360" height="380" alt="Сэлфи-палка Следуй за мной">
+                <div class="item-hover-wrapper">
                   <button class="button modal-send into-the-cart" type="submit">
                     <span class="button-text">В корзину</span>
                   </button>
                   <p class="add-to-compare">Добавить к сравнению</p>
                 </div>
-              </li>
-
-              <!-- надпись "new" не активна, но может появиться:
-                 - Эту надпись можно сделать псевдоэлементом (в контенте, кружок- бордер), который будет появляться только у классов catalog-item-new -->
-              <li class="catalog-item catalog-item-new">
-                <img class="catalog-img" src="img/catalog_product_4.jpg" width="360" height="380" alt="Сэлфи-палка Следуй за мной">
-
                 <div class="item-description">
                   <a class="item-link" href="#">
                     <span>Сэлфи-палка «Следуй за<br> мной» </span>
                   </a>
                   <span class="catalog-price">4 900 руб.</span>
                 </div>
-
-                <div class="item-hover-wrapper visually-hidden">
-                  <button class="button modal-send into-the-cart" type="submit">
-                    <span class="button-text">В корзину</span>
-                  </button>
-                  <p class="add-to-compare">Добавить к сравнению</p>
-                </div>
-
               </li>
             </ul>
-
           </section>
 
           <section class="pagination"> <!-- 3й flex-элемент блока 2 (страница каталога) -->
@@ -364,7 +350,7 @@
             </li>
           </ul>
 
-          <p class="tel-wrapper">Тел.: <a  class="our-tel" href="tel:+7(495)495-95-95">+7(495)495-95-95<a></p>
+          <p class="tel-wrapper">Тел.: <a  class="our-tel" href="tel:+7(495)495-95-95">+7(495)495-95-95</a></p>
 
           <p class="developer">
             <a class="developer-logo" href="https://htmlacademy.ru" title="Ссылка на сайт разработчика" ></a>
