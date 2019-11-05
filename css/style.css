@@ -695,27 +695,27 @@ background-color: #f0c52e;
   margin-left: auto;
 }
 
-.offers-item:nth-child(1) > .offers-link > .offers-image {
+.image-01 {
   margin-top: 51px;
 }
 
-.offers-item:nth-child(2) > .offers-link > .offers-image {
+.image-02 {
   margin-top: 42px;
 }
 
-.offers-item:nth-child(3) > .offers-link > .offers-image {
+.image-03 {
   margin-top: 38px;
 }
 
-.offers-item:nth-child(4) > .offers-link > .offers-image {
+.image-04 {
   margin-top: 49px;
 }
 
-.offers-item:nth-child(5) > .offers-link > .offers-image {
+.image-05 {
   margin-top: 32px;
 }
 
-.offers-item:nth-child(6) > .offers-link > .offers-image {
+.image-06 {
   margin-top: 47px;
 }
 
@@ -857,6 +857,7 @@ background-color: #f0c52e;
 }
 
 .services-description { /*ОПИСАНИЕ УСЛУГИ "ДОСТАВКА/ГАРАНТИЯ/КРЕДИТ"*/
+  width: 460px;
   margin-top: 33px;
 
   color: #464646;
@@ -899,7 +900,6 @@ background-color: #f0c52e;
   background: url("../img/icon_warranty.svg") no-repeat;
   background-size: 130px 160px;
   background-repeat: no-repeat;
-  border: 2px solid #00FF00; /*временно */
 }
 
 .credit {
@@ -917,7 +917,6 @@ background-color: #f0c52e;
   background: url("../img/icon_credit.svg") no-repeat;
   background-size: 155px 185px;
   background-repeat: no-repeat;
-  border: 2px solid #00FF00; /*временно */
 }
 
 /* <SECTION CLASS="PARTNERS">  - БЛОК С ЛОГОТИПАМИ ПАРТНЕРОВ */
@@ -1012,12 +1011,20 @@ background-color: #f0c52e;
 }
 
 .we-title + .we-details {
+  width: 460px;
   padding-top: 5px;
   padding-bottom: 30px;
 }
 
 .we-details + .we-details {
-  /* padding-top: 1px; */
+  width: 480px;
+  padding-bottom: 30px;
+}
+
+
+.contacts > .we-details {
+  width: 530px;
+  padding-top: 5px;
   padding-bottom: 30px;
 }
 
@@ -1054,7 +1061,7 @@ background-color: #f0c52e;
   content: " ";
   display: block;
   position: absolute;
-  top: 15px;
+  top: 16px;
   z-index: 1;
 
   width: 260px;

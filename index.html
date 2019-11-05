@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Девайс</title>
+    <title>Интернет-магазин DEVICE</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -49,8 +49,44 @@
           <h2 class="visually-hidden">Основная навигация по сайту</h2>
           <nav>
             <ul class="main-nav-list reset-list">
-              <li class="main-nav-item">
+              <!-- <li class="main-nav-item">
                 <a class="main-nav-link plus" href="#">Каталог товаров</a>
+              </li> -->
+              <li class="main-nav-item">
+                <a class="main-nav-link plus " href="#">Каталог товаров</a>
+                      <section class="products-block container">
+                        <h2 class="visually-hidden">Разделы каталога</h2>
+                        <div class="left">
+                          <ul class="product-groups-list reset-list">
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Виртуальная реальность</a>
+                            </li>
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Моноподы для селфи</a>
+                            </li>
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Экшн-камеры</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="middle">
+                          <ul class="product-groups-list reset-list">
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Фитнес-браслеты</a>
+                            </li>
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Умные часы</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="right">
+                          <ul class="product-groups-list reset-list">
+                            <li class="product-groups-item">
+                              <a class="product-groups-link" href="#">Квадрокоптеры</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </section>   <!-- конец класса class="products-block" -->
               </li>
               <li class="main-nav-item">
                 <a class="main-nav-link footer-nav-link" href="#">Доставка</a>
@@ -81,7 +117,7 @@
             <div class="slider-description-wrapper">
               <!--div class="page-number">01</div-->
               <p class="slider-slogan">Делай селфи,<br> как Бен Стиллер!</p>
-              <p class="slider-info">Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+              <p class="slider-info">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
               <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
                 <p>
                   <a class="button button-details"  href="#">
@@ -182,37 +218,37 @@
         <ul class="offers-list reset-list">
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img class="offers-image" src="img/index_catalog_virtual_reality.svg" width="100" height="55" alt= "Иконка для раздела &laquo;Виртуальная реальность&raquo;">
+              <img class="offers-image image-01" src="img/index_catalog_virtual_reality.svg" width="100" height="55" alt= "Иконка для раздела &laquo;Виртуальная реальность&raquo;">
             </a>
             <h3 class="offers-title">Виртуальная<br> реальность</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img class="offers-image" src="img/index_catalog_monopod.svg" width="87" height="118" alt="Иконка для раздела &laquo;Моноподы для селфи&raquo;">
+              <img class="offers-image image-02" src="img/index_catalog_monopod.svg" width="87" height="118" alt="Иконка для раздела &laquo;Моноподы для селфи&raquo;">
             </a>
             <h3 class="offers-title">Моноподы<br> для селфи</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img class="offers-image" src="img/index_catalog_action_cameras.svg" width="71" height="87" alt="Иконка для раздела &laquo;Экшн-камеры&raquo;">
+              <img class="offers-image image-03" src="img/index_catalog_action_cameras.svg" width="71" height="87" alt="Иконка для раздела &laquo;Экшн-камеры&raquo;">
             </a>
             <h3 class="offers-title">Экшн-камеры</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link"  href="#">
-              <img class="offers-image" src="img/index_catalog_fitnes_trackers.svg" width="107" height="65" alt="Иконка для раздела &laquo;Фитнес-браслеты&raquo;">
+              <img class="offers-image image-04" src="img/index_catalog_fitnes_trackers.svg" width="107" height="65" alt="Иконка для раздела &laquo;Фитнес-браслеты&raquo;">
             </a>
             <h3 class="offers-title">Фитнес-браслеты</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img class="offers-image" src="img/index_catalog_smart_watches.svg" width="56" height="99" alt="Иконка для раздела &laquo;Умные часы&raquo;">
+              <img class="offers-image image-05" src="img/index_catalog_smart_watches.svg" width="56" height="99" alt="Иконка для раздела &laquo;Умные часы&raquo;">
             </a>
             <h3 class="offers-title">Умные часы</h3>
           </li>
           <li class="offers-item">
             <a class="offers-link" href="#">
-              <img class="offers-image" src="img/index_catalog_quadrocopters.svg" width="132" height="69" alt="Иконка для раздела &laquo;Квадрокоптеры&raquo;">
+              <img class="offers-image image-06" src="img/index_catalog_quadrocopters.svg" width="132" height="69" alt="Иконка для раздела &laquo;Квадрокоптеры&raquo;">
             </a>
             <h3 class="offers-title">Квадрокоптеры</h3>
           </li>
@@ -227,7 +263,7 @@
           <ul class="services-buttons  reset-list"><!--Кнопки ДОСТАВКА ГАРАНТИЯ КРЕДИТ и описания услуг-->
             <li>
               <label class="button button-service delivery-button button-yellow-black" for="delivery">
-                <span class="button-text">Доставка</span>
+                <span class="button-text" tab="0" >Доставка</span>
               </label>
               <input class="visually-hidden" id="delivery" type="radio" value="delivery"/>
             </li>
@@ -251,19 +287,19 @@
             <li class="services-item delivery">
               <div class="text-wrapper">
                 <h3 class="services-title">Доставка</h3>
-                <p class="services-description">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
+                <p class="services-description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
               </div>
             </li>
             <li class="services-item warranty">
               <div class="text-wrapper">
                 <h3 class="services-title">Гарантия</h3>
-                <p class="services-description">Если из-за возгорания купленного у нас товара у вас сгорит<br> дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
+                <p class="services-description">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
               </div>
             </li>
             <li class="services-item credit">
               <div class="text-wrapper">
                 <h3 class="services-title ">Кредит</h3>
-                <p class="services-description">Залезть в долговую яму стало проще! Кредитные консультанты<br> подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
+                <p class="services-description">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные<br><!--При первой защите проекта по этому тэгу br было замечание, но он здесь нужен, тк без него слово "условия" остается во 2й строке, что не соответствует макету. Ширина блока для текста задана 460px, что логично исходя из сетки макета--> условия кредита. Выгодные для нашего банка, разумеется.</p>
               </div>
             </li>
           </ul>
@@ -302,8 +338,8 @@
 
         <div class="about-us">
           <h2 class="we-title">О нас</h2>
-          <p class="we-details">Огромный выбор гаджетов не оставит равнодушным гика,<br> который есть в каждом из нас.</p>
-          <p class="we-details">Мы можем доставить ваш товар в самые отдаленные точки<br> России! DEVICE работает со смногими транспортными компаниями:</p>
+          <p class="we-details">Огромный выбор гаджетов не оставит равнодушным гика, <!-- здесь убрала br согласно замечаниям по 1й защите, отрегулировав шириной абзаца, но это же глупо!! ведь ширина следующего абзаца должна быть больше, это же нелогично!!--> который есть в каждом из нас.</p>
+          <p class="we-details">Мы можем доставить ваш товар в самые отдаленные точки<br><!--здесь без br не могу обойтись, подбирая ширину абзаца: при 480рх слово "России" остается в 1й строке, при ширине 479рх слово "компаниями" уходит на следующую строку--> России! DEVICE работает со смногими транспортными компаниями:</p>
           <ul class="delivery-list reset-list">
             <li class="delivery-partner">Деловые Линии</li>
             <li class="delivery-partner">Автортейдинг</li>
@@ -316,7 +352,7 @@
 
         <div class="contacts">
           <h2 class="we-title">Контакты</h2>
-          <p class="we-details">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете<br> проверить работоспособность покупки. Всякое бывает.</p>
+          <p class="we-details">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
           <img class="our-location" src="img/index_map-small.jpg" width="560" height="222" alt="Схема проезда. Наш адрес: 119311 Москва, ул. Строителей, 15">
           <a class="button details-button" href="#">
             <span class="button-text">Напишите нам</span>
