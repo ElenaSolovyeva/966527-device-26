@@ -60,10 +60,12 @@ window.addEventListener("keydown", function(evt) {
 var mapLink = document.querySelector(".popap-map"); // link. По этой ссылке открывается модальное окно с картой
 var popapMap = document.querySelector(".map-modal"); // popup. Само модальное окно
 var closeMap = popapMap.querySelector(".map-close"); // close. Кнопка закрытия модального окна
+var usualMap = popapMap.querySelector(".not-interactive-map"); // НЕ интерактивная карта под тэгом img
 
 mapLink.addEventListener("click", function(evt) {
   evt.preventDefault();
   popapMap.classList.add("modal-show-map"); // в CSS строка 1635
+  usualMap.classList.add("dont-show-map");
 });
 
 closeMap.addEventListener("click", function(evt) {
