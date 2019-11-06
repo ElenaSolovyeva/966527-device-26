@@ -61,6 +61,12 @@ p {
   padding: 0;
 }
 
+.br {
+  display: block;
+  margin: 0;
+  paddong: 0;
+  } /*span - принудительный пеернос*/
+
 .reset-list {
   position: relative;
 
@@ -393,11 +399,11 @@ flex-wrap: wrap;
 }
 
 .slider-page-1{
-  display: none;
+  /* display: none; */
 }
 
 .slider-page-2{
-
+  display: none;
 }
 
 .slider-info-2 {
@@ -531,6 +537,10 @@ flex-wrap: wrap;
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.099px;
+}
+
+.slider-3-info {
+  width: 460px;
 }
 
 /* Кнопка ПОДРОБНЕЕ и радио-кнопки */
@@ -759,10 +769,16 @@ background-color: #f0c52e;
 }
 
 .offers-title { /*ПОДПИСИ ПОД КАРТИНКАМИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
+  width: 160px;
   padding-top: 17px;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+}
+
+.offers-title-2 {
+  width: 100px;
 }
 
 /* <SECTION CLASS="SLIDER-SERVICES"> - БЛОК "ДОСТАВКА-ГАРАНТИЯ-КРЕДИТ" */
@@ -904,6 +920,14 @@ background-color: #f0c52e;
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.3px;
+}
+
+.services-description-3 {
+  width: 440px;
+}
+
+.delivery {
+  /* display: none; */
 }
 
 .delivery::after { /*<li class="services-item delivery">*/
@@ -1146,7 +1170,6 @@ background-color: #f0c52e;
 
 .our-location {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 /*СТИЛИ ДЛЯ ФУТЕРА*/
@@ -1293,7 +1316,7 @@ margin-left: auto;
 }
 
 .cart-footer {
-  margin-left: 0px;
+  margin-left: 12px;
 }
 
 .compare-footer {
