@@ -362,7 +362,7 @@
           <a class="popap-map" href="#">
             <img class="our-location" src="img/index_map-small.jpg" width="560" height="222" alt="Схема проезда. Наш адрес: 119311 Москва, ул. Строителей, 15">
           </a>
-          <a class="button details-button" href="#">
+          <a class="button details-button write-us-button" href="#">
             <span class="button-text">Напишите нам</span>
           </a>
         </div>
@@ -443,21 +443,21 @@
         <iframe class="map-iframe" src="https://yandex.ru/map-widget/v1/-/CGHhv2na" width="960" height="560" frameborder="1" allowfullscreen="true"></iframe>
         <!-- <img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"> -->
       </p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
-      <button class="modal-close transparent-field" type="button">Закрыть</button>
+      <button class="modal-close map-close transparent-field" type="button">Закрыть</button>
     </section>
 
     <section class="feedback-modal">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <form name="write-us" action="https://echo.html-academy.ru" method="post">
+      <form class="write-us-form" name="write-us" action="https://echo.html-academy.ru" method="post">
         <div class="feedback-wrapper">
           <div class="formfield-wrapper">
-            <label class="feedback-label your-name">Ваше имя:
-              <input class="clients-data feedback-field" type="text" placeholder="Имя  Фамилия" required>
+            <label class="feedback-label">Ваше имя:
+              <input class="clients-data your-name-input feedback-field" type="text" placeholder="Имя  Фамилия">
             </label>
           </div>
           <div class="formfield-wrapper">
-            <label class="feedback-label your-email">Ваш e-mail:
-              <input class="clients-data feedback-field" type="email" placeholder="email@example.com" required>
+            <label class="feedback-label">Ваш e-mail:
+              <input class="clients-data feedback-field email-input" type="email" placeholder="email@example.com">
             </label>
           </div>
           <div class="message-wrapper">
@@ -470,7 +470,7 @@
           </button>
         </div>
 
-        <button class="modal-close  transparent-field" type="button">Закрыть</button>
+        <button class="modal-close feedback-close transparent-field" type="button">Закрыть</button>
 
       </form>
     </section>
