@@ -116,7 +116,7 @@
             <img class="slider-image" src="img/index_slider_1.png" width="384" height="486" alt="Изображение самой длинной палки для сэлфи">
             <div class="slider-description-wrapper">
               <!--div class="page-number">01</div-->
-              <p class="slider-slogan">Делай селфи,<br> как Бен Стиллер!</p>
+              <p class="slider-slogan">Делай селфи,<br><!--здесь br допускается критериями--> как Бен Стиллер!</p>
               <p class="slider-info">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
               <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
                 <p>
@@ -126,7 +126,7 @@
                 </p>
 
                 <input class="promo-button visually-hidden" id="promo-button-1" name="promo-radio"  type="radio"  checked/>
-                <label class="promo-label" for="promo-button-1"></label>
+                <label class="promo-label current" for="promo-button-1"></label>
 
                 <input class="promo-button visually-hidden" id="promo-button-2" name="promo-radio"  type="radio" />
                 <label class="promo-label" for="promo-button-2"></label>
@@ -152,18 +152,20 @@
           <li class="slider-page-2">
             <img class="slider-image" src="img/index_slider_2.png" width="345" height="485" alt="Изображение фитнес-браслета">
             <div class="slider-description-wrapper">
-              <p class="slider-slogan">Худеем<br> правильно!</p>
-              <p class="slider-info">Мотивирующие фитнес-браслеты помогут найти в себе силы<br> не пропускать занятия и соблюдать диету.</p>
+              <p class="slider-slogan">Худеем<br><!--здесь br допускается критериями--> правильно!</p>
+              <p class="slider-info slider-info-2">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
               <div class="details"><!-- Разметка для кнопки ПОДРОБНЕЕ и радио-кнопок -->
                 <p>
-                  <a class="button button-details"  href="#">Подробнее</a>
+                  <a class="button button-details"  href="#">
+                    <span class="button-text">Подробнее</span>
+                  </a>
                 </p>
 
                 <input class="promo-button visually-hidden" id="promo-button-111" name="promo-radio"  type="radio"  checked/>
                 <label class="promo-label" for="promo-button-111"></label>
 
                 <input class="promo-button visually-hidden" id="promo-button-22" name="promo-radio"  type="radio" />
-                <label class="promo-label" for="promo-button-22"></label>
+                <label class="promo-label current" for="promo-button-22"></label>
 
                 <input class="promo-button visually-hidden" id="promo-button-33" name="promo-radio"  type="radio" />
                 <label class="promo-label" for="promo-button-33"></label>
@@ -293,7 +295,7 @@
             <li class="services-item warranty">
               <div class="text-wrapper">
                 <h3 class="services-title">Гарантия</h3>
-                <p class="services-description">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
+                <p class="services-description">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.<br><!--br допускается критериями--> Товар, не дом, конечно же.</p>
               </div>
             </li>
             <li class="services-item credit">
@@ -353,7 +355,9 @@
         <div class="contacts">
           <h2 class="we-title">Контакты</h2>
           <p class="we-details">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
-          <img class="our-location" src="img/index_map-small.jpg" width="560" height="222" alt="Схема проезда. Наш адрес: 119311 Москва, ул. Строителей, 15">
+          <a class="popap-map" href="#">
+            <img class="our-location" src="img/index_map-small.jpg" width="560" height="222" alt="Схема проезда. Наш адрес: 119311 Москва, ул. Строителей, 15">
+          </a>
           <a class="button details-button" href="#">
             <span class="button-text">Напишите нам</span>
           </a>
@@ -432,7 +436,8 @@
     <section class="map-modal">
       <h2 class="visually-hidden">Схема проезда</h2> <!--попап с картой -->
       <p class="map">
-        <img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере">
+        <iframe class="map-iframe" src="https://yandex.ru/map-widget/v1/-/CGHhv2na" width="960" height="560" frameborder="1" allowfullscreen="true"></iframe>
+        <!-- <img src="img/index_map_big.jpg" width="960" height="560" alt="Карта в увеличенном размере"> -->
       </p> <!-- Наш адрес: Москва, ул. Строителей, дом 15" -->
       <button class="modal-close transparent-field" type="button">Закрыть</button>
     </section>
@@ -440,33 +445,32 @@
     <section class="feedback-modal">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <form name="write-us" action="https://echo.html-academy.ru" method="post">
-
         <div class="feedback-wrapper">
-
           <div class="formfield-wrapper">
             <label class="feedback-label your-name">Ваше имя:
               <input class="clients-data feedback-field" type="text" placeholder="Имя  Фамилия" required>
             </label>
           </div>
-
           <div class="formfield-wrapper">
             <label class="feedback-label your-email">Ваш e-mail:
               <input class="clients-data feedback-field" type="email" placeholder="email@example.com" required>
             </label>
           </div>
-
           <div class="message-wrapper">
             <label class="feedback-label your-message">Текст письма:
               <textarea class="clients-message" rows="5" cols="50">В свободной форме</textarea> <!-- количество строк и символов в строке пока указала примерно -->
             </label>
           </div>
-
-          <button class="button modal-send" type="submit">Отправить</button>
+          <button class="button modal-send" type="submit">
+            <span class="button-text">Отправить</span>
+          </button>
         </div>
 
         <button class="modal-close  transparent-field" type="button">Закрыть</button>
 
       </form>
     </section>
+
+    <script src="js/device-script.js"></script>
   </body>
 </html>

@@ -49,10 +49,6 @@ body {
   background-color: #ffffff;
 }
 
-main {
-  background-color: #ffffff;
-}
-
 a {
   margin: 0;
   padding: 0;
@@ -397,12 +393,16 @@ flex-wrap: wrap;
 }
 
 .slider-page-1{
-  /* border: 3px dashed #ADFF2F; */
+  display: none;
 }
 
 .slider-page-2{
   /* border: 3px dashed gold; */
-  display: none;
+
+}
+
+.slider-info-2 {
+  width: 440px;
 }
 
 .slider-page-3{
@@ -437,7 +437,7 @@ flex-wrap: wrap;
   z-index: 4;
   order: 2;
   position: relative;
-  top: -565px;
+  top: -570px;
 
   margin-top: 60px;
   padding-left: 900px; /*примерно*/
@@ -447,7 +447,6 @@ flex-wrap: wrap;
   font-size: 179.2px;
   line-height: 179.2px;
 
-  color: grey;
   text-align: right;
 }
 
@@ -599,6 +598,21 @@ flex-wrap: wrap;
   background-repeat: no-repeat;
 }
 
+.promo-label.current::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 12px;
+  height: 12px;
+  margin-right: 23px;
+
+  opacity: 1;
+  background-image: url("../img/icon_radio-on.svg");
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+}
+
 .promo-button:checked + label::before {
     background-image: url("../img/icon_radio-on.svg");
 }
@@ -684,8 +698,14 @@ background-color: #f0c52e;
 
 .offers-link:active {
   opacity: 0.3;
-  background-color: #f0c52e; /* не получается оставить фон нужного цвета, а изображение сделать полупрозрачным, применяя свойства, а не ссылку на другое изображение */
+  background-color: #f0c52e;
 }
+
+.offers-link:active + .offers-title {
+  opacity: 0.3;
+}
+
+
 
 .offers-image { /*КАРТИНКИ С ЛОГОТИПАМИ РАЗДЕЛОВ КАТАЛОГА НА ГЛАВНОЙ СТРАНИЦЕ*/
   display: block;
@@ -1356,21 +1376,26 @@ margin-left: auto;
 /* ПОПАП С КАРТОЙ */
 
 .map-modal {
-  /* display: block; */
-  position: fixed;
-  bottom: 385px;
+  display: block;
+  position: absolute;
+  top: 1852px;
   left: 120px;
   z-index: 10;
   display: none;
+  /* display: block; */
 
   width: 960px;
   height: 560px;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: 0;
-  margin-left: auto;
-/*
-  border: 1px solid gold; */
+  margin-left: 410px;
+
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.map-iframe {
+  border: none;
 }
 
 .map {
@@ -1387,11 +1412,11 @@ margin-left: auto;
 
 /* ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ*/
 
-.feedback-modal { /*Доделать:  параметры тени*/
-  position: fixed;
+.feedback-modal {
+  position: absolute;
   display: none;
   z-index: 10;
-  bottom: 515px;
+  top: 1057px;
   right: 50%;
 
   width: 962px;
@@ -1402,6 +1427,7 @@ margin-left: auto;
   margin-left: auto;
 
   background-color: #ffffff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .feedback-wrapper {
@@ -1416,8 +1442,6 @@ margin-left: auto;
   margin-top: 100px;
   margin-right: auto;
   margin-left: auto;
-
-  /* border: 1px solid green; */
   }
 
 .feedback-label {
@@ -2088,6 +2112,10 @@ margin-left: auto;
   background-color: transparent;
 }
 
+.sorting-link.current-link {
+  color: rgba(0, 0, 0, 1);
+}
+
 .sorting-link:hover,
 .sorting-link:focus {
     color: rgba(0, 0, 0, 0.6);
@@ -2103,7 +2131,7 @@ margin-left: auto;
   vertical-align: middle;
   z-index: 5;
 
-  width: 11px;
+  width: 12px;
   height: 10px;
 
   background-size: cover;
@@ -2119,6 +2147,10 @@ margin-left: auto;
     margin-right: 140px;
     margin-left: 19px;
     background-image: url("../img/icon_down-dir.svg");
+}
+
+.arrow-down.current-arrow {
+  opacity: 1;
 }
 
 .arrow-up:hover,
