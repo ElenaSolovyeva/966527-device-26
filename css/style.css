@@ -397,7 +397,6 @@ flex-wrap: wrap;
 }
 
 .slider-page-2{
-  /* border: 3px dashed gold; */
 
 }
 
@@ -406,7 +405,6 @@ flex-wrap: wrap;
 }
 
 .slider-page-3{
-  /* border: 3px dashed #00BFFF; */
   display: none;
 }
 
@@ -457,7 +455,7 @@ flex-wrap: wrap;
   z-index: 4;
   order: 2;
   position: relative;
-  top: -565px;
+  top: -570px;
 
   margin-top: 60px;
   padding-left: 900px; /*примерно*/
@@ -467,7 +465,6 @@ flex-wrap: wrap;
   font-size: 179.2px;
   line-height: 179.2px;
 
-  color: grey;
   text-align: right;
 }
 
@@ -475,9 +472,27 @@ flex-wrap: wrap;
    margin-left: 90px;
 }
 
+ .slider-page-2 > .slider-image {
+   margin-top: 10px;
+   margin-left: 100px;
+}
+
+ .slider-page-3 > .slider-image {
+   margin-top: 60px;
+   margin-left: 25px;
+}
+
 .slider-description-wrapper {
   width: 480px;
   margin-left: 125px;
+}
+
+.wrapper-2 {
+  margin-left: 154px;
+}
+
+.wrapper-3 {
+  margin-left: 40px;
 }
 
 .slider-slogan {
@@ -491,6 +506,10 @@ flex-wrap: wrap;
   font-size: 47px;
   line-height: 56px;
   letter-spacing: 0.7px;
+}
+
+.slogan-3 {
+  width: 510px;
 }
 
 .slider-slogan::before {
