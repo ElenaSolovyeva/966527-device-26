@@ -64,7 +64,7 @@ var usualMap = popapMap.querySelector(".not-interactive-map"); // НЕ инте�
 
 mapLink.addEventListener("click", function(evt) {
   evt.preventDefault();
-  popapMap.classList.add("modal-show-map"); // в CSS строка 1635
+  popapMap.classList.add("modal-show-map"); // в CSS строка  1635
   usualMap.classList.add("dont-show-map");
 });
 
