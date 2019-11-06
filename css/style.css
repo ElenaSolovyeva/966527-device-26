@@ -1319,10 +1319,17 @@ margin-left: auto;
   margin-left: 12px;
 }
 
+.cart-footer-catalog {
+  margin-left: 17px;
+}
+
+
+
 .compare-footer {
   margin-right: 0;
   margin-left: 0;
 }
+
 
 .user-footer {
   margin-right: 20px;
@@ -1784,7 +1791,7 @@ margin-left: auto;
   min-height: 70px;
   margin: 0;
   padding-top: 22px;
-  padding-right: 180px;
+  padding-right: 177px;
 
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
